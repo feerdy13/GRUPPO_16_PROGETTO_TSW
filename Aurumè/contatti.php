@@ -3,10 +3,10 @@
     <head lang="it">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contatti</title>
-        <link rel="stylesheet" href="resources/css/Header.css">
-        <link rel="stylesheet" href="resources/css/Footer.css">
-        <link rel="stylesheet" href="resources/css/Contatti.css">
+        <title>contacts</title>
+        <link rel="stylesheet" href="resources/css/header.css">
+        <link rel="stylesheet" href="resources/css/footer.css">
+        <link rel="stylesheet" href="resources/css/contatti.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     <body>
@@ -15,7 +15,7 @@
                 <!-- Icona del menu -->
                 <i class="fas fa-bars"></i>
             </div>
-            <div class="title">Aurumé</div>
+            <div class="title">Aurumè</div>
             <div class="right-icons">
                 <!-- Icona della lente di ingrandimento -->
                 <i class="fas fa-search"></i>

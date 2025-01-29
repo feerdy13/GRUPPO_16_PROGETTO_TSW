@@ -6,9 +6,9 @@
     <!-- Aggiunto il link al CDN di Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>terms-and-conditions</title>
-    <link rel="stylesheet" href="resources/css/Header.css">
-    <link rel="stylesheet" href="resources/css/Footer.css">
-    <link rel="stylesheet" href="resources/css/TerminiCondizioni.css">
+    <link rel="stylesheet" href="resources/css/header.css">
+    <link rel="stylesheet" href="resources/css/footer.css">
+    <link rel="stylesheet" href="resources/css/terminiCondizioni.css">
 </head>
 <body>
     <header>
