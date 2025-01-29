@@ -29,5 +29,3 @@
 
     <!-- Include the footer -->
     <?php include 'includes/footer.html'; ?>
-</body>
-</html>
