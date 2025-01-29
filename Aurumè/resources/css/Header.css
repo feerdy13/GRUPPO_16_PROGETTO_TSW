@@ -1,0 +1,34 @@
+/* Colori del Brand */
+:root {
+    --oro-champagne: #cbae05; /* Oro Champagne */
+    --bianco-perla: #f7f4f0; /* Bianco Perla */
+    --nero-opaco: #1a1a1a; /* Nero Opaco */
+}
+
+/* Header */
+header {
+    background-color: var(--nero-opaco);
+    color: var(--oro-champagne);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+header .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--oro-champagne);
+    font-family:'Times New Roman', Times, serif;
+}
+
+header i {
+    color: var(--bianco-perla);
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+header i:hover {
+    color: var(--oro-champagne);
+}
