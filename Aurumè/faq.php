@@ -1,4 +1,4 @@
-    <!-- Include the header -->
+<!-- Include the header -->
     <?php 
         $title = 'FAQ';
         $cssFile = 'resources/css/faq.css';
@@ -23,8 +23,8 @@
         </div>
         <h2>Non hai trovato risposta alla tua domanda? Contattaci.</h2>
         <div class="contatti">
-            <div class="email">E-mail</div>
-            <div class="instagram">Instagram</div>
+            <div class="email">E-mail: <a href="">...</a></div>
+            <div class="instagram">Instagram: <a href="">...</a></div>
         </div>
     </main>
 
