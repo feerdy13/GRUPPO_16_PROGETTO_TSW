@@ -11,21 +11,6 @@
     <link rel="stylesheet" href="resources/css/terminiCondizioni.css">
 </head>
 <body>
-    <header>
-        <div class="left-icons">
-            <!-- Icona del menu -->
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="title">Aurumè</div>
-        <div class="right-icons">
-            <!-- Icona della lente di ingrandimento -->
-            <i class="fas fa-search"></i>
-            <!-- Icona dell'omino stilizzato -->
-            <a href="#"><i class="fas fa-user"></i></a>
-            <!-- Icona della borsa per il carrello -->
-            <a href="#"><i class="fas fa-shopping-bag"></i></a>
-        </div>
-    </header>
 
     <main>
         <section>
