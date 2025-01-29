@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head lang="it">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Aggiunto il link al CDN di Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>terms-and-conditions</title>
-    <link rel="stylesheet" href="resources/css/header.css">
-    <link rel="stylesheet" href="resources/css/footer.css">
-    <link rel="stylesheet" href="resources/css/terminiCondizioni.css">
-</head>
-<body>
+    <!-- Include the header -->
+    <?php 
+        $title = 'Termini&Condizioni';
+        $cssFile = 'resources/css/termini_condizioni.css';
+        include 'includes/header.php'; 
+    ?>
 
     <main>
         <section>
