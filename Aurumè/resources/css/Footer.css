@@ -2,13 +2,12 @@
 :root {
     --oro-champagne: #cbae05; /* Oro Champagne */
     --bianco-perla: #f7f4f0; /* Bianco Perla */
-    --nero-opaco: #1a1a1a; /* Nero Opaco */
+    --nero-opaco: #046642; /* Nero Opaco */
 }
 
 /* Footer */
 footer {
-    background-color: var(--nero-opaco);
-    color: var(--bianco-perla);
+    background-color: #046642;
     display: flex;
     justify-content: space-around;
     padding: 20px;
