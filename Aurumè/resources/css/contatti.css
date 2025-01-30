@@ -1,3 +1,9 @@
+.heading {
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
 /* Contenitore principale che utilizza Flexbox per allineare le colonne */
 .contacts-container {
     display: flex; 
@@ -5,6 +11,7 @@
     margin-top: 20px;
 }
 
+/* Colonne dei contatti */
 .contacts {
     flex: 1;    /* Permette agli elementi di crescere per riempire lo spazio disponibile */
     margin: 10px 10px;
@@ -19,25 +26,24 @@
 }
 
 .contacts p {
-    font-size: 16px;
     color: #333;
     line-height: 1.5;
 }
 
 .contacts a {
     color: var(--second-color);
-    text-decoration: none;
 }
 
 .contacts a:hover {
     text-decoration: underline;
 }
 
-.heading {
+.email-info, .instagram-info {
     margin-bottom: 20px;
-    text-align: left;
-    font-weight: bold;
+    text-align: justify;
 }
+
+
 
 
 /* Stile per la tabella degli orari */
@@ -58,6 +64,8 @@
     font-weight: bold; /* Rende il testo in grassetto */
 }
 
+
+/* Rende la pagina responsive */
 @media (max-width: 600px) {
     .contacts-container {
         flex-direction: column; /* Dispone le colonne in verticale sui dispositivi più piccoli */

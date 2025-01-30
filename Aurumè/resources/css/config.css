@@ -54,3 +54,8 @@ h3 {
     font-size: var(--text-size-large);
     color: var(--first-color);
 }
+
+p {
+    font-size: var(--text-size-medium);
+    color: black;
+}

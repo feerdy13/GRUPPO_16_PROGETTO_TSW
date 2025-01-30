@@ -50,8 +50,8 @@
                 quando vi siano fondate ragioni quali, senza limitazioni, qualora:
             </p>
             <ul>
-                <li>Lei sia stato coinvolto in una controversia con Aurumè riguardante un ordine precedente;</li>
-                <li>Aurumè abbia fondato motivo di sospettare che Lei:
+                <li class="first-li">Lei sia stato coinvolto in una controversia con Aurumè riguardante un ordine precedente;</li>
+                <li class="first-li">Aurumè abbia fondato motivo di sospettare che Lei:
                     <ul>
                         <li>abbia violato le presenti Condizioni generali,</li>
                         <li>non abbia effettuato il pagamento dei prodotti acquistati alla scadenza del termine previsto,</li>
@@ -60,8 +60,8 @@
                         <li>si rifiuti di fornire delle informazioni che Aurumè ha l'obbligo di raccogliere per legge;</li>
                     </ul>
                 </li>
-                <li>Aurumè ritenesse che la cancellazione dell'ordine sia obbligatoria in base alla legge;</li>
-                <li>Aurumè abbia il diritto di cancellare un ordine ai sensi delle presenti Condizioni generali.</li>
+                <li class="first-li">Aurumè ritenesse che la cancellazione dell'ordine sia obbligatoria in base alla legge;</li>
+                <li class="first-li">Aurumè abbia il diritto di cancellare un ordine ai sensi delle presenti Condizioni generali.</li>
             </ul>
             <p>Nel caso in cui Aurumè annulli un ordine, rimborserà ogni pagamento precedentemente effettuato.
                 Aurumè fa il possibile affinché il colore, il design e lo stile dei prodotti Aurumè raffigurati sul Sito 
