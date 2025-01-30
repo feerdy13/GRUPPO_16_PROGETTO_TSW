@@ -5,6 +5,7 @@ footer {
     justify-content: space-around;
     padding: 20px;
     margin-top: 80px;
+    border-top: 3px solid var(--second-color);
 }
 
 footer hr {
