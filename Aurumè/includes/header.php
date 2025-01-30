@@ -11,14 +11,10 @@
 
         <link rel="stylesheet" href="resources/css/config.css">
         <link rel="stylesheet" href="resources/css/header.css">
-        <link rel="stylesheet" href="resources/css/footer.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
         <!-- Carico il foglio di stile della pagina corrente -->
-        <?php 
-            if (isset($cssFile)) 
-                echo '<link rel="stylesheet" href="css/' . $cssFile . '">'; 
-        ?>
+        
     </head>
     <body>
     <header>

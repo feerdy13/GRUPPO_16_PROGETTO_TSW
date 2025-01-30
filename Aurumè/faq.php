@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="resources/css/faq.css">
-
 <!-- Include the header -->
     <?php 
         $title = 'FAQ';
