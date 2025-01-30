@@ -8,6 +8,10 @@ footer {
     border-top: 3px solid var(--second-color);
 }
 
+.footer-column, .footer-column p {
+    text-align: center;
+}
+
 footer hr {
     flex-basis: 100%; /* Fa sì che l'hr occupi l'intera larghezza e vada su una nuova riga */
     margin-top: 30px;
