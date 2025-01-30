@@ -7,7 +7,7 @@
 
 .contacts {
     flex: 1;    /* Permette agli elementi di crescere per riempire lo spazio disponibile */
-    margin: 0 10px;
+    margin: 10px 10px;
     padding: 20px;
     background-color: #f9f9f9; /* Colore di sfondo delle colonne */
     border-radius: 8px;     /* Arrotonda gli angoli delle colonne */
@@ -15,9 +15,7 @@
 }
 
 .contacts h2 {
-    font-size: 24px;
     margin-bottom: 10px;
-    color: var(--first-color);
 }
 
 .contacts p {
@@ -36,29 +34,38 @@
 }
 
 .heading {
-    font-size: var(--text-size-xxlarge);
-    color: var(--first-color);
     margin-bottom: 20px;
     text-align: left;
     font-weight: bold;
 }
 
 
-/* Stile per allineare i giorni della settimana e gli orari */
-.online-support {
-    display: flex;      /* Abilita Flexbox */
-    flex-wrap: wrap;    /* Permette agli elementi di andare su più righe se necessario */
+/* Stile per la tabella degli orari */
+.hours-table {
+    width: 100%; /* La tabella occupa l'intera larghezza del contenitore */
+    border-collapse: collapse; /* Rimuove gli spazi tra le celle */
 }
 
-
-.online-support .day {
-    padding: 2px 0;
-    font-weight: bold;  /* Rende il testo in grassetto */
-    flex: 1 30%;      /* Ogni elemento occupa il 30% della larghezza disponibile */
+.hours-table .day, .hours-table .time {
+    padding: 8px 5px; /* Aggiunge spazio interno alle celle */
 }
 
-.online-support .time {
-    padding: 2px 0;
-    padding-right: 5px;
-    flex: 1 70%;      /* Ogni elemento occupa il 70% della larghezza disponibile */
+.hours-table tr {
+    border-bottom: 1px solid #ddd; /* Aggiunge una linea di separazione tra le righe */
+}
+
+.hours-table .day {
+    font-weight: bold; /* Rende il testo in grassetto */
+}
+
+@media (max-width: 600px) {
+    .contacts-container {
+        flex-direction: column; /* Dispone le colonne in verticale sui dispositivi più piccoli */
+    }
+
+    .hours-table .day, .hours-table .time {
+        display: block; /* Rende le celle blocchi per andare su più righe */
+        width: 100%; /* Ogni cella occupa l'intera larghezza disponibile */
+        text-align: left; /* Allinea il testo a sinistra */
+    }
 }
