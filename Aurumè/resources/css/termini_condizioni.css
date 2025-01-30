@@ -5,7 +5,6 @@ main {
 }
 
 h1 {
-    margin-top: 180px;
     font-size: 40px;
 }
 
@@ -26,8 +25,13 @@ p {
 ul {
     margin-top: 20px;
     margin-left: 40px; /* Aggiungi un margine sinistro per indentare l'elenco */
+    list-style-type: lower-latin;
 }
 
 li {
     margin-bottom: 10px; /* Aggiungi un margine inferiore per separare gli elementi dell'elenco */
+}
+
+li ul {
+    list-style-type: lower-roman;
 }

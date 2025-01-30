@@ -49,3 +49,7 @@ footer img {
     max-width: 40px;
     max-height: 40px;
 }
+
+footer .bottom {
+    font-size: var(--text-size-small);
+}

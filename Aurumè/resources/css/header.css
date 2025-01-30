@@ -6,10 +6,11 @@ header {
     align-items: center;
     padding: 30px 30px;
     border-bottom: 2px solid black;
-    position: fixed; /* Fissa l'header in alto */
+    position: sticky; /* Fissa l'header in alto */
     top: 0; /* Posiziona l'header in cima alla pagina */
     width: 100%; /* Assicura che l'header occupi l'intera larghezza della pagina */
     z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
+    margin-bottom: 50px;
 }
 
 header .title {
