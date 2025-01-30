@@ -6,12 +6,12 @@
 }
 
 .contacts {
-    flex: 1;
+    flex: 1;    /* Permette agli elementi di crescere per riempire lo spazio disponibile */
     margin: 0 10px;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Colore di sfondo delle colonne */
+    border-radius: 8px;     /* Arrotonda gli angoli delle colonne */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Aggiunge un'ombra leggera alle colonne */
 }
 
 .contacts h2 {
@@ -36,9 +36,29 @@
 }
 
 .heading {
-    font-size: 32px;
+    font-size: var(--text-size-xxlarge);
     color: var(--first-color);
     margin-bottom: 20px;
     text-align: left;
     font-weight: bold;
+}
+
+
+/* Stile per allineare i giorni della settimana e gli orari */
+.online-support {
+    display: flex;      /* Abilita Flexbox */
+    flex-wrap: wrap;    /* Permette agli elementi di andare su più righe se necessario */
+}
+
+
+.online-support .day {
+    padding: 2px 0;
+    font-weight: bold;  /* Rende il testo in grassetto */
+    flex: 1 30%;      /* Ogni elemento occupa il 30% della larghezza disponibile */
+}
+
+.online-support .time {
+    padding: 2px 0;
+    padding-right: 5px;
+    flex: 1 70%;      /* Ogni elemento occupa il 70% della larghezza disponibile */
 }
