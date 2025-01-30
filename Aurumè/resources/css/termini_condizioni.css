@@ -1,3 +1,32 @@
 main {
-    background-color: royalblue;
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    margin-top: 60px;
+}
+
+h3 {
+    margin-top: 40px;
+}
+
+p {
+    color: black;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+ul {
+    margin-top: 20px;
+    margin-left: 40px; /* Aggiungi un margine sinistro per indentare l'elenco */
+}
+
+li {
+    margin-bottom: 10px; /* Aggiungi un margine inferiore per separare gli elementi dell'elenco */
 }

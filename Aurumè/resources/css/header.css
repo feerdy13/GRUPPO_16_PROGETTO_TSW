@@ -4,7 +4,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 30px 30px;
+    border-bottom: 2px solid black;
+    position: fixed; /* Fissa l'header in alto */
+    top: 0; /* Posiziona l'header in cima alla pagina */
+    width: 100%; /* Assicura che l'header occupi l'intera larghezza della pagina */
+    z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
 }
 
 header .title {
@@ -21,6 +26,7 @@ header a {
 header i {
     color: white;
     margin: 0 10px;
+    font-size: var(--text-size-large);
     cursor: pointer;
     transition: color 0.3s ease;    /* Regola la transizione da un colore all'altro */
 }

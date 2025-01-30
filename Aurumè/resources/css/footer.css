@@ -1,18 +1,28 @@
 footer {
     background-color: var(--third-color);
     display: flex;
+    flex-wrap: wrap; /* Permette agli elementi di andare su più righe */
     justify-content: space-around;
     padding: 20px;
+    margin-top: 80px;
+}
+
+footer hr {
+    flex-basis: 100%; /* Fa sì che l'hr occupi l'intera larghezza e vada su una nuova riga */
+    margin-top: 30px;
+    border-color: rgb(112, 112, 112);
 }
 
 footer h3 {
     color: rgb(112, 112, 112);
-    font-size: medium;
-    margin-bottom: 10px;
+    font-size: var(--text-size-large);
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 footer a {
     color: white;
+    font-size: var(--text-size-medium);
     transition: color 0.3s ease;
 }
 
@@ -20,7 +30,22 @@ footer a:hover {
     color: var(--second-color);
 }
 
-img {
+footer .title {
+    font-family: var(--font-title);
+    color: white;
+    font-size: 200px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+footer p {
+    color: white;
+    width: 100%;
+    text-align: left;
+    margin-top: 15px;
+}
+
+footer img {
     max-width: 40px;
     max-height: 40px;
 }
