@@ -27,10 +27,16 @@ header a {
 header i {
     color: white;
     margin: 0 10px;
-    font-size: var(--text-size-large);
+    font-size: var(--text-size-medium);
     cursor: pointer;
     transition: color 0.3s ease;    /* Regola la transizione da un colore all'altro */
 }
+
+header .left-icons {
+    padding-left: 54px;
+}
+
+
 
 header i:hover, a:hover {
     color: var(--second-color);     /* Transizione al colore second-color */

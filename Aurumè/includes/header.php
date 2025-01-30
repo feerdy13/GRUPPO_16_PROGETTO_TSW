@@ -24,7 +24,8 @@
     <header>
         <div class="left-icons">
             <!-- Icona del menu -->
-            <i class="fi fi-rs-bars-sort"></i>
+            <i class="fi fi-rs-bars-sort">  Menu</i>
+            
         </div>
         <div class="title"><a href="index.php">A U R U M È</a></div>
         <div class="right-icons">
