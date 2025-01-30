@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@font-face {
+    font-family: 'Font Titolo';
+    src: url('../fonts/Galmine.otf') format('opentype');
+}
+
+
+:root {
+    /* Colori del Brand */
+    --first-color: #044a42;
+    --second-color: #d4af37;
+    --third-color: #2e2e2e;
+
+    /* Font Testo */
+    --font-text: 'Inter', sans-serif;
+    /* Font Titolo */
+    --font-title: 'Font Titolo';
+    /* Dimensioni del Testo */
+    --text-size-small: 12px;
+    --text-size-medium: 16px;
+    --text-size-large: 20px;
+    --text-size-xlarge: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-text);
+    text-decoration: none;
+}
