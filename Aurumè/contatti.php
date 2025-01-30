@@ -24,12 +24,14 @@
 
             <div class="contacts">
                 <h2>Orari supporto online</h2>
-                <p>Lunedì: 9:00 - 19:00</p>
-                <p>Martedì: 9:00 - 19:00 </p>
-                <p>Mercoledì: solo in ricezione</p>
-                <p>Giovedì: 9:00 - 19:00</p>
-                <p>Venerdì: 9:00 - 19:00</p>
-                <p>Sabato: 9:00 - 13:00</p>
+                <div class="online-support">
+                    <div class="day">Lunedì:</div>      <div class="time">9:00 - 19:00</div>
+                    <div class="day">Martedì:</div>     <div class="time">9:00 - 19:00</div>
+                    <div class="day">Mercoledì:</div>   <div class="time">solo in ricezione</div>
+                    <div class="day">Giovedì:</div>     <div class="time">9:00 - 19:00</div>
+                    <div class="day">Venerdì:</div>     <div class="time">9:00 - 19:00</div>
+                    <div class="day">Sabato:</div>      <div class="time">9:00 - 13:00</div>
+                </div>
             </div>
         </div>
     </main>
