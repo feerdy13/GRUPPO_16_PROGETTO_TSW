@@ -5,7 +5,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 30px;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid var(--second-color);
     position: sticky; /* Fissa l'header in alto */
     top: 0; /* Posiziona l'header in cima alla pagina */
     width: 100%; /* Assicura che l'header occupi l'intera larghezza della pagina */
