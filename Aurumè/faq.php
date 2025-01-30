@@ -9,23 +9,26 @@
         <h1>DOMANDE FREQUENTI</h1>
 
         <div class="grid-container">
-        <div class="row icons">
-            <div class="column"><i class="fas fa-truck"></i></div>
-            <div class="column"><i class="fas fa-box-open"></i></div>
-            <div class="column"><i class="fas fa-sync-alt"></i></div>
-            <div class="column"><i class="fas fa-shield-alt"></i></div>
+            <div class="grid-item">
+                <i class="fi fi-rs-terms-info"></i>
+                <div>Informazioni sull'ordine</div>
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-box-open"></i>
+                <div>Spedizioni</div>
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-sync-alt"></i>
+                <div>Reso e cambio</div>
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>Garanzie</div>
+            </div>
         </div>
-        <div class="row texts">
-            <div class="column">Informazioni sull'ordine</div>
-            <div class="column">Spedizioni</div>
-            <div class="column">Reso e cambio</div>
-            <div class="column">Garanzie</div>
-        </div>
-        </div>
-
         <h2 class="contattaci">Non hai trovato risposta alla tua domanda? Contattaci.</h2>
         <div class="contatti">
-            <div class="email">E-mail: <a href="">...</a></div>
+            <div class="email">E-mail: <a href="">...</a></div> 
             <div class="instagram">Instagram: <a href="">...</a></div>
         </div>
     </main>
