@@ -24,6 +24,7 @@ footer a {
     color: white;
     font-size: var(--text-size-medium);
     transition: color 0.3s ease;
+    text-decoration: underline;
 }
 
 footer a:hover {
