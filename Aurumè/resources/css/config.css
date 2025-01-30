@@ -29,3 +29,12 @@
     font-family: var(--font-text);
     text-decoration: none;
 }
+
+body {
+    background-color: whitesmoke;
+}
+
+main {
+    margin-left: 20px;
+    margin-right: 20px;
+}
