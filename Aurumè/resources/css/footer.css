@@ -6,6 +6,8 @@ footer {
 }
 
 footer h3 {
+    color: rgb(112, 112, 112);
+    font-size: medium;
     margin-bottom: 10px;
 }
 
