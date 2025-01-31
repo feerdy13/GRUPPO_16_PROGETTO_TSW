@@ -51,6 +51,9 @@
                 </table>
             </div>
         </div>
+        <img src="resources/img/aurumè_shop_mod.jpg" alt="assistenza" class="contacts-image">
+        Prenota un appuntamento
+        Vieni a visitarci presso la tua Boutique preferita o prenota una videochiamata direttamente dal comfort di casa tua.
     </main>
             
     <!-- Include the footer -->
