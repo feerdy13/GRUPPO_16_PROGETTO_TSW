@@ -5,7 +5,7 @@
         include 'includes/header.php'; 
     ?>
 
-
+    <video class="video" src="resources/img/gold.mp4" autoplay loop muted></video>
     <h2>Il significato del nome del brand</h2>
     <p class="description">
         Aurumè è un nome che deriva dalla parola latina "aurum", che significa oro. <br>

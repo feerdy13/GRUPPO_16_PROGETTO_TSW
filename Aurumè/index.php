@@ -6,10 +6,7 @@
     ?>
 
     <main>
-        <video autoplay loop muted playsinline width="800" height="450">
-            <source src="resources/img/" type="video/mp4">
-            Il tuo browser non supporta il tag video.
-        </video>
+        <video class="video-home" src="resources/img/jewellery.mp4" autoplay loop muted></video>
     </main>
 
 
