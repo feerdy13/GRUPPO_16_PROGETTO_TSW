@@ -38,7 +38,7 @@
             <!-- Icona della lente di ingrandimento -->
             <i class="fi fi-rs-search"></i>
             <!-- Icona dell'omino stilizzato -->
-            <a href=""><i class="fi fi-rs-user"></i></a>
+            <a href="area_utente.php"><i class="fi fi-rs-user"></i></a>
             <!-- Icona della borsa per il carrello -->
             <a href="carrello.php"><i class="fi fi-rs-shopping-bag"></i></a>
         </div>
