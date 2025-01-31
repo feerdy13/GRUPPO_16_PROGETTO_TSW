@@ -20,7 +20,7 @@
             <p>Siamo un gruppo di artigiani appassionati che creano gioielli unici e personalizzati.</p>
         </div>
         <div class="image-column">
-            <img src="" alt="gioielli">
+            <img src="resources/img/gioielli.png" alt="gioielli">
             <p>Cosa proponiamo?</p>
             <p>Offriamo una vasta gamma di gioielli realizzati a mano, utilizzando solo i migliori materiali.</p>
         </div>
