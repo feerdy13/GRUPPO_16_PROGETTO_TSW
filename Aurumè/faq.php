@@ -5,24 +5,32 @@
         include 'includes/header.php'; 
     ?>
 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+
     <main>
         <h1>DOMANDE FREQUENTI</h1>
 
         <div class="grid-container">
             <div class="grid-item">
-                <i class="fi fi-rs-terms-info"></i>
-                <div>Informazioni sull'ordine</div>
+            <!-- Icona delle informazioni sull'ordine -->
+            
+            <div>Informazioni sull'ordine</div>
             </div>
             <div class="grid-item">
-                <i class="fas fa-box-open"></i>
+                <!-- Icona del camioncino -->
+                <i class="fi fi-rs-truck-side"></i>
                 <div>Spedizioni</div>
             </div>
             <div class="grid-item">
-                <i class="fas fa-sync-alt"></i>
+                <!-- Icona del reso -->
+
                 <div>Reso e cambio</div>
             </div>
             <div class="grid-item">
-                <i class="fas fa-shield-alt"></i>
+                <!-- Icona dello scudo per garanzia -->
+                <i class="fi fi-rr-shield-check"></i>
                 <div>Garanzie</div>
             </div>
         </div>
