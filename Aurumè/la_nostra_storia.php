@@ -8,7 +8,7 @@
 
     <h2>Il significato del nome del brand</h2>
     <p>
-        Aurumè è un nome che deriva dalla parola latina "aurum", che significa oro. <br>
+        Aurumè è un nome che deriva dalla parola latina "aurum", che significa oro. <br><br>
         Abbiamo scelto questo nome perché il nostro obiettivo è quello di creare gioielli unici e preziosi, <br>
         realizzati con materiali di alta qualità e con la massima cura e dedizione.
     </p>
@@ -25,7 +25,7 @@
             <p>Offriamo una vasta gamma di gioielli realizzati a mano, utilizzando solo i migliori materiali.</p>
         </div>
         <div class="image-column">
-            <img src="" alt="perché-sceglierci">
+            <img src="resources/img/aurumè_logo.jpg" alt="perché-sceglierci">
             <p>Perché sceglierci?</p>
             <p>Perché ogni nostro pezzo è unico e realizzato con la massima cura e dedizione.</p>
         </div>
