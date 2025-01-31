@@ -74,6 +74,10 @@
     vertical-align: middle; /* Allinea verticalmente il contenuto al centro */
 }
 
+.visit-table p {
+    text-align: justify; 
+}
+
 .visit-table a {
     color: var(--fourth-color);
     text-decoration: underline;
