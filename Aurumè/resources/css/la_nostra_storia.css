@@ -1,3 +1,8 @@
+.description {
+    padding-bottom: 10px;
+    font-size: var(--text-size-large);
+}
+
 .image-row {
     display: flex;
     justify-content: space-around;
@@ -12,8 +17,18 @@
 .image-column img {
     width: 100%;
     height: auto;
+    min-height: 580px;
+    max-height: 580px;
+    object-fit: cover;
 }
 
 h2, p {
     text-align: center;
 }
+
+.question {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
