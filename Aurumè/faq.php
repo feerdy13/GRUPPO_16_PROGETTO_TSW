@@ -7,7 +7,8 @@
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
     <main>
         <h1>DOMANDE FREQUENTI</h1>
@@ -15,7 +16,7 @@
         <div class="grid-container">
             <div class="grid-item">
             <!-- Icona delle informazioni sull'ordine -->
-            
+            <i class="fi fi-rr-info"></i>
             <div>Informazioni sull'ordine</div>
             </div>
             <div class="grid-item">
@@ -25,7 +26,7 @@
             </div>
             <div class="grid-item">
                 <!-- Icona del reso -->
-
+                <i class="fi fi-ss-restock"></i>
                 <div>Reso e cambio</div>
             </div>
             <div class="grid-item">
