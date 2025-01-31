@@ -1,5 +1,4 @@
 .heading {
-    margin-bottom: 20px;
     text-align: left;
     font-weight: bold;
 }
@@ -8,7 +7,6 @@
 .contacts-container {
     display: flex; 
     justify-content: space-between;
-    margin-top: 20px;
 }
 
 /* Colonne dei contatti */

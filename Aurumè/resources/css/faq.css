@@ -1,10 +1,14 @@
+.heading {
+    text-align: left;
+    font-weight: bold;
+}
+
 /* Contenitore principale con layout a griglia */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Definisce 4 colonne di larghezza uguale */
     gap: 20px;
     text-align: center;
-    margin-top: 40px;
 }
 
 /* Elementi della griglia con layout flessibile */

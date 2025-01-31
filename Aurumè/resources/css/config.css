@@ -43,16 +43,19 @@ main {
 h1 {
     font-size: var(--text-size-xxlarge);
     color: var(--first-color);
+    margin-bottom: 50px;
 }
 
 h2 {
     font-size: var(--text-size-xlarge);
     color: var(--first-color);
+    margin-bottom: 30px;
 }
 
 h3 {
     font-size: var(--text-size-large);
     color: var(--first-color);
+    margin-bottom: 20px;
 }
 
 p {
