@@ -1,4 +1,4 @@
-<!-- Include the header -->
+    <!-- Include the header -->
     <?php 
         $title = 'FAQ';
         $cssFile = 'resources/css/faq.css';

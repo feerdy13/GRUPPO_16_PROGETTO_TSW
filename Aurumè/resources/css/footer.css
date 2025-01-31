@@ -56,8 +56,14 @@ footer img {
     max-height: 40px;
 }
 
-footer .bottom {
-    font-size: var(--text-size-small);
+.bottom {
+    font-size: var(--text-size-normal);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 20px 10px;
 }
 
 .logo-instagram {
