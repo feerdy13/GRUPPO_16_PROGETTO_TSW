@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
     <main>
-        <h1>DOMANDE FREQUENTI</h1>
+        <h1>Domande Frequenti</h1>
 
         <div class="grid-container">
             <div class="grid-item">
@@ -35,11 +35,7 @@
                 <div>Garanzie</div>
             </div>
         </div>
-        <h2 class="contattaci">Non hai trovato risposta alla tua domanda? Contattaci.</h2>
-        <div class="contatti">
-            <div class="email">E-mail: <a href="">...</a></div> 
-            <div class="instagram">Instagram: <a href="">...</a></div>
-        </div>
+        <h2 class="contact">Non hai trovato risposta alla tua domanda? <a href="contatti.php">Contattaci</a></h2>
     </main>
 
     
