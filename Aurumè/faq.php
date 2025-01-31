@@ -15,9 +15,9 @@
 
         <div class="grid-container">
             <div class="grid-item">
-            <!-- Icona delle informazioni sull'ordine -->
-            <i class="fi fi-rr-info"></i>
-            <div>Informazioni sull'ordine</div>
+                <!-- Icona delle informazioni sull'ordine -->
+                <i class="fi fi-rr-info"></i>
+                <div>Informazioni sull'ordine</div>
             </div>
             <div class="grid-item">
                 <!-- Icona del camioncino -->
