@@ -19,12 +19,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Aggiunge un'ombra leggera alle colonne */
 }
 
-.contacts h2 {
-    margin-bottom: 10px;
-}
-
 .contacts p {
-    color: #333;
     line-height: 1.5;
 }
 
@@ -41,11 +36,7 @@
     text-align: justify;
 }
 
-.contacts-image {
-    width: 50%;
-    height: auto;
-    margin: 10px 10px;
-}
+
 
 
 
@@ -66,6 +57,38 @@
 .hours-table .day {
     font-weight: bold; /* Rende il testo in grassetto */
 }
+
+/* Stile per la tabella che contiene l'immagine del negozio */
+.visit-table {
+    width: 100%;
+    margin-top: 50px;
+    border-collapse: collapse;
+    background-color: #f9f9f9; /* Colore di sfondo della tabella */
+    border-radius: 8px; /* Arrotonda gli angoli della tabella */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Aggiunge un'ombra leggera alla tabella */
+}
+
+.visit-table td {
+    width: 50%; /* Ogni cella occupa il 50% della larghezza della tabella */
+    padding: 20px;
+    vertical-align: middle; /* Allinea verticalmente il contenuto al centro */
+}
+
+.visit-table a {
+    color: var(--fourth-color);
+    text-decoration: underline;
+    transition: color 0.3s ease; /* Regola la transizione da un colore all'altro */
+}
+
+.visit-table a:hover {
+    color: var(--second-color);
+}
+
+.visit-image {
+    width: 100%; /* Imposta la larghezza dell'immagine al 100% */
+    border-radius: 8px; /* Arrotonda gli angoli dell'immagine */
+}
+
 
 
 /* Rende la pagina responsive */

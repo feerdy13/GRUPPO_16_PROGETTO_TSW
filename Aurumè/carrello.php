@@ -1,7 +1,7 @@
     <!-- Include the header -->
     <?php 
-        $title = 'Contatti';
-        $cssFile = 'resources/css/contatti.css';
+        $title = 'Carrello';
+        $cssFile = 'resources/css/carrello.css';
         include 'includes/header.php'; 
     ?>
 

@@ -51,9 +51,28 @@
                 </table>
             </div>
         </div>
-        <img src="resources/img/aurumè_shop_mod.jpg" alt="assistenza" class="contacts-image">
-        Prenota un appuntamento
-        Vieni a visitarci presso la tua Boutique preferita o prenota una videochiamata direttamente dal comfort di casa tua.
+
+        <table class="visit-table">
+            <tr>
+                <td>
+                    <img class="visit-image" src="resources/img/aurumè_shop_mod.jpg" alt="assistenza" >
+                </td>
+                <td>
+                    <h2>Vieni a trovarci in Boutique!</h2>
+                    <p>
+                    Il nostro team di esperti sarà lieto di assisterti e consigliarti nella 
+                    scelta dei tuoi gioielli preferiti. Vieni a trovarci per un'esperienza di 
+                    shopping unica e personalizzata. 
+                    Ti aspettiamo nella nostra boutique per scoprire le ultime collezioni e le 
+                    offerte esclusive. 
+                    </p>
+
+                    <p>
+                        Ci troviamo <a href="https://maps.app.goo.gl/73L1ic2gxmTjmFTn6">qui.</a>
+                    </p>
+                </td>
+            </tr>
+        </table>
     </main>
             
     <!-- Include the footer -->

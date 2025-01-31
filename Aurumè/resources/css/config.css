@@ -10,6 +10,7 @@
     --first-color: #023c35;
     --second-color: #d4af37;
     --third-color: #000000;
+    --fourth-color: #333;
 
     /* Font Testo */
     --font-text: 'Inter', sans-serif;
@@ -60,5 +61,5 @@ h3 {
 
 p {
     font-size: var(--text-size-medium);
-    color: black;
+    color: var(--fourth-color);
 }
