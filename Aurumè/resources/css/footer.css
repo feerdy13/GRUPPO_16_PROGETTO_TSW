@@ -59,3 +59,8 @@ footer img {
 footer .bottom {
     font-size: var(--text-size-small);
 }
+
+.logo-instagram {
+    text-decoration: none;
+    font-size: var(--text-size-xlarge);
+}

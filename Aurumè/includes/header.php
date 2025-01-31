@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="resources/css/header.css">
         <link rel="stylesheet" href="resources/css/footer.css">
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
 
         <?php
             if (isset($cssFile)) 
