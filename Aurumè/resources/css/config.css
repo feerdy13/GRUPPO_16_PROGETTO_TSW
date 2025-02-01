@@ -42,9 +42,10 @@ main {
 }
 
 h1 {
+
+    margin: 50px;
     font-size: var(--text-size-xxlarge);
     color: var(--first-color);
-    margin-bottom: 50px;
 }
 
 h2 {

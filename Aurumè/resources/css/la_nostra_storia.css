@@ -7,7 +7,9 @@
 }
 
 .description {
+    text-align: center;
     padding-bottom: 10px;
+    margin: 0 290px 100px 290px;
     font-size: var(--text-size-large);
 }
 
@@ -28,6 +30,12 @@
     min-height: 580px;
     max-height: 580px;
     object-fit: cover;
+}
+
+.image {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1); /* Aggiunge un'ombra leggera alla tabella */
+
 }
 
 h2, p {

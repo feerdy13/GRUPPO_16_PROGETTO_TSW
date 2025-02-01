@@ -7,7 +7,7 @@
 
     <main>
         <section>
-            <h1>Termini & condizioni generali</h1>
+            <h1 class="heading">Termini & condizioni generali</h1>
             <p>Il presente documento regola i Termini e le condizioni generali di vendita (le “Condizioni generali”) relative agli ordini, 
                 agli acquisti di prodotti e alla condivisione di informazioni tra Aurumè e il cliente che intende ordinare e 
                 acquistare prodotti tramite la sezione italiana del sito internet di Aurumè.
@@ -120,7 +120,7 @@
         <section>
             <h2>Politica di reso</h2>
             <h3>a. Regole generali</h3>
-            <p>Può effettuare un reso di un prodotto acquistato tramite il Sito, e ottenere il rimborso del prezzo pagato o 
+            <p class="p-h3">Può effettuare un reso di un prodotto acquistato tramite il Sito, e ottenere il rimborso del prezzo pagato o 
                 chiedere la sostituzione con un altro prodotto (di taglia o colore diversi), informandoci chiaramente della 
                 Sua intenzione di farlo entro quattordici (14) giorni di calendario dalla data di ricezione del prodotto: contattando il 
                 nostro servizio clienti all'indirizzo mail it.cs@aurume.com o al numero di telefono +39 0694801941 o tramite il Sito.
@@ -140,7 +140,7 @@
                 La nostra Politica di Reso non intende in alcun modo escludere o limitare diritti o rimedi inderogabili e a Lei spettanti in base alla legge.
             </p>
             <h3>b. Restituzione mediante il servizio clienti</h3>
-            <p>Una volta ricevuta la comunicazione relativa alla Sua volontà di recedere dal contratto, Aurumè Le invierà un'etichetta 
+            <p class="p-h3">Una volta ricevuta la comunicazione relativa alla Sua volontà di recedere dal contratto, Aurumè Le invierà un'etichetta 
                 pre-pagata per la restituzione. Può anche restituire i prodotti inviandoli direttamente a Aurumè unitamente al Modulo di 
                 restituzione od altra dichiarazione della Sua volontà di recedere dal contratto. 
                 Dovrà restituire il prodotto entro 14 giorni dal momento della Sua comunicazione a Aurumè della volontà di recedere. 
@@ -153,7 +153,7 @@
                 con un altro prodotto, non saranno addebitate le spese di spedizione per l'invio del prodotto in sostituzione.
             </p>
             <h3>c. Restituzione online</h3>
-            <p>E' anche possibile restituire i prodotti acquistati online, per ottenere un rimborso o una sostituzione, tramite il Sito. 
+            <p class="p-h3">E' anche possibile restituire i prodotti acquistati online, per ottenere un rimborso o una sostituzione, tramite il Sito. 
                 Per effettuare un reso tramite il Sito, bisogna compilare il modulo di reso online o accedere alla pagina 
                 Cronologia ordini nella sezione MyAccount e seguire le relative indicazioni. 
                 A seguito della richiesta di reso, Aurumè Le invierà un'etichetta di reso prepagata. 
@@ -168,7 +168,7 @@
                 dettagliate nei paragrafi precedenti. Il prodotto sostitutivo verrà in genere inviato all'indirizzo di spedizione indicato 
                 sull'ordine originale entro uno o due (1-2) giorni lavorativi dalla ricezione e controllo del prodotto restituito. 
                 Riceverà quindi un'e-mail separata con le nuove informazioni sull'ordine e il numero di tracciamento per il nuovo prodotto.
-            </p>
+            </p class="p-h3">
         </section>
     </main>
 

@@ -7,7 +7,7 @@
 
 
     <main>
-        <h1 class="heading">Domande Frequenti</h1>
+        <h1 class="heading">Domande frequenti</h1>
 
         <div class="grid-container">
             <div class="grid-item">
