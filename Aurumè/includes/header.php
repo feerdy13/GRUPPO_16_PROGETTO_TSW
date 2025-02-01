@@ -33,7 +33,7 @@
             <i class="fi fi-rs-bars-sort">  Menu</i>
             
         </div>
-        <div class="title"><a href="index.php">A U R U M È</a></div>
+        <div class="header-title"><a href="index.php">A U R U M È</a></div>
         <div class="right-icons">
             <!-- Icona della lente di ingrandimento -->
             <i class="fi fi-rs-search"></i>

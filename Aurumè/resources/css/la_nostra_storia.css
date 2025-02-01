@@ -1,9 +1,7 @@
 .video {
-    width: 100%;
+    width: 100vw; /* Imposta la larghezza del video al 100% della viewport */
     height: auto;
-    display: block;
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Rimuove i margini predefiniti */
 }
 
 .description {
@@ -43,8 +41,14 @@ h2, p {
 }
 
 .question {
+    font-size: var(--text-size-large);
     padding-top: 10px;
     padding-bottom: 10px;
     font-weight: bold;
+}
+
+.answer {
+    font-size: var(--text-size-medium);
+    margin-bottom: 20px;
 }
 
