@@ -95,7 +95,7 @@
 
 
 
-/* Rende la pagina responsive */
+/* Rende la pagina responsive per smartphone */
 @media (max-width: 600px) {
     .contacts-container {
         flex-direction: column; /* Dispone le colonne in verticale sui dispositivi più piccoli */

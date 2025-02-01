@@ -15,7 +15,7 @@
 
         <div class="image-row">
             <div class="image-column">
-                <img class="image" src="resources/img/artigiano.jpeg" alt="artigiano">
+                <img class="image" src="resources/img/artigiano_mod.jpeg" alt="artigiano">
                 <p class="question">Chi siamo?</p>
                 <p class="answer">Siamo un gruppo di artigiani appassionati che creano gioielli unici e personalizzati.</p>
             </div>
@@ -25,7 +25,7 @@
                 <p class="answer">Offriamo una vasta gamma di gioielli realizzati a mano, utilizzando solo i migliori materiali.</p>
             </div>
             <div class="image-column">
-                <img class="image" src="resources/img/pezzi_unici.webp" alt="perché-sceglierci">
+                <img class="image" src="resources/img/pezzi_unici_mod.jpg" alt="perché-sceglierci">
                 <p class="question">Perché sceglierci?</p> 
                 <p class="answer">Perché ogni nostro pezzo è unico e realizzato da zero a mano con la massima cura e dedizione.</p>
             </div>

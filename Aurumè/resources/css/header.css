@@ -13,6 +13,12 @@ header {
     
 }
 
+
+.header-title {
+    text-align: center;
+
+}
+
 .header-title a {
     font-family: var(--font-title);
     font-size: var(--text-size-xlarge);
@@ -36,8 +42,24 @@ header .left-icons {
     padding-left: 54px;
 }
 
-
-
 header i:hover, a:hover {
     color: var(--second-color);     /* Transizione al colore second-color */
+}
+
+
+
+/* Rende l'header responsive per smartphone */
+@media (max-width: 600px) {
+    header {
+        padding: 20px 10px;
+    }
+    
+    header i {
+        font-size: var(--text-size-small);
+        margin: 0 5px;
+    }
+
+    header .left-icons {
+        padding-left: 20px;
+    }
 }
