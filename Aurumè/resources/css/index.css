@@ -1,5 +1,5 @@
 .video-home {
-    width: 100%;
+    width: calc(100% + 40px); /* Compensa i margini del main */
     height: auto;
-    display: block;
+    margin-left: -20px; /* Sposta il video allineandolo ai bordi dello schermo */
 }

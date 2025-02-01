@@ -1,7 +1,7 @@
 .video {
-    width: 100vw; /* Imposta la larghezza del video al 100% della viewport */
+    width: calc(100% + 40px); /* Compensa i margini del main */
     height: auto;
-    margin: 0; /* Rimuove i margini predefiniti */
+    margin-left: -20px; /* Sposta il video allineandolo ai bordi dello schermo */
 }
 
 .description {
