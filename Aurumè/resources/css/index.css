@@ -4,7 +4,66 @@
     margin-left: -20px; /* Sposta il video allineandolo ai bordi dello schermo */
 }
 
+.heading {
+    text-align: center; /* Centra il testo e gli elementi all'interno del contenitore */
+}
 
+/* Stile per il pulsante "Scopri la collezione" */
+.shop-button {
+    display: inline-block; /* Rende il pulsante un elemento inline-block */
+    background-color: var(--first-color); /* Colore di sfondo del pulsante */
+    color: whitesmoke; /* Colore del testo del pulsante */
+    padding: 10px 20px; /* Padding interno del pulsante */
+    border: none; /* Rimuove il bordo del pulsante */
+    border-radius: 5px; /* Arrotonda gli angoli del pulsante */
+    text-decoration: none; /* Rimuove la sottolineatura dal link */
+    font-size: var(--text-size-medium); /* Dimensione del testo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera al pulsante */
+    transition: background-color 0.3s ease; /* Transizione per il cambio di colore di sfondo */
+    margin-top: 20px; /* Aggiunge uno spazio sopra il pulsante */
+}
+
+
+/* Stile per gli highlight con immagini e testo */
+.highlights-container {
+    width: 80%;
+    margin: 5vh auto;
+}
+.highlight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.highlight img {
+    width: 250px; /* Regola la dimensione dell'immagine */
+    height: auto;
+    border-radius: 10px;
+}
+.text {
+    max-width: 50%;
+}
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Stile per lo scroll orizzontale delle immagini */
+.image-scroll-container {
+    overflow-x: auto; /* Abilita lo scroll orizzontale */
+    white-space: nowrap; /* Impedisce il wrapping delle immagini */
+    padding: 20px 0; /* Aggiunge padding sopra e sotto il contenitore */
+}
+.image-scroll {
+    display: inline-flex; /* Utilizza Flexbox per disporre le immagini in una riga */
+}
+.image-scroll img {
+    width: 300px; /* Imposta una larghezza fissa per le immagini */
+    height: auto; /* Mantiene l'altezza proporzionale alla larghezza */
+    margin-right: 20px; /* Aggiunge uno spazio tra le immagini */
+    border-radius: 8px; /* Arrotonda gli angoli delle immagini */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera alle immagini */
+}
 
 
 
