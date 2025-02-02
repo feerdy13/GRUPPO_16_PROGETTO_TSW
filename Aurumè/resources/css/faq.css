@@ -3,39 +3,90 @@
     font-weight: bold;
 }
 
-/* Contenitore principale con layout a griglia */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Definisce 4 colonne di larghezza uguale */
-    gap: 20px;
-    text-align: center;
+
+/* Contenitore flessibile per le icone */
+.flex-container {
+    display: flex; /* Utilizza Flexbox per disporre gli elementi in una riga */
+    justify-content: space-around; /* Distribuisce gli elementi con spazio uguale tra di loro */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
 }
 
-/* Elementi della griglia con layout flessibile */
-.grid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Elementi flessibili */
+.flex-item {
+    display: flex; /* Utilizza Flexbox per disporre il contenuto all'interno dell'elemento */
+    flex-direction: column; /* Dispone il contenuto in una colonna */
+    align-items: center; /* Centra il contenuto orizzontalmente */
+    text-align: center; /* Centra il testo */
+    margin: 10px; /* Aggiunge uno spazio intorno agli elementi */
+    color: var(--fourth-color);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+.flex-item:hover {
+    color: var(--second-color);
 }
 
-/* Icone all'interno degli elementi della griglia */
-.grid-item i {
-    font-size: 2em;
-    margin-bottom: 10px;
+/* Icone all'interno degli elementi flessibili */
+.flex-item i {
+    font-size: var(--text-size-xxlarge);
 }
 
+/* Link all'interno degli elementi flessibili */
+.flex-item a {
+    color: inherit; /* Eredita il colore del testo */
+}
+
+/* Stile per il testo di supporto */
 .contact {
     text-align: center;
     margin-top: 80px;
 }
-
 .contact a {
     text-align: center;
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--first-color);
     transition: color 0.3s ease;
 }
-
 .contact a:hover {
     color: var(--second-color); 
 }
+
+
+/* Stile per le sezioni FAQ */
+.faq-section {
+    display: none; /* Nasconde le sezioni FAQ per impostazione predefinita */
+    margin-top: 20px;
+}
+.faq-section.active {
+    display: block; /* Mostra la sezione FAQ attiva */
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    background-color: var(--first-color);
+    color: whitesmoke;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--second-color);
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid var(--first-color);
+}
+.faq-answer.active {
+    display: block;
+}
+
