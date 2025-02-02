@@ -3,3 +3,35 @@
     height: auto;
     margin-left: -20px; /* Sposta il video allineandolo ai bordi dello schermo */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stile per il pulsante email */
+.email-button-container {
+    position: fixed; /* Posiziona il contenitore in modo fisso */
+    bottom: 20px; /* Distanza dal fondo della pagina */
+    right: 20px; /* Distanza dal lato destro della pagina */
+}
+.email-button {
+    background-color: var(--first-color); /* Colore di sfondo del pulsante */
+    color: whitesmoke; /* Colore del testo del pulsante */
+    padding: 10px 20px; /* Padding interno del pulsante */
+    border: none; /* Rimuove il bordo del pulsante */
+    border-radius: 5px; /* Arrotonda gli angoli del pulsante */
+    text-decoration: none; /* Rimuove la sottolineatura dal link */
+    font-size: var(--text-size-medium); /* Dimensione del testo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera al pulsante */
+    transition: color 0.3s ease; /* Transizione per il cambio di colore di sfondo */
+}
+.email-button:hover {
+    color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
+}
