@@ -27,7 +27,7 @@
 /* Stile per gli highlight con immagini e testo */
 .highlights-container {
     width: 80%;
-    margin: 5vh auto;
+    margin: 10vh auto;
 }
 .highlight {
     display: flex;
@@ -48,15 +48,26 @@
     flex-direction: row-reverse;
 }
 
-/* Stile per lo scroll orizzontale delle immagini */
+
+/* Contenitore per lo scroll orizzontale delle immagini */
+.image-scroll-wrapper {
+    margin: 25vh 10vw;
+    position: relative; /* Posiziona i pulsanti delle frecce in relazione al contenitore */
+    display: flex;
+    align-items: center;
+}
+
 .image-scroll-container {
     overflow-x: auto; /* Abilita lo scroll orizzontale */
     white-space: nowrap; /* Impedisce il wrapping delle immagini */
-    padding: 20px 0; /* Aggiunge padding sopra e sotto il contenitore */
+    padding: 75px 0; /* Aggiunge padding sopra e sotto il contenitore */
+    flex: 1; /* Permette al contenitore di espandersi per riempire lo spazio disponibile */
 }
+
 .image-scroll {
     display: inline-flex; /* Utilizza Flexbox per disporre le immagini in una riga */
 }
+
 .image-scroll img {
     width: 300px; /* Imposta una larghezza fissa per le immagini */
     height: auto; /* Mantiene l'altezza proporzionale alla larghezza */
@@ -65,6 +76,33 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera alle immagini */
 }
 
+/* Stile per i pulsanti delle frecce */
+.scroll-button {
+    position: absolute; /* Posiziona i pulsanti in modo assoluto */
+    background-color: var(--first-color); /* Colore di sfondo del pulsante */
+    color: whitesmoke; /* Colore del testo del pulsante */
+    border: none; /* Rimuove il bordo del pulsante */
+    border-radius: 50%; /* Arrotonda gli angoli del pulsante */
+    width: 40px; /* Larghezza del pulsante */
+    height: 40px; /* Altezza del pulsante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera al pulsante */
+    top: 10px; /* Posiziona i pulsanti in alto */
+    right: 10px; /* Allinea i pulsanti a destra */
+    margin-left: 10px; /* Aggiunge uno spazio tra i pulsanti */
+    transition: background-color 0.3s ease; /* Transizione per il cambio di colore di sfondo */
+}
+
+.scroll-button.left {
+    right: 80px; /* Impedisce il sovrapporsi dei pulsanti */
+}
+
+.scroll-button:hover {
+    background-color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
+}
 
 
 

@@ -33,20 +33,24 @@
         </div>
 
         <!-- Contenitore per lo scroll orizzontale delle immagini -->
-        <div class="image-scroll-container">
-            <div class="image-scroll">
-                <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
-                <img src="resources/img/gioielli.png" alt="Immagine 2">
-                <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
-                <img src="resources/img/gioielli.png" alt="Immagine 4">
-                <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
-                <img src="resources/img/gioielli.png" alt="Immagine 2">
-                <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
-                <img src="resources/img/gioielli.png" alt="Immagine 4">
-                <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
-                <img src="resources/img/gioielli.png" alt="Immagine 2">
-                <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
-                <img src="resources/img/gioielli.png" alt="Immagine 4">
+        <div class="image-scroll-wrapper">
+            <button class="scroll-button left">&lt;</button>
+            <button class="scroll-button right">&gt;</button>
+            <div class="image-scroll-container">
+                <div class="image-scroll">
+                    <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
+                    <img src="resources/img/gioielli.png" alt="Immagine 2">
+                    <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
+                    <img src="resources/img/gioielli.png" alt="Immagine 4">
+                    <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
+                    <img src="resources/img/gioielli.png" alt="Immagine 2">
+                    <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
+                    <img src="resources/img/gioielli.png" alt="Immagine 4">
+                    <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
+                    <img src="resources/img/gioielli.png" alt="Immagine 2">
+                    <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
+                    <img src="resources/img/gioielli.png" alt="Immagine 4">
+                </div>
             </div>
         </div>
     </main>

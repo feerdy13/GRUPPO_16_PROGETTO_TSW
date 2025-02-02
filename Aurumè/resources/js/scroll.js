@@ -1,25 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     const scrollContainer = document.querySelector('.image-scroll-container');
-    const mainContainer = document.querySelector('main');
+    const leftButton = document.querySelector('.scroll-button.left');
+    const rightButton = document.querySelector('.scroll-button.right');
 
-    let isScrollingHorizontally = false;
-
-    window.addEventListener('scroll', function() {
-        const rect = scrollContainer.getBoundingClientRect();
-        const mainRect = mainContainer.getBoundingClientRect();
-
-        // Check if the user has reached the image scroll section
-        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            isScrollingHorizontally = true;
-        } else {
-            isScrollingHorizontally = false;
-        }
+    leftButton.addEventListener('click', function() {
+        scrollContainer.scrollBy({
+            left: -320, // Scorri a sinistra di 300px
+            behavior: 'smooth' // Scorrimento liscio
+        });
     });
 
-    scrollContainer.addEventListener('wheel', function(event) {
-        if (isScrollingHorizontally) {
-            event.preventDefault();
-            scrollContainer.scrollLeft += event.deltaY;
-        }
+    rightButton.addEventListener('click', function() {
+        scrollContainer.scrollBy({
+            left: 320, // Scorri a destra di 300px
+            behavior: 'smooth' // Scorrimento liscio
+        });
     });
 });
