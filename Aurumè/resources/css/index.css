@@ -51,10 +51,11 @@
 
 /* Contenitore per lo scroll orizzontale delle immagini */
 .image-scroll-wrapper {
-    margin: 25vh 10vw;
+    margin: 25vh 7vw;
     position: relative; /* Posiziona i pulsanti delle frecce in relazione al contenitore */
     display: flex;
     align-items: center;
+    overflow: hidden; /* Nasconde la scrollbar orizzontale */
 }
 
 .image-scroll-container {
@@ -62,6 +63,7 @@
     white-space: nowrap; /* Impedisce il wrapping delle immagini */
     padding: 75px 0; /* Aggiunge padding sopra e sotto il contenitore */
     flex: 1; /* Permette al contenitore di espandersi per riempire lo spazio disponibile */
+    scrollbar-width: none; /* Nasconde la scrollbar orizzontale */
 }
 
 .image-scroll {
@@ -71,9 +73,9 @@
 .image-scroll img {
     width: 300px; /* Imposta una larghezza fissa per le immagini */
     height: auto; /* Mantiene l'altezza proporzionale alla larghezza */
-    margin-right: 20px; /* Aggiunge uno spazio tra le immagini */
+    margin: 0 4vw; /* Aggiunge uno spazio tra le immagini */
     border-radius: 8px; /* Arrotonda gli angoli delle immagini */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera alle immagini */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra leggera alle immagini */
 }
 
 /* Stile per i pulsanti delle frecce */

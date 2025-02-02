@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     leftButton.addEventListener('click', function() {
         scrollContainer.scrollBy({
-            left: -320, // Scorri a sinistra di 300px
+            left: -420, // Scorri a sinistra di 300px
             behavior: 'smooth' // Scorrimento liscio
         });
     });
 
     rightButton.addEventListener('click', function() {
         scrollContainer.scrollBy({
-            left: 320, // Scorri a destra di 300px
+            left: 420, // Scorri a destra di 300px
             behavior: 'smooth' // Scorrimento liscio
         });
     });
