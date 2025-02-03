@@ -1,0 +1,7 @@
+.form-container { 
+    display: none; 
+}
+
+.active { 
+    display: block; 
+}

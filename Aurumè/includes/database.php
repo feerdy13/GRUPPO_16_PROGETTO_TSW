@@ -12,4 +12,3 @@
         die("Errore di connessione al database: " . pg_last_error());
     }
 ?>
-

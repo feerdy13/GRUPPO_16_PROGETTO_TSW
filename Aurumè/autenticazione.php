@@ -1,5 +1,5 @@
 <?php
-    require '../includes/database.php';  // Assicura che $conn sia disponibile
+    require 'includes/database.php';  // Assicura che $conn sia disponibile
     session_start();
 
     $showForm = isset($_GET["register"]) ? "register" : "login";
@@ -10,12 +10,12 @@
         $email = trim($_POST["email"]);
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-        var_dump($name, $email, $password);  // Aggiungi questa riga per verificare i valori
+        //var_dump($name, $email, $password);  // Aggiungi questa riga per verificare i valori
         
         // Prepariamo la query per evitare SQL Injection
-        $query = "INSERT INTO utenti_registrati (name, email, password) VALUES ($1, $2, $3)";
-        $stmt = pg_prepare($conn, "utente_registrato", $query);
-        $result = pg_execute($conn, "utente_registrato", array($name, $email, $password));
+        $query = "INSERT INTO utenti (name, email, password) VALUES ($1, $2, $3)";
+        $stmt = pg_prepare($conn, "utente", $query);
+        $result = pg_execute($conn, "utente", array($name, $email, $password));
 
         if ($result) {
             header("Location: auth.php?success=registered");
@@ -51,16 +51,12 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="it">
-    <head>
-        <title>Login & Registrazione</title>
-        <style>
-            .form-container { display: none; }
-            .active { display: block; }
-        </style>
-    </head>
-    <body>
+    <!-- Include the header -->
+    <?php
+        $title = 'Autenticazione';
+        $cssFile = 'resources/css/autenticazione.css';
+        include 'includes/header.php'; 
+    ?>
 
     <?php if (isset($error)) echo "<p style='color: red;'>$error</p>"; ?>
     <?php if (isset($_GET["success"]) && $_GET["success"] == "registered") echo "<p style='color: green;'>Registrazione completata! Accedi ora.</p>"; ?>
@@ -88,5 +84,5 @@
         <p>Hai già un account? <a href="autenticazione.php">Accedi</a></p>
     </div>
 
-    </body>
-</html>
+<!-- Include the footer -->
+<?php include 'includes/footer.html'; ?>
