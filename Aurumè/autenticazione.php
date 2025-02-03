@@ -14,11 +14,11 @@
         
         // Prepariamo la query per evitare SQL Injection
         $query = "INSERT INTO utenti (name, email, password) VALUES ($1, $2, $3)";
-        $stmt = pg_prepare($conn, "utente", $query);
-        $result = pg_execute($conn, "utente", array($name, $email, $password));
+        $stmt = pg_prepare($conn, "utente_registrato", $query);
+        $result = pg_execute($conn, "utente_registrato", array($name, $email, $password));
 
         if ($result) {
-            header("Location: auth.php?success=registered");
+            header("Location: autenticazione.php?success=registered");
             exit();
         } else {
             $error = "Errore nella registrazione: " . pg_last_error($conn);
@@ -31,16 +31,16 @@
         $password = trim($_POST["password"]);
 
         // Prepariamo la query per cercare l'utente
-        $query = "SELECT id, name, password FROM users WHERE email = $1";
-        $stmt = pg_prepare($conn, "login_user", $query);
-        $result = pg_execute($conn, "login_user", array($email));
+        $query = "SELECT id, name, password FROM utenti WHERE email = $1";
+        $stmt = pg_prepare($conn, "utente_loggato", $query);
+        $result = pg_execute($conn, "utente_loggato", array($email));
 
         if ($row = pg_fetch_assoc($result)) {
             // Verifica la password
             if (password_verify($password, $row["password"])) {
                 $_SESSION["user_id"] = $row["id"];
                 $_SESSION["user_name"] = $row["name"];
-                header("Location: ../dashboard.php");
+                header("Location: dashboard.php");
                 exit();
             } else {
                 $error = "Password errata!";
