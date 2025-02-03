@@ -16,7 +16,7 @@
 
         <div class="highlights-container">
             <div class="highlight">
-                <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
+                <img src="resources/img/artigiano.jpeg" alt="Highlight 1">
                 <div class="text">
                     <h2>Titolo 1</h2>
                     <p>Descrizione della prima immagine.</p>
@@ -38,11 +38,11 @@
             <button class="scroll-button right">&gt;</button>
             <div class="image-scroll-container">
                 <div class="image-scroll">
-                    <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
-                    <img src="resources/img/gioielli.png" alt="Immagine 2">
-                    <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
-                    <img src="resources/img/gioielli.png" alt="Immagine 4">
-                    <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
+                    <img src="resources/img/gioielliindossati1.jpg" alt="Immagine 1">
+                    <img src="resources/img/gioielliindossati2.jpg" alt="Immagine 2">
+                    <img src="resources/img/gioielliindossati3.jpg" alt="Immagine 3">
+                    <img src="resources/img/gioielliindossati4.jpg" alt="Immagine 4">
+                    <img src="resources/img/gioielliindossati5.jpg" alt="Immagine 5">
                     <img src="resources/img/gioielli.png" alt="Immagine 2">
                     <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
                     <img src="resources/img/gioielli.png" alt="Immagine 4">
