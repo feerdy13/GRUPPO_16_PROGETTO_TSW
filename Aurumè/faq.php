@@ -9,6 +9,7 @@
     <main>
         <h1 class="heading">Domande frequenti</h1>
 
+        <!-- Sezione icone -->
         <div class="flex-container">
             <div class="flex-item">
                 <!-- Icona informazioni sull'ordine -->
