@@ -18,7 +18,7 @@
             <div class="highlight">
                 <img src="resources/img/highligth1.jpg" alt="Highlight 1" class="highlight-image1">
                 <div class="text1">
-                    <h2 class="title1">LUI o LEI</h2>
+                    <h2 class="title1">Lui o Lei</h2>
                     <p class="paragrafo1">Se stai cercando un pezzo unico per te o per la tua metà, sei nel posto giusto. 
                         Aurumè ti dà l'opportunità di scegliere tra tantissimi prodotti tutti di alta qualità, 
                         fatti da artigiani specializzati nel settore.</p>
