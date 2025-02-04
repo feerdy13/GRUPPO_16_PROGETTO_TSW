@@ -28,11 +28,36 @@
     </head>
     <body>
     <header>
-        <div class="left-icons">
-            <!-- Icona del menu -->
-            <i class="fi fi-rs-bars-sort">  Menu</i>
-            
+        
+
+        <!--<div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                </div>-->
+
+        <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href='index.php'>Home</a>
+        <a href='catalogo.php'>Catalogo</a>
+        <a href='faq.php'>FAQ</a>
         </div>
+
+        
+
+        <!-- Add all page content inside this div if you want the side nav to push page content to 
+         the right (not used if you only want the sidenav to sit on top of the page -->
+        <div id="main">
+            <!-- Use any element to open the sidenav -->
+            <span onclick="openNav()">
+                <div class="left-icons">
+                    <!--Icona del menu--> 
+                    <i class="fi fi-rs-bars-sort">  Menu</i>
+                    
+                </div>
+            </span>
+        </div>
+        
         <div class="header-title"><a href="index.php">A U R U M È</a></div>
         <div class="right-icons">
             <!-- Icona della lente di ingrandimento -->
@@ -43,3 +68,23 @@
             <a href="carrello.php"><i class="fi fi-rs-shopping-bag"></i></a>
         </div>
     </header>
+    <script>
+    function myFunction(x) {
+    x.classList.toggle("change");
+    }
+    </script>
+
+
+
+
+    <script>
+        /* Set the width of the side navigation to 250px */
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
