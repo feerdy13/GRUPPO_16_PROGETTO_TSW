@@ -1,19 +1,44 @@
-<!-- Include the header -->
     <?php 
+        require 'includes/database.php';  // Assicura che $conn sia disponibile
+
+
+        // Query per recuperare i prodotti dal catalogo
+        $query = "SELECT path, descrizione, prezzo, categoria FROM catalogo";
+        $result = pg_query($conn, $query);
+
+        if (!$result) {
+            die("Errore nella query: " . pg_last_error());
+        }
+    ?>
+
+
+    <!-- Include the header -->
+    <?php
+        
         $title = 'Catalogo';
         $cssFile = 'resources/css/catalogo.css';
         include 'includes/header.php'; 
     ?>
 
-    <h2 class="title">La nostra Collezione</h2>
+    <h1 class="heading">La nostra Collezione</h2>
     
-    <div class="filters">
-        <a href="?filter=bracciali" class="filter-link">bracciali</a>
-        <a href="?filter=collane" class="filter-link">collane</a>
-        <a href="?filter=orecchini" class="filter-link">orecchini</a>
-        <a href="?filter=orologi" class="filter-link">orologi</a>
-        <a href="?filter=anelli" class="filter-link">anelli</a>
+    <div class="catalogo-container">
+        <?php while ($row = pg_fetch_assoc($result)): ?>
+            <div class="catalogo-item">
+                <img src="<?php echo htmlspecialchars($row['path']); ?>" alt="Immagine prodotto">
+                <div class="catalogo-info">
+                    <p class="descrizione"><?php echo htmlspecialchars($row['descrizione']); ?></p>
+                    <p class="prezzo"><?php echo htmlspecialchars($row['prezzo']); ?> €</p>
+                    <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
+                </div>
+            </div>
+        <?php endwhile; ?>
     </div>
+
+    <?php 
+        // Chiudi la connessione
+        pg_close($conn);
+    ?>
 
 
 
