@@ -63,25 +63,25 @@
 
     <!-- Form di LOGIN -->
     <div id="login-form" class="form-container <?php echo ($showForm == 'login') ? 'active' : ''; ?>">
-        <h2>Login</h2>
         <form method="POST">
+            <h2>Ho già un account</h2>
             <label>Email:</label> <input type="email" name="email" required><br>
             <label>Password:</label> <input type="password" name="password" required><br>
-            <input type="submit" name="login" value="Accedi">
+            <input type="submit" name="login" value="ACCEDI">
         </form>
-        <p>Non hai un account? <a href="?register">Registrati</a></p>
+        <p>Non sei ancora membro? Scopri i nostri vantaggi<a href="?register" class="button">CREA  ACCOUNT</a></p>
     </div>
 
     <!-- Form di REGISTRAZIONE -->
     <div id="register-form" class="form-container <?php echo ($showForm == 'register') ? 'active' : ''; ?>">
-        <h2>Registrazione</h2>
         <form method="POST">
+            <h2>Registrazione</h2>
             <label>Nome:</label> <input type="text" name="name" required><br>
             <label>Email:</label> <input type="email" name="email" required><br>
             <label>Password:</label> <input type="password" name="password" required><br>
-            <input type="submit" name="register" value="Registrati">
+            <input type="submit" name="register" value="REGISTRATI">
         </form>
-        <p>Hai già un account? <a href="autenticazione.php">Accedi</a></p>
+        <p>Hai già un account? <a href="autenticazione.php" class="button">ACCEDI</a></p>
     </div>
 
 <!-- Include the footer -->
