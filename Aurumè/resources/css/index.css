@@ -26,42 +26,54 @@
 
 /* Stile per gli highlight con immagini e testo */
 .highlights-container {
-    width: 80%;
-    margin: 10vh auto;
+    margin-top: 80px;
 }
+
+.highlight .highlight-text {
+    flex: 1;
+}
+
+.highlight .highlight-title {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--first-color);
+}
+
+.highlight .highlight-p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+    text-align: left;
+}
+
 .highlight {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 40px;
+    margin: 20px 0;
+    padding: 20px;
+    flex-direction: row;
 }
+
 .highlight img {
-    width: 600px; /* Regola la dimensione dell'immagine */
-    height: auto;
+    width: 50%; /* Le immagini occupano il 50% dello spazio orizzontale */
+    margin-right: 20px;
     border-radius: 10px;
 }
 
-.text1 {
-    padding-left: 10px;
-}
-.title1 {
-   text-align: center;
-   font-size: var(--text-size-xlarge);
-}
-
-.text2 {
-    margin-right: 20px;
-}
-
-.reverse {
+.highlight.reverse {
     flex-direction: row-reverse;
 }
+
+.highlight.reverse img {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
 
 
 /* Contenitore per lo scroll orizzontale delle immagini */
 .image-scroll-wrapper {
-    margin: 25vh 7vw;
+    margin: 15vh 7vw;
     position: relative; /* Posiziona i pulsanti delle frecce in relazione al contenitore */
     display: flex;
     align-items: center;

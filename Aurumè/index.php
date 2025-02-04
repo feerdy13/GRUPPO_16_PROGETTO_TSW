@@ -17,9 +17,9 @@
         <div class="highlights-container">
             <div class="highlight">
                 <img src="resources/img/highligth1.jpg" alt="Highlight 1" class="highlight-image1">
-                <div class="text1">
-                    <h2 class="title1">Lui o Lei</h2>
-                    <p class="paragrafo1">Se stai cercando un pezzo unico per te o per la tua metà, sei nel posto giusto. 
+                <div class="highlight-text">
+                    <h2 class="highlight-title">Lui o Lei</h2>
+                    <p class="highlight-p">Se stai cercando un pezzo unico per te o per la tua metà, sei nel posto giusto. 
                         Aurumè ti dà l'opportunità di scegliere tra tantissimi prodotti tutti di alta qualità, 
                         fatti da artigiani specializzati nel settore.</p>
                 </div>
@@ -27,9 +27,9 @@
 
             <div class="highlight reverse">
                 <img src="resources/img/highligth2.jpg" alt="Highlight 2" class="highlight-image2">
-                <div class="text2">
-                    <h2 class="title2">Eleganza senza tempo</h2>
-                    <p class="paragrafo2">La nostra collezione offre gioielli che combinano design moderno e tradizione artigianale,
+                <div class="highlight-text">
+                    <h2 class="highlight-title">Eleganza senza tempo</h2>
+                    <p class="highlight-p">La nostra collezione offre gioielli che combinano design moderno e tradizione artigianale,
                          perfetti per ogni occasione. Scopri pezzi unici che esprimono eleganza e 
                          raffinatezza.</p>
                 </div>
