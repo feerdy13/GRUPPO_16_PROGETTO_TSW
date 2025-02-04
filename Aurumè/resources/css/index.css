@@ -37,13 +37,23 @@
     margin-bottom: 40px;
 }
 .highlight img {
-    width: 250px; /* Regola la dimensione dell'immagine */
+    width: 600px; /* Regola la dimensione dell'immagine */
     height: auto;
     border-radius: 10px;
 }
-.text {
-    max-width: 50%;
+
+.text1 {
+    padding-left: 10px;
 }
+.title1 {
+   text-align: center;
+   font-size: var(--text-size-xlarge);
+}
+
+.text2 {
+    margin-right: 20px;
+}
+
 .reverse {
     flex-direction: row-reverse;
 }

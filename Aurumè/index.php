@@ -16,18 +16,22 @@
 
         <div class="highlights-container">
             <div class="highlight">
-                <img src="resources/img/artigiano.jpeg" alt="Highlight 1">
-                <div class="text">
-                    <h2>Titolo 1</h2>
-                    <p>Descrizione della prima immagine.</p>
+                <img src="resources/img/highligth1.jpg" alt="Highlight 1" class="highlight-image1">
+                <div class="text1">
+                    <h2 class="title1">LUI o LEI</h2>
+                    <p class="paragrafo1">Se stai cercando un pezzo unico per te o per la tua metà, sei nel posto giusto. 
+                        Aurumè ti dà l'opportunità di scegliere tra tantissimi prodotti tutti di alta qualità, 
+                        fatti da artigiani specializzati nel settore.</p>
                 </div>
             </div>
 
             <div class="highlight reverse">
-                <img src="resources/img/gioielli.png" alt="Immagine 2">
-                <div class="text">
-                    <h2>Titolo 2</h2>
-                    <p>Descrizione della seconda immagine.</p>
+                <img src="resources/img/highligth2.jpg" alt="Highlight 2" class="highlight-image2">
+                <div class="text2">
+                    <h2 class="title2">Eleganza senza tempo</h2>
+                    <p class="paragrafo2">La nostra collezione offre gioielli che combinano design moderno e tradizione artigianale,
+                         perfetti per ogni occasione. Scopri pezzi unici che esprimono eleganza e 
+                         raffinatezza.</p>
                 </div>
             </div>
         </div>
@@ -43,13 +47,9 @@
                     <img src="resources/img/gioielliindossati3.jpg" alt="Immagine 3">
                     <img src="resources/img/gioielliindossati4.jpg" alt="Immagine 4">
                     <img src="resources/img/gioielliindossati5.jpg" alt="Immagine 5">
-                    <img src="resources/img/gioielli.png" alt="Immagine 2">
-                    <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
-                    <img src="resources/img/gioielli.png" alt="Immagine 4">
-                    <img src="resources/img/artigiano.jpeg" alt="Immagine 1">
-                    <img src="resources/img/gioielli.png" alt="Immagine 2">
-                    <img src="resources/img/pezzi_unici.webp" alt="Immagine 3">
-                    <img src="resources/img/gioielli.png" alt="Immagine 4">
+                    <img src="resources/img/gioielliindossati6.jpg" alt="Immagine 6">
+                    <img src="resources/img/gioielliindossati7.jpg" alt="Immagine 7">
+                    <img src="resources/img/gioielliindossati8.jpg" alt="Immagine 8">
                 </div>
             </div>
         </div>
