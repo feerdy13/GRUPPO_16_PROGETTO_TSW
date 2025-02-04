@@ -43,10 +43,10 @@
                 header("Location: dashboard.php");
                 exit();
             } else {
-                $_SESSION['error'] = "Password errata, riprova";
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Password errata, riprova";
             }
         } else {
-            $_SESSION['error'] = "Email non trovata, riprova";
+            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Email non trovata, riprova";
         }
     }
 
