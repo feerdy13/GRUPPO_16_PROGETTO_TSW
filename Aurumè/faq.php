@@ -45,6 +45,22 @@
                 <button class="faq-question">Posso modificare il mio ordine dopo averlo effettuato?</button>
                 <div class="faq-answer">Sì, puoi modificare il tuo ordine contattando il nostro servizio clienti entro 24 ore dall'acquisto.</div>
             </div>
+            <div class="faq-item">
+                <button class="faq-question">Cosa devo fare se il mio ordine arriva danneggiato?</button>
+                <div class="faq-answer">Se il tuo ordine arriva danneggiato, contatta immediatamente il nostro servizio clienti con una foto del danno e il numero dell'ordine. Provvederemo a risolvere il problema il prima possibile.</div>
+             </div>
+            <div class="faq-item">
+                <button class="faq-question">Posso annullare il mio ordine?</button>
+                <div class="faq-answer">Sì, puoi annullare il tuo ordine contattando il nostro servizio clienti entro 24 ore dall'acquisto. Dopo questo periodo, l'ordine potrebbe essere già stato spedito.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Cosa devo fare se non ricevo il mio ordine?</button>
+                <div class="faq-answer">Se non ricevi il tuo ordine entro il tempo previsto, contatta il nostro servizio clienti con il numero dell'ordine. Faremo del nostro meglio per risolvere il problema il prima possibile.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Posso richiedere una fattura per il mio ordine?</button>
+                <div class="faq-answer">Sì, puoi richiedere una fattura per il tuo ordine contattando il nostro servizio clienti e fornendo i dettagli necessari.</div>
+            </div>
         </div>
 
         <div class="faq-section" id="spedizioni">
@@ -57,6 +73,22 @@
                 <button class="faq-question">Quali metodi di spedizione offrite?</button>
                 <div class="faq-answer">Offriamo spedizione standard e spedizione espressa. Puoi scegliere il metodo di spedizione al momento del checkout.</div>
             </div>
+            <div class="faq-item">
+                <button class="faq-question">Quanto costa la spedizione?</button>
+                <div class="faq-answer">La spedizione standard è gratuita per tutti gli ordini. La spedizione espressa ha un costo aggiuntivo di 5 euro.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Spedite a livello internazionale?</button>
+                <div class="faq-answer">Sì, spediamo a livello internazionale. I tempi e i costi di spedizione possono variare a seconda della destinazione.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Posso cambiare l'indirizzo di spedizione dopo aver effettuato l'ordine?</button>
+                <div class="faq-answer">Sì, puoi cambiare l'indirizzo di spedizione contattando il nostro servizio clienti entro 24 ore dall'acquisto.</div>
+            </div>    
+            <div class="faq-item">
+                <button class="faq-question">Cosa devo fare se il mio pacco viene perso durante la spedizione?</button>
+                <div class="faq-answer">Se il tuo pacco viene perso durante la spedizione, contatta immediatamente il nostro servizio clienti con il numero dell'ordine.</div>
+            </div>
         </div>
 
         <div class="faq-section" id="reso">
@@ -68,6 +100,18 @@
             <div class="faq-item">
                 <button class="faq-question">Qual è la vostra politica di reso?</button>
                 <div class="faq-answer">Accettiamo resi entro 30 giorni dall'acquisto, a condizione che il prodotto sia nelle condizioni originali.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Quanto tempo ci vuole per elaborare un reso?</button>
+                <div class="faq-answer">L'elaborazione di un reso può richiedere fino a 10 giorni lavorativi dal momento in cui riceviamo il prodotto restituito.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Posso scambiare un prodotto con un altro?</button>
+                <div class="faq-answer">Sì, puoi cambiare un prodotto con un altro contattando il nostro servizio clienti e specificando il prodotto desiderato per il cambio.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Devo pagare per restituire un prodotto?</button>
+                <div class="faq-answer">Le spese di spedizione per la restituzione di un prodotto sono a carico del cliente, a meno che il prodotto non sia difettoso o danneggiato.</div>
             </div>
         </div>
 
