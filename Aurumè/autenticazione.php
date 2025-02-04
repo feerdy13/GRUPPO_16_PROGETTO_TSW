@@ -21,7 +21,7 @@
             header("Location: autenticazione.php?success=registered");
             exit();
         } else {
-            $error = "Errore nella registrazione: " . pg_last_error($conn);
+            $_SESSION['error'] = "Errore nella registrazione: " . pg_last_error($conn);
         }
     }
 
@@ -43,12 +43,15 @@
                 header("Location: dashboard.php");
                 exit();
             } else {
-                $error = "Password errata!";
+                $_SESSION['error'] = "Password errata, riprova";
             }
         } else {
-            $error = "Email non trovata!";
+            $_SESSION['error'] = "Email non trovata, riprova";
         }
     }
+
+    $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
+    unset($_SESSION['error']);
 ?>
 
     <!-- Include the header -->
@@ -58,13 +61,13 @@
         include 'includes/header.php'; 
     ?>
 
-    <?php if (isset($error)) echo "<p style='color: red;'>$error</p>"; ?>
     <?php if (isset($_GET["success"]) && $_GET["success"] == "registered") echo "<p style='color: green;'>Registrazione completata! Accedi ora.</p>"; ?>
 
     <!-- Form di LOGIN -->
     <div id="login-form" class="form-container <?php echo ($showForm == 'login') ? 'active' : ''; ?>">
         <form method="POST">
             <h2>Ho già un account</h2>
+            <div class="alert <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
             <label>Email:</label> <input type="email" name="email" required><br>
             <label>Password:</label> <input type="password" name="password" required><br>
             <input type="submit" name="login" value="ACCEDI">
