@@ -46,10 +46,6 @@
             </form>
         </div>
     </div>
-
-    <form id="logout-form" method="POST" action="logout.php">
-        <button type="submit">Logout</button>
-    </form>
     
 </main>
 
