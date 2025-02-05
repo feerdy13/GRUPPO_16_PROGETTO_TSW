@@ -41,10 +41,10 @@
                 </div>-->
 
         <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href='index.php'>Home</a>
-        <a href='catalogo.php'>Catalogo</a>
-        <a href='faq.php'>FAQ</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href='index.php'>Home</a>
+            <a href='catalogo.php'>Catalogo</a>
+            <a href='faq.php'>FAQ</a>
         </div>
 
         
@@ -115,11 +115,28 @@
     <script>
         /* Set the width of the side navigation to 250px */
         function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+            // Di quanto deve uscire la sidebar
+            document.getElementById("mySidenav").style.width = "20%";
+
+            // Cambia il colore di sfondo del body
+            document.body.style.backgroundColor = "rgba(0,0,0,0.5)";
+            //document.body.style.color = "black";
+
+            // Cambia il colore di sfondo dell'header
+            document.querySelector("header").style.backgroundColor = "rgba(0,0,0,0.5)";
+            //document.querySelector("header").style.color = "black";
+
+            // Cambia il colore di sfondo del footer
+            document.querySelector("footer").style.backgroundColor = "rgba(0,0,0,0.5)";
+            //document.querySelector("footer").style.color = "black";
+
         }
 
         /* Set the width of the side navigation to 0 */
         function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("mySidenav").style.width = "0";
+            document.body.style.backgroundColor = "whitesmoke";
+            document.querySelector("header").style.backgroundColor = "var(--first-color)";
+            document.querySelector("footer").style.backgroundColor = "var(--third-color)";
         }
     </script>

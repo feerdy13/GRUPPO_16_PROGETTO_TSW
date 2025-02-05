@@ -1,3 +1,57 @@
-main {
-    background-color: red;
+h2 {
+    padding: 20px;
+    font-size: var(--text-size-xlarge);
+    color: var(--first-color);
+}
+
+.container-element {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.info-personali, .credenziali, .indirizzo-consegna {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: var(--text-size-large);
+    color: var(--first-color);
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: var(--text-size-medium);
+    color: var(--fourth-color);
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: var(--text-size-medium);
+}
+
+button {
+    padding: 10px;
+    background-color: var(--first-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--text-size-medium);
+}
+
+button:hover {
+    background-color: var(--second-color);
 }

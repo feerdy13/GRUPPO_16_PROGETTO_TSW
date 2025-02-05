@@ -16,6 +16,7 @@
         $result = pg_execute($conn, "utente_registrato", array($name, $email, $password));
 
         if ($result) {
+            $_SESSION['success'] = "Registrazione completata! Accedi ora.";
             header("Location: autenticazione.php?success=registered");
             exit();
         } else {
@@ -49,7 +50,10 @@
     }
 
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
+    $success = isset($_SESSION['success']) ? $_SESSION['success'] : '';
+
     unset($_SESSION['error']);
+    unset($_SESSION['success']);
 ?>
 
     <!-- Header -->
@@ -59,13 +63,15 @@
         include 'includes/header.php'; 
     ?>
 
-    <?php if (isset($_GET["success"]) && $_GET["success"] == "registered") echo "<p style='color: green;'>Registrazione completata! Accedi ora.</p>"; ?>
+    <?php if (!empty($success)): ?>
+        <div id="success-alert" class="alert-success"><?php echo $success; ?></div>
+    <?php endif; ?>
 
     <!-- Form di LOGIN -->
     <div id="login-form" class="form-container <?php echo ($showForm == 'login') ? 'active' : ''; ?>">
         <form method="POST">
             <h2>Ho già un account</h2>
-            <div class="alert <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
+            <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
             <label>Email:</label> <input type="email" name="email" required><br>
             <label>Password:</label> <input type="password" name="password" required><br>
             <input type="submit" name="login" value="ACCEDI">
@@ -84,6 +90,8 @@
         </form>
         <p>Hai già un account? <a href="autenticazione.php" class="button">ACCEDI</a></p>
     </div>
+
+    <script src="resources/js/autenticazione.js"></script>
 
     <?php 
         // Chiudi la connessione
