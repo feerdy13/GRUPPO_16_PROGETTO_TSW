@@ -1,28 +1,4 @@
-.title {
-    font-size: var(--text-size-xlarge);
-    color: var(--first-color);
-    padding-top: 15px;
-    text-align: center;
-}
-
-.filters {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 20px;
-}
-
-.filter-link {
-    text-decoration: none;
-    color: var(--first-color);
-    font-size: var(--text-size-medium);
-    padding: 5px 10px;
-    border: 1px solid var(--first-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.filter-link:hover {
-    background-color: var(--first-color);
-    color: white;
+.heading {
+    text-align: left;
+    font-weight: bold;
 }

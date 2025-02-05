@@ -40,13 +40,13 @@
             if (password_verify($password, $row["password"])) {
                 $_SESSION["user_id"] = $row["id"];
                 $_SESSION["user_name"] = $row["name"];
-                header("Location: dashboard.php");
+                header("Location: index.php");
                 exit();
             } else {
-                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Password errata, riprova";
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Nome utente o password errati, riprova.";
             }
         } else {
-            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Email non trovata, riprova";
+            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Nome utente o password errati, riprova.";
         }
     }
 

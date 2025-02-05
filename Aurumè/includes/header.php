@@ -19,10 +19,14 @@
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
-
         <?php
             if (isset($cssFile)) 
                 echo '<link rel="stylesheet" href="' . $cssFile . '">';
+
+            // Verifica se una sessione è già stata avviata
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();  // Avvia la sessione solo se non è già attiva
+            }     
         ?>
         
     </head>
