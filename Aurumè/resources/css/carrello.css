@@ -3,6 +3,12 @@
     font-weight: bold;
 }
 
+.text-center {
+    text-align: center;
+    font-size: var(--text-size-large);
+    margin-top: 50px;
+}
+
 .cart-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -37,7 +43,7 @@
 
 .cart-info .prezzo {
     font-size: 1em;
-    color: #333;
+    color: var(--fourth-color);
     margin-bottom: 5px;
 }
 
@@ -52,12 +58,39 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background-color: red;
-    color: #fff;
+    border: solid 2px rgb(214, 4, 4);
+    color: #6c0000;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 0.9em;
     transition: opacity 0.3s ease;
     opacity: 1;
+}
+.cart-item .remove-from-cart:hover {
+    background-color: rgb(214, 4, 4);
+    color: #fff;
+}
+
+.button {
+    text-align: center;
+    font-size: var(--text-size-large);
+    margin-top: 50px;
+}
+
+.button a {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: var(--text-size-large);
+    transition: color 0.3s ease;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.button a:hover {
+    color: var(--second-color);
 }

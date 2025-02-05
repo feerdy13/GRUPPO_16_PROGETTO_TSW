@@ -63,9 +63,10 @@
         include 'includes/header.php'; 
     ?>
 
-    <div class="alert">
-        <?php if (!empty($alert)) echo $alert; ?>
-    </div>
+
+    <?php 
+        if (!empty($alert)) echo "<div class='alert'>$alert </div>";
+    ?>
 
     <!-- Form di LOGIN -->
     <div id="login-form" class="form-container <?php echo ($showForm == 'login') ? 'active' : ''; ?>">

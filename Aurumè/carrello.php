@@ -43,27 +43,41 @@
     
     <main>
         <h1 class="heading">Carrello</h2>
-
-        <?php if (!$result): ?>
-            <div class='empty-cart'>
-                <h2>Il tuo carrello è vuoto</h2>
-                <h3>Aggiungi dei prodotti al carrello dalla pagina del catalogo</h3>
-            </div>
-        <?php else: ?>
-            <div class="cart-container">
-                <?php while ($row = pg_fetch_assoc($result)): ?>
-                    <div class="cart-item">
-                        <img src="resources/img/catalogue/<?php echo htmlspecialchars($row['filename']); ?>" alt="Immagine prodotto">
-                        <div class="cart-info">
-                            <p class="descrizione"><?php echo htmlspecialchars($row['descrizione']); ?></p>
-                            <p class="prezzo"><?php echo htmlspecialchars($row['prezzo']); ?> €</p>
-                            <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <?php if (!$result || pg_num_rows($result) == 0): ?>
+                <div class='text-center'>
+                    <h2>Il tuo carrello è vuoto</h2>
+                    <h3>Aggiungi dei prodotti al carrello dalla pagina del catalogo</h3>
+                </div>
+            <?php else: ?>
+                <div class="cart-container">
+                    <?php while ($row = pg_fetch_assoc($result)): ?>
+                        <div class="cart-item">
+                            <img src="resources/img/catalogue/<?php echo htmlspecialchars($row['filename']); ?>" alt="Immagine prodotto">
+                            <div class="cart-info">
+                                <p class="descrizione"><?php echo htmlspecialchars($row['descrizione']); ?></p>
+                                <p class="prezzo"><?php echo htmlspecialchars($row['prezzo']); ?> €</p>
+                                <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
+                            </div>
+                            <a href="action/rimuovi_dal_carrello.php?product_id=<?php echo $row['id']; ?>" class="remove-from-cart">Rimuovi</a>
                         </div>
-                        <a href="action/rimuovi_dal_carrello.php?product_id=<?php echo $row['id']; ?>" class="remove-from-cart">Rimuovi</a>
-                    </div>
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?> 
+
+            <div class="button">
+                <a href='catalogo.php'>Torna al catalogo</a>
             </div>
-        <?php endif; ?>       
+
+        <?php else: ?> 
+            <div class='text-center'>
+                <h2>Ops!</h2>
+                <h3>Devi aver effettuato l'accesso per accedere al carrello</h3>
+            </div> 
+            <div class="button">
+                <a href='autenticazione.php'>Accedi</a>
+            </div>
+        <?php endif; ?>
     </main>
     
     <!-- Chiudo la connessione -->
