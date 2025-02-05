@@ -3,6 +3,16 @@
     font-weight: bold;
 }
 
+.message {
+    background-color: #dff0d8;
+    color: var(--first-color);
+    font-size: var(--text-size-large);
+    padding: 10px;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
 .catalogo-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

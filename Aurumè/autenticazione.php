@@ -9,8 +9,6 @@
         $name = trim($_POST["name"]);
         $email = trim($_POST["email"]);
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
-        //var_dump($name, $email, $password);  // Aggiungi questa riga per verificare i valori
         
         // Prepariamo la query per evitare SQL Injection
         $query = "INSERT INTO utenti (name, email, password) VALUES ($1, $2, $3)";

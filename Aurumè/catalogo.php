@@ -1,4 +1,5 @@
     <?php 
+        session_start(); 
         require 'includes/database.php';  // Assicura che $conn sia disponibile
 
 
@@ -33,7 +34,7 @@
                         <p class="prezzo"><?php echo htmlspecialchars($row['prezzo']); ?> €</p>
                         <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
                     </div>
-                    <a href="" class="add-to-cart">Aggiungi al carrello</a>
+                    <a href="action/aggiungi_al_carrello.php?product_id=<?php echo $row['id']; ?>" class="add-to-cart">Aggiungi al carrello</a>
                 </div>
             <?php endwhile; ?>
         </div>
