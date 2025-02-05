@@ -86,7 +86,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 30px;
+    padding: 15px 15px;
     border-bottom: 3px solid var(--second-color);
     position: sticky; /* Fissa l'header in alto */
     top: 0; /* Posiziona l'header in cima alla pagina */
