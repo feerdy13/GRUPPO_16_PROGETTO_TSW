@@ -16,7 +16,7 @@
         $result = pg_execute($conn, "utente_registrato", array($name, $email, $password));
 
         if ($result) {
-            $_SESSION['success'] = "Registrazione completata! Accedi ora.";
+            $_SESSION['alert'] = "Registrazione completata! Accedi ora.";
             header("Location: autenticazione.php?success=registered");
             exit();
         } else {
@@ -50,10 +50,10 @@
     }
 
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
-    $success = isset($_SESSION['success']) ? $_SESSION['success'] : '';
+    $alert = isset($_SESSION['alert']) ? $_SESSION['alert'] : '';
 
     unset($_SESSION['error']);
-    unset($_SESSION['success']);
+    unset($_SESSION['alert']);
 ?>
 
     <!-- Header -->
@@ -63,9 +63,9 @@
         include 'includes/header.php'; 
     ?>
 
-    <?php if (!empty($success)): ?>
-        <div id="success-alert" class="alert-success"><?php echo $success; ?></div>
-    <?php endif; ?>
+    <div class="alert">
+        <?php if (!empty($alert)) echo $alert; ?>
+    </div>
 
     <!-- Form di LOGIN -->
     <div id="login-form" class="form-container <?php echo ($showForm == 'login') ? 'active' : ''; ?>">

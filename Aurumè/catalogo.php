@@ -7,9 +7,8 @@
         $query = "SELECT id, filename, descrizione, prezzo, categoria FROM prodotti";
         $result = pg_query($conn, $query);
 
-        if (!$result) {
-            die("Errore nella query: " . pg_last_error());
-        }
+        if (!isset($_SESSION['user_id'])) 
+            $_SESSION['alert'] = "Per aggiungere prodotti al carrello bisogna effettuare il login.";
     ?>
 
 
@@ -34,7 +33,12 @@
                         <p class="prezzo"><?php echo htmlspecialchars($row['prezzo']); ?> €</p>
                         <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
                     </div>
-                    <a href="action/aggiungi_al_carrello.php?product_id=<?php echo $row['id']; ?>" class="add-to-cart">Aggiungi al carrello</a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <a href="action/aggiungi_al_carrello.php?product_id=<?php echo htmlspecialchars($row['id']); ?>" class="add-to-cart">Aggiungi al carrello</a>
+                    <?php else: ?>
+                        <?php $_SESSION['alert'] = "Per aggiungere prodotti al carrello bisogna prima effettuare il login."; ?>
+                        <a href="autenticazione.php" class="add-to-cart">Aggiungi al carrello</a>
+                    <?php endif; ?>
                 </div>
             <?php endwhile; ?>
         </div>
