@@ -93,10 +93,7 @@
 
     <script src="resources/js/autenticazione.js"></script>
 
-    <?php 
-        // Chiudi la connessione
-        pg_close($conn);
-    ?>
+    <?php pg_close($conn); ?>
 
     <!-- Footer -->
     <?php include 'includes/footer.html'; ?>

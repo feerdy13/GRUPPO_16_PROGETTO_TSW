@@ -25,7 +25,7 @@
 
                 $query = "SELECT id, filename, descrizione, prezzo, categoria 
                             FROM prodotti 
-                            WHERE id IN ($cart_ids)";
+                            WHERE id IN ($idsString)";
                 $result = pg_query($conn, $query);
             } else
                 $result = false;

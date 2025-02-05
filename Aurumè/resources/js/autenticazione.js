@@ -4,6 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (successAlert) {
         setTimeout(function() {
             successAlert.style.display = "none";
-        }, 3000); // L'alert scompare dopo 5 secondi
+        }, 3000); // L'alert scompare dopo 3 secondi
     }
 });
