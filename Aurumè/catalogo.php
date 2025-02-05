@@ -3,7 +3,7 @@
 
 
         // Query per recuperare i prodotti dal catalogo
-        $query = "SELECT id, filename, descrizione, prezzo, categoria FROM catalogo";
+        $query = "SELECT id, filename, descrizione, prezzo, categoria FROM prodotti";
         $result = pg_query($conn, $query);
 
         if (!$result) {
