@@ -3,7 +3,7 @@
 
 
         // Query per recuperare i prodotti dal catalogo
-        $query = "SELECT path, descrizione, prezzo, categoria FROM catalogo";
+        $query = "SELECT id, filename, descrizione, prezzo, categoria FROM catalogo";
         $result = pg_query($conn, $query);
 
         if (!$result) {
@@ -12,7 +12,7 @@
     ?>
 
 
-    <!-- Include the header -->
+    <!-- Header -->
     <?php
         
         $title = 'Catalogo';
@@ -20,31 +20,27 @@
         include 'includes/header.php'; 
     ?>
 
-    <h1 class="heading">La nostra Collezione</h2>
-    
-    <div class="catalogo-container">
-        <?php while ($row = pg_fetch_assoc($result)): ?>
-            <div class="catalogo-item">
-                <img src="<?php echo htmlspecialchars($row['path']); ?>" alt="Immagine prodotto">
-                <div class="catalogo-info">
-                    <p class="descrizione"><?php echo htmlspecialchars($row['descrizione']); ?></p>
-                    <p class="prezzo"><?php echo htmlspecialchars($row['prezzo']); ?> €</p>
-                    <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
+
+    <main>
+        <h1 class="heading">La nostra Collezione</h2>
+        
+        <div class="catalogo-container">
+            <?php while ($row = pg_fetch_assoc($result)): ?>
+                <div class="catalogo-item">
+                    <img src="resources/img/catalogue/<?php echo htmlspecialchars($row['filename']); ?>" alt="Immagine prodotto">
+                    <div class="catalogo-info">
+                        <p class="descrizione"><?php echo htmlspecialchars($row['descrizione']); ?></p>
+                        <p class="prezzo"><?php echo htmlspecialchars($row['prezzo']); ?> €</p>
+                        <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
+                    </div>
+                    <a href="" class="add-to-cart">Aggiungi al carrello</a>
                 </div>
-            </div>
-        <?php endwhile; ?>
-    </div>
+            <?php endwhile; ?>
+        </div>
+    </main>
 
-    <?php 
-        // Chiudi la connessione
-        pg_close($conn);
-    ?>
+    <!-- Chiudo la connessione -->
+    <?php pg_close($conn); ?>
 
-
-
-
-
-
-
-    <!-- Include the footer -->
+    <!-- Footer -->
     <?php include 'includes/footer.html'; ?>

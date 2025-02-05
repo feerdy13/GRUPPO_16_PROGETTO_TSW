@@ -1,4 +1,4 @@
-    <!-- Include the header -->
+    <!-- Header -->
     <?php 
         $title = 'La nostra storia';
         $cssFile = 'resources/css/la_nostra_storia.css';
@@ -32,5 +32,5 @@
         </div>
     </main>  
 
-    <!-- Include the footer -->
+    <!-- Footer -->
     <?php include 'includes/footer.html'; ?>

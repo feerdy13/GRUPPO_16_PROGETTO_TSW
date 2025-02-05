@@ -1,4 +1,4 @@
-    <!-- Include the header -->
+    <!-- Header -->
     <?php 
         $title = 'FAQ';
         $cssFile = 'resources/css/faq.css';
@@ -131,5 +131,5 @@
     <!-- JavaScript per le sezioni FAQ -->
     <script src="resources/js/faq.js"></script>
 
-    <!-- Include the footer -->
+    <!-- Footer -->
     <?php include 'includes/footer.html'; ?>

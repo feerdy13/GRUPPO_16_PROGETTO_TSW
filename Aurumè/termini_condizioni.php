@@ -1,4 +1,4 @@
-    <!-- Include the header -->
+    <!-- Header -->
     <?php 
         $title = 'Termini&Condizioni';
         $cssFile = 'resources/css/termini_condizioni.css';
@@ -172,5 +172,5 @@
         </section>
     </main>
 
-    <!-- Include the footer -->
+    <!-- Footer -->
     <?php include 'includes/footer.html'; ?>

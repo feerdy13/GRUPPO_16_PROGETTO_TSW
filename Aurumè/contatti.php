@@ -1,4 +1,4 @@
-    <!-- Include the header -->
+    <!-- Header -->
     <?php 
         $title = 'Contatti';
         $cssFile = 'resources/css/contatti.css';
@@ -75,5 +75,5 @@
         </table>
     </main>
             
-    <!-- Include the footer -->
+    <!-- Footer -->
     <?php include 'includes/footer.html'; ?>

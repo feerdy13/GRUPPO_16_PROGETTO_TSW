@@ -1,4 +1,4 @@
-    <!-- Include the header -->
+    <!-- Header -->
     <?php 
         $title = 'Carrello';
         $cssFile = 'resources/css/carrello.css';
@@ -25,5 +25,5 @@
     
 
             
-    <!-- Include the footer -->
+    <!-- Footer -->
     <?php include 'includes/footer.html'; ?>

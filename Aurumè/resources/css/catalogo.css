@@ -2,3 +2,78 @@
     text-align: left;
     font-weight: bold;
 }
+
+.catalogo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 30px;
+}
+
+/*  
+    Limita il numero massimo di colonne a 4: al di sotto di 800px di larghezza dello schermo 
+    il layout sarà comunque responsive e gestito automaticamente 
+*/
+@media (min-width: 800px) {
+    .catalogo-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.catalogo-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.catalogo-item img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.catalogo-info {
+    padding: 15px;
+}
+
+.catalogo-info .descrizione {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.catalogo-info .prezzo {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.catalogo-info .categoria {
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+
+/* Stile per la call to action */
+.catalogo-item .add-to-cart {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+/* Mostra la call to action al passaggio del mouse */
+.catalogo-item:hover .add-to-cart {
+    opacity: 1;
+}

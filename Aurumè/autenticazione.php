@@ -54,7 +54,7 @@
     unset($_SESSION['error']);
 ?>
 
-    <!-- Include the header -->
+    <!-- Header -->
     <?php
         $title = 'Autenticazione';
         $cssFile = 'resources/css/autenticazione.css';
@@ -87,5 +87,10 @@
         <p>Hai già un account? <a href="autenticazione.php" class="button">ACCEDI</a></p>
     </div>
 
-<!-- Include the footer -->
-<?php include 'includes/footer.html'; ?>
+    <?php 
+        // Chiudi la connessione
+        pg_close($conn);
+    ?>
+
+    <!-- Footer -->
+    <?php include 'includes/footer.html'; ?>

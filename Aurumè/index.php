@@ -1,4 +1,4 @@
-    <!-- Include the header -->
+    <!-- Header -->
     <?php 
         $title = 'Homepage';
         $cssFile = 'resources/css/index.css';
@@ -63,5 +63,5 @@
     <!-- JavaScript per lo scroll orizzontale -->
     <script src="resources/js/scroll.js"></script>
 
-    <!-- Include the footer -->
+    <!-- Footer -->
     <?php include 'includes/footer.html'; ?>
