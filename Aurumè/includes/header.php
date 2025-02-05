@@ -41,10 +41,10 @@
                 </div>-->
 
         <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href='index.php'>Home</a>
-        <a href='catalogo.php'>Catalogo</a>
-        <a href='faq.php'>FAQ</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href='index.php'>Home</a>
+            <a href='catalogo.php'>Catalogo</a>
+            <a href='faq.php'>FAQ</a>
         </div>
 
         
@@ -115,11 +115,13 @@
     <script>
         /* Set the width of the side navigation to 250px */
         function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").style.width = "20%";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.5)";
         }
 
         /* Set the width of the side navigation to 0 */
         function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("mySidenav").style.width = "0";
+            document.body.style.backgroundColor = "white";
         }
     </script>
