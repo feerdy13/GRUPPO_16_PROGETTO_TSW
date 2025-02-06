@@ -90,10 +90,6 @@ header {
 }
 /*BARRA DI NAVIGAZIONE CHE SCOMPARE*/
 #navbar {
-    background-color: #333; /* Colore di sfondo nero */
-    position: fixed; /* Rende l'elemento fisso */
-    /* top: 0; Rimane in cima */
-    width: 100%; /* Larghezza completa */
     transition: top 0.5s; /* Effetto di transizione quando scorre verso il basso (e verso l'alto) */
   }
 
