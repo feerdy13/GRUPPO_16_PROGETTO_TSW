@@ -20,6 +20,9 @@
         include 'includes/header.php'; 
     ?>
 
+    <!-- alert -->
+    <div id="alert-container" class="alert-container"></div>
+
 
     <main>
         <h1 class="heading">La nostra Collezione</h2>
@@ -34,15 +37,20 @@
                         <p class="categoria"><?php echo htmlspecialchars($row['categoria']); ?></p>
                     </div>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <a href="action/aggiungi_al_carrello.php?product_id=<?php echo htmlspecialchars($row['id']); ?>" class="add-to-cart">Aggiungi al carrello</a>
+                        <button class="add-to-cart" onclick="aggiungiAlCarrello(<?php echo htmlspecialchars($row['id']); ?>)">Aggiungi al carrello</button>
                     <?php else: ?>
-                        <?php $_SESSION['alert'] = "Per aggiungere prodotti al carrello bisogna prima effettuare il login."; ?>
-                        <a href="autenticazione.php" class="add-to-cart">Aggiungi al carrello</a>
+                        <button class="add-to-cart" onclick="showAlert('Per aggiungere prodotti al carrello bisogna prima effettuare il login.')">Aggiungi al carrello</button>
                     <?php endif; ?>
                 </div>
             <?php endwhile; ?>
         </div>
     </main>
+
+    <!-- Script per mostrare alert -->
+    <script src="resources/js/showAlert.js"></script>
+    <!-- Script per aggiungi al carrello in AJAX -->
+    <script src="resources/js/catalogo-ajax.js"></script>
+    
 
     <!-- Chiudo la connessione -->
     <?php pg_close($conn); ?>

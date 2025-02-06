@@ -68,29 +68,34 @@
         if (!empty($alert)) echo "<div class='alert'>$alert </div>";
     ?>
 
-    <!-- Form di LOGIN -->
-    <div id="login-form" class="form-container <?php echo ($showForm == 'login') ? 'active' : ''; ?>">
-        <form method="POST">
-            <h2>Ho già un account</h2>
-            <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-            <label>Email:</label> <input type="email" name="email" required><br>
-            <label>Password:</label> <input type="password" name="password" required><br>
-            <input type="submit" name="login" value="ACCEDI">
-        </form>
-        <p>Non sei ancora membro? Scopri i nostri vantaggi<a href="?register" class="button">CREA  ACCOUNT</a></p>
-    </div>
+    <main>
 
-    <!-- Form di REGISTRAZIONE -->
-    <div id="register-form" class="form-container <?php echo ($showForm == 'register') ? 'active' : ''; ?>">
-        <form method="POST">
-            <h2>Registrazione</h2>
-            <label>Nome:</label> <input type="text" name="name" required><br>
-            <label>Email:</label> <input type="email" name="email" required><br>
-            <label>Password:</label> <input type="password" name="password" required><br>
-            <input type="submit" name="register" value="REGISTRATI">
-        </form>
-        <p>Hai già un account? <a href="autenticazione.php" class="button">ACCEDI</a></p>
-    </div>
+        <!-- Form di LOGIN -->
+        <div id="login-form" class="form-container <?php echo ($showForm == 'login') ? 'active' : ''; ?>">
+            <form method="POST">
+                <h2>Ho già un account</h2>
+                <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
+                <label>Email:</label> <input type="email" name="email" required><br>
+                <label>Password:</label> <input type="password" name="password" required><br>
+                <input type="submit" name="login" value="ACCEDI">
+            </form>
+            <p>Non sei ancora membro? Scopri i nostri vantaggi<a href="?register" class="button">CREA  ACCOUNT</a></p>
+        </div>
+
+        <!-- Form di REGISTRAZIONE -->
+        <div id="register-form" class="form-container <?php echo ($showForm == 'register') ? 'active' : ''; ?>">
+            <form method="POST">
+                <h2>Registrazione</h2>
+                <label>Nome:</label> <input type="text" name="name" required><br>
+                <label>Email:</label> <input type="email" name="email" required><br>
+                <label>Password:</label> <input type="password" name="password" required><br>
+                <input type="submit" name="register" value="REGISTRATI">
+            </form>
+            <p>Hai già un account? <a href="autenticazione.php" class="button">ACCEDI</a></p>
+        </div>
+
+    </main>
+
 
     <script src="resources/js/autenticazione.js"></script>
 
