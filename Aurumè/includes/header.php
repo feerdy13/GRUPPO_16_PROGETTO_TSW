@@ -31,7 +31,7 @@
         
     </head>
     <body>
-    <header>
+    <header id="navbar">
         
 
         <!--<div class="container" onclick="myFunction(this)">
@@ -49,10 +49,9 @@
 
         
 
-        <!-- Add all page content inside this div if you want the side nav to push page content to 
-         the right (not used if you only want the sidenav to sit on top of the page -->
+        <!-- Aggiungi tutto il contenuto della pagina all'interno di questo div se vuoi che la side nav spinga il contenuto della pagina a destra (non utilizzato se vuoi solo che la sidenav si sovrapponga alla pagina -->
         <div id="main">
-            <!-- Use any element to open the sidenav -->
+            <!-- Usa qualsiasi elemento per aprire la sidenav -->
             <span onclick="openNav()">
                 <div class="left-icons">
                     <!--Icona del menu--> 
@@ -113,7 +112,7 @@
 
 
     <script>
-        /* Set the width of the side navigation to 250px */
+        /* Imposta la larghezza della navigazione laterale al 20% della larghezza della pagina */
         function openNav() {
             // Di quanto deve uscire la sidebar
             document.getElementById("mySidenav").style.width = "20%";
@@ -132,11 +131,24 @@
 
         }
 
-        /* Set the width of the side navigation to 0 */
+        /* Imposta la larghezza della navigazione laterale a 0 */
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             document.body.style.backgroundColor = "whitesmoke";
             document.querySelector("header").style.backgroundColor = "var(--first-color)";
             document.querySelector("footer").style.backgroundColor = "var(--third-color)";
         }
+    </script>
+
+    <script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+    } else {
+        document.getElementById("navbar").style.top = "-90px";
+    }
+    prevScrollpos = currentScrollPos;
+    }
     </script>

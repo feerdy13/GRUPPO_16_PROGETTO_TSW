@@ -2,7 +2,7 @@
     display: inline-block !important ;/* Assicura che il contenitore si comporti come un blocco */
     cursor: pointer;
   }
-  
+
   .bar1, .bar2, .bar3 {
     display: block;  /* Assicura che ogni barra sia un blocco separato */
     width: 35px;
@@ -11,40 +11,34 @@
     margin: 6px 0; /* Spazio tra le barre */
     transition: 0.4s;
   }
-  
 
-/* Rotate first bar */
+
+/* Ruota la prima barra */
 .change .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
+    transform: translate(0, 11px) rotate(-45deg);
 }
 
-/* Fade out the second bar */
+/* Dissolvi la seconda barra */
 .change .bar2 {opacity: 0;}
 
-/* Rotate last bar */
+/* Ruota l'ultima barra */
 .change .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
+    transform: translate(0, -11px) rotate(45deg);
 }
 
-
-
-
-
-/* The side navigation menu */
+/* Il menu di navigazione laterale */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
-  
-  /* The navigation menu links */
+        height: 100%; /* 100% Altezza completa */
+        width: 0; /* 0 larghezza - cambia questo con JavaScript */
+        position: fixed; /* Rimani in posizione */
+        z-index: 1; /* Rimani in cima */
+        top: 0; /* Rimani in cima */
+        left: 0;
+        background-color: #111; /* Nero */
+        overflow-x: hidden; /* Disabilita lo scorrimento orizzontale */
+        padding-top: 60px; /* Posiziona il contenuto a 60px dall'alto */
+        transition: 0.5s; /* Effetto di transizione di 0.5 secondi per far scorrere la navigazione laterale */
+    }
   .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -53,13 +47,13 @@
     display: block;
     transition: 0.3s;
   }
-  
-  /* When you mouse over the navigation links, change their color */
+
+/* Quando passi il mouse sui link di navigazione, cambia il loro colore */
   .sidenav a:hover {
     color: var(--second-color);
   }
-  
-  /* Position and style the close button (top right corner) */
+
+/* Posiziona e stila il pulsante di chiusura (angolo in alto a destra) */
   .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -67,15 +61,15 @@
     font-size: 36px;
     margin-left: 50px;
   }
-  
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+/* Stile del contenuto della pagina - usa questo se vuoi spingere il contenuto della pagina a destra quando apri la navigazione laterale */
   #main {
     transition: margin-left .5s;
     padding: 20px;
   }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+
+/* Su schermi più piccoli, dove l'altezza è inferiore a 600px, cambia lo stile della sidenav (meno padding e una dimensione del font più piccola) */
+  @media screen and (max-height: 600px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
@@ -92,8 +86,16 @@ header {
     top: 0; /* Posiziona l'header in cima alla pagina */
     width: 100%; /* Assicura che l'header occupi l'intera larghezza della pagina */
     z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
-    
+
 }
+/*BARRA DI NAVIGAZIONE CHE SCOMPARE*/
+#navbar {
+    background-color: #333; /* Colore di sfondo nero */
+    position: fixed; /* Rende l'elemento fisso */
+    /* top: 0; Rimane in cima */
+    width: 100%; /* Larghezza completa */
+    transition: top 0.5s; /* Effetto di transizione quando scorre verso il basso (e verso l'alto) */
+  }
 
 
 .header-title {
@@ -202,7 +204,7 @@ header i:hover, a:hover {
     header {
         padding: 20px 10px;
     }
-    
+
     header i {
         font-size: var(--text-size-small);
         margin: 0 5px;
