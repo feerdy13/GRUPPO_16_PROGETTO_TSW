@@ -64,9 +64,17 @@
     ?>
 
 
-    <?php 
-        if (!empty($alert)) echo "<div class='alert'>$alert </div>";
-    ?>
+    <!-- alert -->
+    <div id="alert-container" class="alert-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            <?php if (!empty($alert)) { ?>
+                showAlert('<?php echo $alert; ?>');
+            <?php } ?>
+        });
+    </script>
+    
+
 
     <main>
 
@@ -97,7 +105,10 @@
     </main>
 
 
-    
+    <!-- Script per mostrare alert -->
+    <script src="resources/js/showAlert.js"></script>
+
+    <!-- Script per validazione form -->
     <script src="resources/js/autenticazione.js"></script>
 
     <?php pg_close($conn); ?>

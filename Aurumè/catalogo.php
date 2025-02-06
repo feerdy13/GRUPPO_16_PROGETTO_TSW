@@ -6,9 +6,6 @@
         // Query per recuperare i prodotti dal catalogo
         $query = "SELECT id, filename, descrizione, prezzo, categoria FROM prodotti";
         $result = pg_query($conn, $query);
-
-        if (!isset($_SESSION['user_id'])) 
-            $_SESSION['alert'] = "Per aggiungere prodotti al carrello bisogna effettuare il login.";
     ?>
 
 
