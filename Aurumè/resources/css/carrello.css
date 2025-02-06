@@ -9,88 +9,179 @@
     margin-top: 50px;
 }
 
-.cart-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    margin: 30px;
+
+.cart-page-container {
+    display: flex;
+    gap: 40px;  /* gap tra sezione prodotti e sezione pagamento */
+    margin: 50px;
+}
+
+.cart-items-container {
+    display: flex;
+    flex: 0 0 60%;  /* La sezione degli elementi occupera sempre il 70% dello spazio orizzontale */
+    flex-direction: column;
+    gap: 20px;  /* gap tra i prodotti del carrello */
 }
 
 .cart-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    position: relative;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    gap: 20px; 
 }
 
 .cart-item img {
-    width: 80%;
+    width: 150px;
     height: auto;
-    margin: 0 auto;
 }
 
 .cart-info {
-    padding: 15px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .cart-info .descrizione {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: var(--text-size-large);
+    color: var(--first-color);
+    font-weight: bold;
 }
 
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--fourth-color);
+    border-radius: 20px;
+    width: fit-content;
+    padding: 5px 10px;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background: none;
+    border: none;
+    font-size: var(--text-size-large);
+    cursor: pointer;
+    color: var(--first-color);
+}
+
+/* Current Quantity Display
+ * Consistent font sizing for quantity */
+.quantity-control .quantita {
+    font-size: var(--text-size-medium);
+}
+
+/* Product Price Styling
+ * Highlights price in brand's secondary color */
 .cart-info .prezzo {
-    font-size: 1em;
+    font-size: var(--text-size-large);
+    color: var(--second-color);
+    font-weight: bold;
+}
+
+/* Remove Product Link
+ * Subtle styling for product removal option */
+.remove-from-cart {
     color: var(--fourth-color);
-    margin-bottom: 5px;
+    text-decoration: underline;
+    align-self: flex-start;
+    font-size: var(--text-size-medium);
 }
 
-.cart-info .categoria {
-    font-size: 0.9em;
-    color: #777;
+/* Order Summary Section
+ * Displays order total and purchase options */
+.order-summary {
+    flex: 0 0 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: fit-content;
 }
 
-/* Stile per il bottone di rimozione */
-.cart-item .remove-from-cart {
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    border: solid 2px rgb(214, 4, 4);
-    color: #6c0000;
-    padding: 10px 15px;
+/* Order Summary Heading
+ * Centered title with brand's primary color */
+.order-summary h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: var(--text-size-large);
+    color: var(--first-color);
+}
+
+/* Summary Details Container
+ * Organizes price breakdown items */
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* Individual Summary Rows
+ * Displays price details with items pushed to opposite ends */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-size-medium);
+}
+
+/* Total Row Styling
+ * Emphasizes total price with larger font and brand color */
+.summary-row.total {
+    margin-top: 10px;
+    font-size: var(--text-size-large);
+    color: var(--first-color);
+}
+
+/* Purchase Completion Button
+ * Full-width button with interactive hover state */
+.complete-purchase {
+    width: 100%;
+    background-color: var(--first-color);
+    color: white;
+    border: none;
+    padding: 10px;
     border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease;
-    opacity: 1;
+    margin-top: 20px;
+    font-size: var(--text-size-medium);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.cart-item .remove-from-cart:hover {
-    background-color: rgb(214, 4, 4);
-    color: #fff;
+
+/* Button Hover Effect
+ * Provides visual feedback on user interaction */
+.complete-purchase:hover {
+    background-color: var(--second-color);
 }
+
+
+
+
+
+
+
+
 
 .button {
-    text-align: center;
-    font-size: var(--text-size-large);
-    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .button a {
-    display: inline-block;
     background-color: var(--first-color);
-    color: #fff;
+    color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    text-decoration: none;
-    font-size: var(--text-size-large);
-    transition: color 0.3s ease;
-    margin: 20px auto;
-    text-align: center;
+    font-size: var(--text-size-medium);
+    transition: background-color 0.3s ease;
 }
 
 .button a:hover {
-    color: var(--second-color);
+    background-color: var(--second-color);
 }
