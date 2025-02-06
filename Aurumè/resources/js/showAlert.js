@@ -11,5 +11,5 @@ function showAlert(message) {
 
     setTimeout(() => {
         alertContainer.classList.remove('show');
-    }, 4000); // L'alert scompare dopo 4 secondi
+    }, 3000); // L'alert scompare dopo 3 secondi
 }

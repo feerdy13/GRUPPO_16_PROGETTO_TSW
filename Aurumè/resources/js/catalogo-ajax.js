@@ -13,7 +13,7 @@ function aggiungiAlCarrello(productID) {
         // Verifica se la richiesta è stata completata (readyState 4) e ha avuto successo (status 200)
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             // Mostra un messaggio di conferma all'utente
-            alert("Prodotto aggiunto al carrello!");
+            showAlert("Prodotto aggiunto al carrello!");
         }
     };
 
