@@ -2,6 +2,8 @@
     session_start();
     require '../includes/database.php';
 
+    header('Content-Type: application/json');
+
     if (isset($_POST['product_id'])) {
         $product_id = $_POST['product_id'];
         $update = $_POST['update'];
@@ -35,6 +37,17 @@
                     pg_prepare($conn, "rimuovi_prodotto", $query);
                     pg_execute($conn, "rimuovi_prodotto", array($user_id, $product_id));
                 }
+
+                // Calcolo il nuovo totale del carrello
+                $query_total = "SELECT SUM(p.prezzo * c.quantita) AS total
+                                FROM carrello c 
+                                JOIN prodotti p ON c.id_prodotto = p.id 
+                                WHERE c.id_utente = $1";
+                pg_prepare($conn, "calcola_totale", $query_total);
+                $result_total = pg_execute($conn, "calcola_totale", array($user_id));
+                $nuovo_totale = pg_fetch_result($result_total, 0, 'total');
+
+                echo json_encode(['success' => true, 'new_quantity' => $nuova_quantita, 'new_total' => $nuovo_totale]);
             }
         }
     }

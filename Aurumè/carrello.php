@@ -59,8 +59,8 @@
                     <div class="cart-items-container">
                         <?php foreach ($cart_items as $row): ?>
                             <!-- Recupero il contenuto del carrello -->
-                            <div class="cart-item">
-                                <img src="resources/img/catalogue/<?php echo htmlspecialchars($row['filename']); ?>" alt="Immagine prodotto">
+                            <div class="cart-item" id="prodID<?php echo $row['id']; ?>">
+                                <img src="resources/img/catalogue/<?php echo ($row['filename']); ?>" alt="Immagine prodotto">
                                 <div class="cart-info">
                                     <div class="info-descrizione"><?php echo $row['descrizione']; ?></div>
                                     <div class="info-quantita">
@@ -88,7 +88,7 @@
                         <div class="summary-details">
                             <div class="summary-row total">
                                 <strong>Totale</strong>
-                                <strong><?php echo number_format($total, 2); ?> €</strong>
+                                <strong id="total"><?php echo number_format($total, 2); ?> €</strong>
                             </div>
                             <div class="summary-row">
                                 <span>Incluse tasse e spese di spedizione</span>
