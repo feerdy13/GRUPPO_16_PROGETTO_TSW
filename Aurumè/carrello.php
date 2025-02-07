@@ -21,7 +21,7 @@
             if ($result) {
                 while ($row = pg_fetch_assoc($result)) {
                     $cart_items[] = $row;
-                    $total += $total += round($row['prezzo'] * $row['quantita'], 2); // Arrotonda a due decimali
+                    $total += round($row['prezzo'] * $row['quantita'], 2); // Arrotonda a due decimali
                 }
             }
         }
@@ -59,18 +59,23 @@
                     <div class="cart-items-container">
                         <?php foreach ($cart_items as $row): ?>
                             <!-- Recupero il contenuto del carrello -->
-
                             <div class="cart-item">
                                 <img src="resources/img/catalogue/<?php echo htmlspecialchars($row['filename']); ?>" alt="Immagine prodotto">
                                 <div class="cart-info">
-                                    <div class="descrizione"><?php echo $row['descrizione']; ?></div>
-                                    <div class="quantity-control">
-                                        <button class="quantity-btn" onclick="updateQuantity(<?php echo $row['id']; ?>, -1)">-</button>
-                                        <span class="quantita"><?php echo $row['quantita']; ?></span>
-                                        <button class="quantity-btn" onclick="updateQuantity(<?php echo $row['id']; ?>, 1)">+</button>
+                                    <div class="info-descrizione"><?php echo $row['descrizione']; ?></div>
+                                    <div class="info-quantita">
+                                        <span>Quantità:</span>
+                                        <div class="quantity-control">
+                                            <button class="quantity-btn" onclick="updateQuantity(<?php echo $row['id']; ?>, -1)">-</button>
+                                            <span class="quantita"><?php echo $row['quantita']; ?></span>
+                                            <button class="quantity-btn" onclick="updateQuantity(<?php echo $row['id']; ?>, 1)">+</button>
+                                        </div>
                                     </div>
-                                    <p class="prezzo"><?php echo number_format($row['prezzo'], 2); ?> €</p>
-                                    <a href="action/rimuovi_dal_carrello.php?product_id=<?php echo $row['id']; ?>" class="remove-from-cart">Rimuovi</a>
+                                    <div class="info-prezzo">
+                                        <span>Prezzo:</span>
+                                        <span class="prezzo"><?php echo number_format($row['prezzo'], 2); ?> €</span>
+                                    </div>
+                                    <a href="action/rimuovi_dal_carrello.php?product_id=<?php echo $row['id']; ?>" class="remove-from-cart">RIMUOVI</a>
                                 </div>
                             </div>
 
@@ -128,6 +133,9 @@
     </main>
     
 
+
+    <!-- Script per aggiornare quantità prodotto in AJAX -->
+    <script src="resources/js/carrello-ajax.js"></script>
 
     <!-- Chiudo la connessione -->
     <?php pg_close($conn); ?>

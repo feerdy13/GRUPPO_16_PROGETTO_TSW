@@ -10,6 +10,9 @@
 }
 
 
+
+
+
 .cart-page-container {
     display: flex;
     gap: 40px;  /* gap tra sezione prodotti e sezione pagamento */
@@ -39,26 +42,44 @@
 }
 
 .cart-info {
+    padding: 5px 50px;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     gap: 15px;
 }
 
-.cart-info .descrizione {
+.cart-info span {
+    font-size: 14px;
+    color: var(--fourth-color);
+    margin-right: 30px;
+}
+
+.info-descrizione {
     font-size: var(--text-size-large);
     color: var(--first-color);
     font-weight: bold;
 }
 
+.info-quantita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .quantity-control {
     display: flex;
     align-items: center;
+    width: fit-content;
+    padding: 1px 8px;
+    gap: 10px;
     border: 1px solid var(--fourth-color);
     border-radius: 20px;
-    width: fit-content;
-    padding: 5px 10px;
-    gap: 10px;
+}
+
+.quantity-control :nth-child(2) {
+    margin: 0;
+    font-size: 14px;
 }
 
 .quantity-btn {
@@ -67,19 +88,18 @@
     font-size: var(--text-size-large);
     cursor: pointer;
     color: var(--first-color);
+    transition: color 0.3s ease;
+}
+.quantity-btn:hover {
+    color: var(--second-color);
 }
 
-/* Current Quantity Display
- * Consistent font sizing for quantity */
-.quantity-control .quantita {
-    font-size: var(--text-size-medium);
-}
+
 
 /* Product Price Styling
  * Highlights price in brand's secondary color */
 .cart-info .prezzo {
     font-size: var(--text-size-large);
-    color: var(--second-color);
     font-weight: bold;
 }
 
@@ -87,9 +107,17 @@
  * Subtle styling for product removal option */
 .remove-from-cart {
     color: var(--fourth-color);
+    background-color: white;
+    padding: 2px;
+    border-radius: 5px;
     text-decoration: underline;
     align-self: flex-start;
     font-size: var(--text-size-medium);
+    transition: color 0.3s ease;
+}
+
+.remove-from-cart:hover {
+    color: var(--second-color);
 }
 
 /* Order Summary Section
@@ -128,6 +156,15 @@
     display: flex;
     justify-content: space-between;
     font-size: var(--text-size-medium);
+}
+
+.summary-row ul {
+    margin: 20px;
+}
+.summary-row ul li {
+    color: var(--fourth-color);
+    list-style-type: circle;
+    margin-bottom: 15px;
 }
 
 /* Total Row Styling
