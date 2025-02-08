@@ -99,8 +99,8 @@
                             <div class="summary-row">
                                 <ul>
                                     <li>Spedizione standard de 1 a 2 giorni lavorativi, gratuita su tutti gli ordini.</li>
-                                    <li>Servizio di ritiro in una qualsiasi boutique Bvlgari in Italia. Il tuo ordine online sarà disponibile per il ritiro entro 3 giorni dalla data di acquisto.</li>
-                                    <li>Puoi restituire una creazione Bvlgari acquistata online e richiedere un cambio o un rimborso entro 14 giorni dalla data di consegna.</li>
+                                    <li>Servizio di ritiro in una qualsiasi boutique Aurumè in Italia. Il tuo ordine online sarà disponibile per il ritiro entro 3 giorni dalla data di acquisto.</li>
+                                    <li>Puoi restituire una creazione Aurumè acquistata online e richiedere un cambio o un rimborso entro 14 giorni dalla data di consegna.</li>
                                 </ul>
                             </div>
                            

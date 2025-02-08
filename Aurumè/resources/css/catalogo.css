@@ -27,6 +27,35 @@
     text-align: center;
 }
 
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.filter {
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--text-size-medium);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100px;
+}
+.filter:hover {
+    background-color: var(--second-color);
+    transform: scale(1.05);
+}
+.filter.active {
+    background-color: var(--second-color);
+    transform: scale(1.05);
+}
+
+
 .catalogo-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -90,7 +119,7 @@
     background-color: var(--first-color);
     color: #fff;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 7px 8px;
     border-radius: 5px;
     text-decoration: none;
     font-size: var(--text-size-medium);
