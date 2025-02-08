@@ -8,19 +8,55 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
         $name = trim($_POST["name"]);
         $email = trim($_POST["email"]);
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $password = trim($_POST["password"]);
+
+        // Validazione lato server
+        $errors = [];
+
+        if (strlen($name) < 3) {
+            $errors[] = "Il nome deve contenere almeno 3 caratteri.";
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors[] = "L'email inserita non è valida.";
+        }
+
+        if (strlen($password) < 6) {
+            $errors[] = "La password deve contenere almeno 6 caratteri.";
+        }
+
+        if (!empty($errors)) {
+            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> " . implode("<br>", $errors);
+            header("Location: autenticazione.php?register");
+            exit();
+        }
+        
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         
         // Prepariamo la query per evitare SQL Injection
         $query = "INSERT INTO utenti (name, email, password) VALUES ($1, $2, $3)";
         $stmt = pg_prepare($conn, "utente_registrato", $query);
-        $result = pg_execute($conn, "utente_registrato", array($name, $email, $password));
 
-        if ($result) {
+        // Invia la query senza eseguirla immediatamente
+        pg_send_execute($conn, "utente_registrato", array($name, $email, $password));
+    
+        // Ottieni il risultato della query
+        $result = pg_get_result($conn);
+
+        // Controlla se ci sono errori
+        if (pg_result_status($result) !== PGSQL_COMMAND_OK) {
+            $errorMessage = pg_result_error($result);
+
+            // Controlliamo se l'errore è dovuto a una violazione UNIQUE (email già registrata)
+            if (strpos($errorMessage, "utenti_email_key") !== false) {
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Account già esistente. Usa un'altra email o accedi.";
+            } else {
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Errore nella registrazione: " . htmlspecialchars($errorMessage);
+            }
+        } else {
             $_SESSION['alert'] = "Registrazione completata! Accedi ora.";
             header("Location: autenticazione.php?success=registered");
             exit();
-        } else {
-            $_SESSION['error'] = "Errore nella registrazione: " . pg_last_error($conn);
         }
     }
 
@@ -94,6 +130,7 @@
         <div id="register-form" class="form-container <?php echo ($showForm == 'register') ? 'active' : ''; ?>">
             <form method="POST">
                 <h2>Registrazione</h2>
+                <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
                 <label>Nome:</label> <input type="text" name="name" required><br>
                 <label>Email:</label> <input type="email" name="email" required><br>
                 <label>Password:</label> <input type="password" name="password" required><br>
