@@ -85,11 +85,20 @@
         }
     }
 
+    // Controlla se è presente un alert passato via GET, altrimenti controlla la sessione
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
-    $alert = isset($_SESSION['alert']) ? $_SESSION['alert'] : '';
+    $alert = '';
 
+    if (isset($_GET['alert']) && !empty($_GET['alert'])) {
+        $alert = $_GET['alert'];
+    } elseif (isset($_SESSION['alert'])) {
+        $alert = $_SESSION['alert'];
+    }
+
+    // Se usi la sessione per l'alert, puoi anche rimuoverlo dalla sessione
     unset($_SESSION['error']);
     unset($_SESSION['alert']);
+
 ?>
 
     <!-- Header -->
@@ -98,16 +107,6 @@
         $cssFile = 'resources/css/autenticazione.css';
         include 'includes/header.php'; 
     ?>
-
-    <?php if (isset($_SESSION['alert'])): ?>
-        <div class="alert">
-            <?php 
-            echo htmlspecialchars($_SESSION['alert']); 
-            unset($_SESSION['alert']); // Rimuove il messaggio una volta visualizzato
-            ?>
-        </div>
-    <?php endif; ?>
-    
 
 
     <!-- alert -->
