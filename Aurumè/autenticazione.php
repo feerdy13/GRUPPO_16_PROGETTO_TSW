@@ -9,7 +9,6 @@
         $name = trim($_POST["name"]);
         $email = trim($_POST["email"]);
         $password = trim($_POST["password"]);
-
         // Validazione lato server
         $errors = [];
 
@@ -66,7 +65,7 @@
         $password = trim($_POST["password"]);
 
         // Prepariamo la query per cercare l'utente
-        $query = "SELECT id, name, password FROM utenti WHERE email = $1";
+        $query = "SELECT id, name, email, password FROM utenti WHERE email = $1";
         $stmt = pg_prepare($conn, "utente_loggato", $query);
         $result = pg_execute($conn, "utente_loggato", array($email));
 
@@ -75,6 +74,7 @@
             if (password_verify($password, $row["password"])) {
                 $_SESSION["user_id"] = $row["id"];
                 $_SESSION["user_name"] = $row["name"];
+                $_SESSION["user_email"] = $row["email"];
                 header("Location: index.php");
                 exit();
             } else {
@@ -98,6 +98,16 @@
         $cssFile = 'resources/css/autenticazione.css';
         include 'includes/header.php'; 
     ?>
+
+    <?php if (isset($_SESSION['alert'])): ?>
+        <div class="alert">
+            <?php 
+            echo htmlspecialchars($_SESSION['alert']); 
+            unset($_SESSION['alert']); // Rimuove il messaggio una volta visualizzato
+            ?>
+        </div>
+    <?php endif; ?>
+    
 
 
     <!-- alert -->
