@@ -37,7 +37,7 @@
         $stmt = pg_prepare($conn, "utente_registrato", $query);
 
         // Invia la query senza eseguirla immediatamente
-        pg_send_execute($conn, "utente_registrato", array($name, $email, $password));
+        pg_send_execute($conn, "utente_registrato", array($name, $email, $passwordHash));
     
         // Ottieni il risultato della query
         $result = pg_get_result($conn);
@@ -128,24 +128,24 @@
             <form method="POST">
                 <h2>Ho già un account</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label>Email:</label> <input type="email" name="email" required><br>
-                <label>Password:</label> <input type="password" name="password" required><br>
+                <label>Email:</label> <input type="email" name="email" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
                 <input type="submit" name="login" value="ACCEDI">
             </form>
-            <p>Non sei ancora membro? Scopri i nostri vantaggi<a href="?register" class="button">CREA  ACCOUNT</a></p>
+            <p>Non sei ancora membro? Scopri i nostri vantaggi<a href="?register" class="button" id="show-register">CREA  ACCOUNT</a></p>
         </div>
 
         <!-- Form di REGISTRAZIONE -->
         <div id="register-form" class="form-container <?php echo ($showForm == 'register') ? 'active' : ''; ?>">
-            <form method="POST">
+            <form method="POST" id="register-form">
                 <h2>Registrazione</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label>Nome:</label> <input type="text" name="name" required><br>
-                <label>Email:</label> <input type="email" name="email" required><br>
-                <label>Password:</label> <input type="password" name="password" required><br>
+                <label>Nome:</label> <input type="text" name="name" placeholder="Inserisci il tuo nome" minlength="3" required><br>
+                <label>Email:</label> <input type="email" name="email" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="3" required><br>
                 <input type="submit" name="register" value="REGISTRATI">
             </form>
-            <p>Hai già un account? <a href="autenticazione.php" class="button">ACCEDI</a></p>
+            <p>Hai già un account? <a href="autenticazione.php" class="button" id="show-login">ACCEDI</a></p>
         </div>
 
     </main>
@@ -156,6 +156,7 @@
 
     <!-- Script per validazione form -->
     <script src="resources/js/autenticazione.js"></script>
+
 
     <?php pg_close($conn); ?>
 

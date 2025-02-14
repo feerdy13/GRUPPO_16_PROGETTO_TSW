@@ -16,15 +16,20 @@
     height: 50px; /* Altezza dell'alert */
     opacity: 1;
 }
+
+/* Stile per l'alert */
 .alert {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: whitesmoke;
+    color: var(--third-color);
     font-size: var(--text-size-medium);
     padding: 10px 15px;
-    border: 1px solid #c3e6cb;
+    border: 1px solid rgb(225, 225, 225);
     border-radius: 5px;
     margin: 10px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Effetto 3D sollevato */
+    transform: translateY(-2px); /* Solleva leggermente l'alert */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transizione per l'effetto */
 }
 
 .filter-buttons {
