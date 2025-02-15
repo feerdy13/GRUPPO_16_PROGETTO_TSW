@@ -2,6 +2,7 @@
 <?php 
     session_start();
     require 'includes/database.php';
+    require 'includes/controllo.php';
 
     /* SEZIONE PER MODIFICARE NEL DB LE INFORMAZIONI DELL'UTENTE */
     // Controlla se è stata inviata la richiesta per aggiornare il profilo

@@ -3,27 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const registerForm = document.querySelector('#register-form form');
     const inputs = document.querySelectorAll('input');
 
-    function showAlert(message) {
-        const alertContainer = document.getElementById('alert-container');
-        if (!alertContainer) {
-            console.error('Alert container not found');
-            return;
-        }
-        alertContainer.innerHTML = `<div class="alert">${message}</div>`;
-        alertContainer.classList.add('show');
-        setTimeout(() => {
-            alertContainer.classList.remove('show');
-        }, 3000);
-    }
-
     function validateEmail(email) {
         email = email.trim();
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) return false;
 
         const domain = email.split('@')[1];
-
-        // **Whitelist (opzionale)**: Se abilitata, accetta solo questi domini
         const allowedDomains = ["gmail.com", "yahoo.com", "outlook.com", "libero.it", "hotmail.com"];
         if (allowedDomains.length > 0 && !allowedDomains.includes(domain)) {
             return false;
@@ -44,53 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateName(name) {
         return name.trim().length >= 3;
     }
-
-    // **Salva e Ripristina dati nel sessionStorage**
-    function saveFormData(formId) {
-        const form = document.querySelector(`#${formId} form`);
-        if (form) {
-            const formData = {};
-            form.querySelectorAll('input').forEach(input => {
-                formData[input.name] = input.value;
-            });
-            sessionStorage.setItem(formId, JSON.stringify(formData));
-        }
-    }
-
-    function restoreFormData(formId) {
-        const form = document.querySelector(`#${formId} form`);
-        if (form) {
-            const storedData = sessionStorage.getItem(formId);
-            if (storedData) {
-                const formData = JSON.parse(storedData);
-                form.querySelectorAll('input').forEach(input => {
-                    if (formData[input.name]) {
-                        input.value = formData[input.name];
-                    }
-                });
-            }
-        }
-    }
-
-    restoreFormData("login-form");
-    restoreFormData("register-form");
-
-    // **Elimina i dati quando si cambia form**
-    function clearFormData(formId) {
-        sessionStorage.removeItem(formId);
-        const form = document.querySelector(`#${formId} form`);
-        if (form) {
-            form.querySelectorAll('input').forEach(input => input.value = '');
-        }
-    }
-
-    document.getElementById("show-login").addEventListener("click", function () {
-        clearFormData("register-form"); // Cancella la registrazione quando si va al login
-    });
-
-    document.getElementById("show-register").addEventListener("click", function () {
-        clearFormData("login-form"); // Cancella il login quando si va alla registrazione
-    });
 
     // **Validazione con messaggi**
     inputs.forEach(input => {
@@ -149,9 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 errorMessage.textContent = message;
                 errorMessage.style.display = 'block';
             }
-
-            if (loginForm && input.closest('#login-form')) saveFormData("login-form");
-            if (registerForm && input.closest('#register-form')) saveFormData("register-form");
         });
     });
 
@@ -170,8 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 event.preventDefault();
                 return;
             }
-
-            sessionStorage.removeItem("login-form");
         });
     }
 
@@ -198,8 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 event.preventDefault();
                 return;
             }
-
-            sessionStorage.removeItem("register-form");
         });
     }
 });

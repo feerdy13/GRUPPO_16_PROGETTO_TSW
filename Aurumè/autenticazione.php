@@ -4,11 +4,16 @@
 
     $showForm = isset($_GET["register"]) ? "register" : "login";
 
+    // Recupero i dati se sono presenti
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+
     // REGISTRAZIONE
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
         $name = trim($_POST["name"]);
         $email = trim($_POST["email"]);
         $password = trim($_POST["password"]);
+
         // Validazione lato server
         $errors = [];
 
@@ -110,7 +115,7 @@
 
 
     <!-- alert -->
-    <div id="alert-container" class="alert-container"></div>
+    <div class="alert-container"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             <?php if (!empty($alert)) { ?>
@@ -128,7 +133,7 @@
             <form method="POST">
                 <h2>Ho già un account</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label>Email:</label> <input type="email" name="email" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                <label>Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
                 <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
                 <input type="submit" name="login" value="ACCEDI">
             </form>
@@ -140,9 +145,9 @@
             <form method="POST" id="register-form">
                 <h2>Registrazione</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label>Nome:</label> <input type="text" name="name" placeholder="Inserisci il tuo nome" minlength="3" required><br>
-                <label>Email:</label> <input type="email" name="email" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
-                <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="3" required><br>
+                <label>Nome:</label> <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" required><br>
+                <label>Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
                 <input type="submit" name="register" value="REGISTRATI">
             </form>
             <p>Hai già un account? <a href="autenticazione.php" class="button" id="show-login">ACCEDI</a></p>
