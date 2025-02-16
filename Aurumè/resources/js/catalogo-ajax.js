@@ -1,3 +1,4 @@
+// Filtri prodotti
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.filter');   /* Filtri */
     const items = document.querySelectorAll('.catalogo-item');  /* Prodotti */
@@ -18,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     })
-
-
 });
 
 function filterProducts(items, category) {
@@ -37,7 +36,7 @@ function showAllProducts(items) {
 }
 
 
-// Utilizza AJAX
+// Aggiungi al carrello tramite AJAX
 function aggiungiAlCarrello(productID) {
     // Crea un nuovo oggetto XMLHttpRequest, necessario per AJAX
     const xhttp = new XMLHttpRequest();

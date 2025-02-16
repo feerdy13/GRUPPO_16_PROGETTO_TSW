@@ -38,3 +38,4 @@ function updateQuantity(productID, update) {
     // Invia la richiesta 
     xhttp.send("product_id=" + productID + "&update=" + update);
 }
+

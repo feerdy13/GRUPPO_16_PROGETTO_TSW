@@ -28,6 +28,8 @@
                 session_start();  // Avvia la sessione solo se non è già attiva
             }     
         ?>
+
+        <script src="https://js.stripe.com/v3/"></script>
         
     </head>
     <body>

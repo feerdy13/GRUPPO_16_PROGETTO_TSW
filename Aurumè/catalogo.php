@@ -19,7 +19,7 @@
     ?>
 
     <!-- alert -->
-    <div id="alert-container" class="alert-container"></div>
+    <div class="alert-container"></div>
 
 
     <main>
