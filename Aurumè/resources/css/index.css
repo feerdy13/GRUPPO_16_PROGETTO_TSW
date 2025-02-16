@@ -6,6 +6,13 @@
 
 .heading {
     text-align: center; /* Centra il testo e gli elementi all'interno del contenitore */
+    margin-bottom: 40px;
+}
+
+.heading h1 {
+    font-size: var(--text-size-xxlarge); /* Dimensione del testo */
+    color: var(--first-color); /* Colore del testo */
+    margin: 20px; /* Aggiunge spazio sotto il titolo */
 }
 
 /* Stile per il pulsante "Scopri la collezione" */
@@ -26,7 +33,7 @@
 
 /* Stile per gli highlight con immagini e testo */
 .highlights-container {
-    margin-top: 80px;
+    margin-top: 18px;
 }
 
 .highlight .highlight-text {
@@ -49,41 +56,100 @@
 .highlight {
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    padding: 20px;
-    flex-direction: row;
+    margin: 0;
+    flex-direction: row-reverse;
 }
 
 .highlight img {
     width: 50%; /* Le immagini occupano il 50% dello spazio orizzontale */
-    margin-right: 20px;
     border-radius: 10px;
 }
 
 .highlight.reverse {
-    flex-direction: row-reverse;
+    margin-top: 10px;
+    flex-direction: row;
 }
 
 .highlight.reverse img {
-    margin-left: 20px;
     margin-right: 0;
 }
 
+/* Sezione gioielli in oro */
+.section-image {
+    width: 100%;
+    height: auto;
+    display: flex; /* Assicura che il contenitore utilizzi Flexbox */
+    justify-content: center; /* Centra l'immagine orizzontalmente */
+    align-items: center; /* Centra l'immagine verticalmente */
+    margin-top: 20px;
+    position: relative;
+}
 
+.section-image img {
+    max-width: 100%; /* Assicura che l'immagine non superi la larghezza del contenitore */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+    border-radius: 10px; /* Arrotonda gli angoli dell'immagine */
+}
+
+/* Stile per il testo sovrapposto */
+.overlay-text-one {
+    position: absolute; /* Posiziona il testo in modo assoluto sopra l'immagine */
+    top: 75%; /* Posiziona il testo a metà dell'immagine */
+    color: white; 
+    text-align: left;  
+    margin: 50px;
+}
+
+.section-image h2 {
+    font-size: var(--text-size-xxlarge); 
+    margin-bottom: 15px;
+    color: whitesmoke;
+}
+
+.section-image p {
+    font-size: var(--text-size-xlarge);
+    color: whitesmoke;
+}
+
+.section-image p:hover {
+    text-decoration: underline;
+}
+
+.overlay-text-two {
+    position: absolute; /* Posiziona il testo in modo assoluto sopra l'immagine */
+    top: 85%; /* Posiziona il testo a metà dell'immagine */
+    color: white; 
+    text-align: left;  
+    margin: 50px;
+}
 
 /* Contenitore per lo scroll orizzontale delle immagini */
 .image-scroll-wrapper {
-    margin: 15vh 7vw;
+    margin: 14vh 7vw;
     position: relative; /* Posiziona i pulsanti delle frecce in relazione al contenitore */
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Dispone gli elementi in una colonna */
     overflow: hidden; /* Nasconde la scrollbar orizzontale */
+}
+
+.text-gallery-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Distribuisce lo spazio tra la scritta e i bottoni */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    margin-bottom: 10px; /* Aggiunge uno spazio tra la scritta e le immagini */
+}
+
+.text-gallery {
+    font-size: var(--text-size-xxlarge); 
+    color: var(--first-color); 
+    margin: 0; 
 }
 
 .image-scroll-container {
     overflow-x: auto; /* Abilita lo scroll orizzontale */
     white-space: nowrap; /* Impedisce il wrapping delle immagini */
-    padding: 75px 0; /* Aggiunge padding sopra e sotto il contenitore */
+    padding: 40px 0; /* Aggiunge padding sopra e sotto il contenitore */
     flex: 1; /* Permette al contenitore di espandersi per riempire lo spazio disponibile */
     scrollbar-width: none; /* Nasconde la scrollbar orizzontale */
 }
@@ -129,8 +195,46 @@
 }
 
 
+/* Stile per il contenitore di autenticazione */
+.authentication-container {
+    display: flex;
+    flex-direction: column; /* Dispone gli elementi in una colonna */
+    text-align: left; 
+    margin: 60px auto; /* Centra il contenitore orizzontalmente */
+    max-width: 800px; /* Limita la larghezza massima */
+}
 
+.authentication-container h2 {
+    font-size: var(--text-size-xxlarge);
+    margin-bottom: 20px; /* Aggiunge spazio sotto l'h2 */
+}
 
+.authentication-content {
+    display: flex;
+    justify-content: space-between; /* Distribuisce lo spazio tra il paragrafo e il bottone */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+}
+
+.authentication-container p {
+    font-size: var(--text-size-large);
+    max-width: 600px; /* Limita la larghezza massima del testo */
+    margin: 0; /* Rimuove il margine predefinito */
+}
+
+.authentication-container .button {
+    padding: 10px 20px; /* Aggiunge padding interno */
+    background-color: var(--first-color); /* Colore di sfondo del bottone */
+    color: whitesmoke; /* Colore del testo del bottone */
+    border: none; /* Rimuove il bordo del bottone */
+    border-radius: 5px; /* Arrotonda gli angoli del bottone */
+    text-decoration: none; /* Rimuove la sottolineatura dal link */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    transition: background-color 0.3s ease; /* Aggiunge una transizione per il cambio di colore di sfondo */
+}
+
+.authentication-container .button:hover {
+    background-color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
+}
 
 
 

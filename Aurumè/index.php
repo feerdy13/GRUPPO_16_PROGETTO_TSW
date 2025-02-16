@@ -1,3 +1,8 @@
+    <?php
+    // Avvia la sessione
+    session_start();
+    ?>
+    
     <!-- Header -->
     <?php 
         $title = 'Homepage';
@@ -8,11 +13,21 @@
     <main>
         <video class="video-home" src="resources/img/jewellery.mp4" autoplay loop muted></video>
 
-        <div class="heading">
-            <h1>Benvenuti in Aurumè</h1>
-            <p>Scopri la nostra collezione di gioielli in oro e pietre preziose</p>
-            <a href="catalogo.php" class="shop-button">Scopri la collezione</a>
-        </div>
+        <?php 
+            if(isset($_SESSION["user_name"])) {
+                echo '<div class="heading">
+                        <h1>Benvenuto ' . $_SESSION["user_name"] . '</h1>
+                        <p>Scopri la nostra collezione di gioielli in oro e pietre preziose</p>
+                        <a href="catalogo.php" class="shop-button">Scopri la collezione</a>
+                    </div>';
+            } else {
+                echo '<div class="heading">
+                        <h1>Benvenuti in Aurumè</h1>
+                        <p>Scopri la nostra collezione di gioielli in oro e pietre preziose</p>
+                        <a href="catalogo.php" class="shop-button">Scopri la collezione</a>
+                    </div>';
+            }
+        ?>
 
         <div class="highlights-container">
             <div class="highlight">
@@ -36,10 +51,24 @@
             </div>
         </div>
 
+        <!-- Prima sezione immagine statica con link all'interno -->
+        <div class="section-image">
+            <a href="catalogo.php">
+                <img src="resources/img/gold_jewels.jpg" alt="Gioielli in oro">
+                <div class="overlay-text-one">
+                    <h2>Gioielli in Oro</h2>
+                    <p>Scopri la nostra collezione</p>
+                </div>
+            </a>
+        </div>
+
         <!-- Contenitore per lo scroll orizzontale delle immagini -->
         <div class="image-scroll-wrapper">
-            <button class="scroll-button left">&lt;</button>
-            <button class="scroll-button right">&gt;</button>
+            <div class="text-gallery-container">
+                <p class="text-gallery">La nostra galleria</p>
+                <button class="scroll-button left">&lt;</button>
+                <button class="scroll-button right">&gt;</button>
+            </div>
             <div class="image-scroll-container">
                 <div class="image-scroll">
                     <img src="resources/img/gioielliindossati1.jpg" alt="Immagine 1">
@@ -53,6 +82,28 @@
                 </div>
             </div>
         </div>
+
+        <!-- Seconda sezione immagine statica con link all'interno -->
+        <div class="section-image">
+            <a href="la_nostra_storia.php">
+                <img src="resources/img/gruppo.jpg" alt="La nostra storia">
+                <div class="overlay-text-two">
+                    <p>La nostra storia</p>
+                </div>
+            </a>
+        </div>
+
+        <?php 
+            if(!isset($_SESSION["user_name"])) 
+                echo '<div class="authentication-container">
+                        <h2>Entra nell\'universo Aurumé</h2>
+                        <div class="authentication-content">
+                            <p>Scopri le sue meravigliose icone e le esperienze uniche</p>
+                            <a href="autenticazione.php?register" class="button" id="show-register">CREA ACCOUNT</a>
+                        </div>
+                    </div>';
+        ?>
+
     </main>
 
     <!-- Pulsante per inviare email -->
