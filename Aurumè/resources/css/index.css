@@ -1,12 +1,41 @@
-.video-home {
-    width: calc(100% + 40px); /* Compensa i margini del main */
-    height: auto;
-    margin-left: -20px; /* Sposta il video allineandolo ai bordi dello schermo */
+main {
+    margin: 0;
+    overflow-x: hidden; /* Nasconde la scrollbar orizzontale */
 }
+
+.video-container {
+    position: relative;
+    width: 100vw; /* Imposta la larghezza al 100% della larghezza della finestra */
+    height: 100vh; /* Imposta l'altezza al 100% dell'altezza della finestra */
+    overflow: hidden; /* Nasconde eventuali parti del video che escono dal contenitore */
+}
+
+.video-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Assicura che il video occupi l'intera larghezza del contenitore */
+    height: 100%; /* Assicura che il video occupi l'intera altezza del contenitore */
+    object-fit: cover; /* Mantiene le proporzioni del video e riempie l'area disponibile */
+}
+
+/* Effetto di ingresso per i container */
+.hidden {
+    opacity: 0; /* Nasconde inizialmente gli elementi */
+    transform: translateY(50px); /* Li sposta in basso */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Effetto fluido */
+}
+  
+/* Quando l'elemento entra in viewport */
+.show {
+    opacity: 1; /* Rende visibile l'elemento */
+    transform: translateY(0); /* Lo riporta alla posizione normale */
+}
+  
 
 .heading {
     text-align: center; /* Centra il testo e gli elementi all'interno del contenitore */
-    margin-bottom: 40px;
+    margin: 20px;
 }
 
 .heading h1 {
@@ -27,68 +56,59 @@
     font-size: var(--text-size-medium); /* Dimensione del testo */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera al pulsante */
     transition: background-color 0.3s ease; /* Transizione per il cambio di colore di sfondo */
-    margin-top: 20px; /* Aggiunge uno spazio sopra il pulsante */
 }
 
 
 /* Stile per gli highlight con immagini e testo */
 .highlights-container {
-    margin-top: 18px;
+    margin-top: 60px;
 }
 
-.highlight .highlight-text {
-    flex: 1;
+.highlight-text {
+    text-align: justify;
+    max-width: 550px;
+    margin: 0 auto;
 }
 
-.highlight .highlight-title {
-    margin: 0 0 10px;
+.highlight-text .highlight-title {
     font-size: 1.5em;
     color: var(--first-color);
 }
 
-.highlight .highlight-p {
-    margin: 0;
+.highlight-text .highlight-p {
     font-size: 1em;
     color: #333;
-    text-align: left;
+}
+
+.highlight.right {
+    flex-direction: row-reverse;
 }
 
 .highlight {
     display: flex;
     align-items: center;
-    margin: 0;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .highlight img {
     width: 50%; /* Le immagini occupano il 50% dello spazio orizzontale */
-    border-radius: 10px;
-}
-
-.highlight.reverse {
-    margin-top: 10px;
-    flex-direction: row;
-}
-
-.highlight.reverse img {
-    margin-right: 0;
 }
 
 /* Sezione gioielli in oro */
 .section-image {
-    width: 100%;
-    height: auto;
+    width: 100vw; /* Imposta la larghezza al 100% della larghezza della finestra */
+    height: 100vh; /* Imposta l'altezza al 100% dell'altezza della finestra */
     display: flex; /* Assicura che il contenitore utilizzi Flexbox */
     justify-content: center; /* Centra l'immagine orizzontalmente */
     align-items: center; /* Centra l'immagine verticalmente */
-    margin-top: 20px;
     position: relative;
+    overflow: hidden; /* Nasconde eventuali parti dell'immagine che escono dal contenitore */
 }
 
 .section-image img {
-    max-width: 100%; /* Assicura che l'immagine non superi la larghezza del contenitore */
-    height: auto; /* Mantiene le proporzioni dell'immagine */
-    border-radius: 10px; /* Arrotonda gli angoli dell'immagine */
+    width: 100%; /* Assicura che l'immagine occupi l'intera larghezza del contenitore */
+    height: 100%; /* Assicura che l'immagine occupi l'intera altezza del contenitore */
+    object-fit: cover; /* Mantiene le proporzioni dell'immagine e riempie l'area disponibile */
 }
 
 /* Stile per il testo sovrapposto */
@@ -161,6 +181,7 @@
 .image-scroll img {
     width: 300px; /* Imposta una larghezza fissa per le immagini */
     height: auto; /* Mantiene l'altezza proporzionale alla larghezza */
+    max-height: 450px; /* Limita l'altezza massima delle immagini */
     margin: 0 4vw; /* Aggiunge uno spazio tra le immagini */
     border-radius: 8px; /* Arrotonda gli angoli delle immagini */
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra leggera alle immagini */
@@ -222,7 +243,7 @@
 }
 
 .authentication-container .button {
-    padding: 10px 20px; /* Aggiunge padding interno */
+    padding: 15px 60px; /* Aggiunge padding interno */
     background-color: var(--first-color); /* Colore di sfondo del bottone */
     color: whitesmoke; /* Colore del testo del bottone */
     border: none; /* Rimuove il bordo del bottone */

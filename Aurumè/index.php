@@ -11,26 +11,26 @@
     ?>
 
     <main>
-        <video class="video-home" src="resources/img/jewellery.mp4" autoplay loop muted></video>
+        <div class="video-container hidden">
+            <video class="video-home" src="resources/img/jewellery.mp4" autoplay loop muted></video>
+        </div>
 
         <?php 
             if(isset($_SESSION["user_name"])) {
-                echo '<div class="heading">
+                echo '<div class="heading hidden">
                         <h1>Benvenuto ' . $_SESSION["user_name"] . '</h1>
-                        <p>Scopri la nostra collezione di gioielli in oro e pietre preziose</p>
                         <a href="catalogo.php" class="shop-button">Scopri la collezione</a>
                     </div>';
             } else {
-                echo '<div class="heading">
+                echo '<div class="heading hidden">
                         <h1>Benvenuti in Aurumè</h1>
-                        <p>Scopri la nostra collezione di gioielli in oro e pietre preziose</p>
                         <a href="catalogo.php" class="shop-button">Scopri la collezione</a>
                     </div>';
             }
         ?>
 
-        <div class="highlights-container">
-            <div class="highlight">
+        <div class="highlights-container hidden">
+            <div class="highlight right hidden">
                 <img src="resources/img/highligth1.jpg" alt="Highlight 1" class="highlight-image1">
                 <div class="highlight-text">
                     <h2 class="highlight-title">Lui o Lei</h2>
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="highlight reverse">
+            <div class="highlight left hidden">
                 <img src="resources/img/highligth2.jpg" alt="Highlight 2" class="highlight-image2">
                 <div class="highlight-text">
                     <h2 class="highlight-title">Eleganza senza tempo</h2>
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Prima sezione immagine statica con link all'interno -->
-        <div class="section-image">
+        <div class="section-image hidden">
             <a href="catalogo.php">
                 <img src="resources/img/gold_jewels.jpg" alt="Gioielli in oro">
                 <div class="overlay-text-one">
@@ -62,8 +62,19 @@
             </a>
         </div>
 
+        <!-- Prima sezione immagine statica con link all'interno -->
+        <div class="section-image hidden">
+            <a href="catalogo.php">
+                <img src="resources/img/watch.jpeg" alt="Orologi">
+                <div class="overlay-text-one">
+                    <h2>Il tempo è prezioso</h2>
+                    <p>Scopri il tuo nuovo orologio perfetto</p>
+                </div>
+            </a>
+        </div>
+
         <!-- Contenitore per lo scroll orizzontale delle immagini -->
-        <div class="image-scroll-wrapper">
+        <div class="image-scroll-wrapper hidden">
             <div class="text-gallery-container">
                 <p class="text-gallery">La nostra galleria</p>
                 <button class="scroll-button left">&lt;</button>
@@ -84,7 +95,7 @@
         </div>
 
         <!-- Seconda sezione immagine statica con link all'interno -->
-        <div class="section-image">
+        <div class="section-image hidden">
             <a href="la_nostra_storia.php">
                 <img src="resources/img/gruppo.jpg" alt="La nostra storia">
                 <div class="overlay-text-two">
@@ -95,7 +106,7 @@
 
         <?php 
             if(!isset($_SESSION["user_name"])) 
-                echo '<div class="authentication-container">
+                echo '<div class="authentication-container hidden">
                         <h2>Entra nell\'universo Aurumé</h2>
                         <div class="authentication-content">
                             <p>Scopri le sue meravigliose icone e le esperienze uniche</p>
@@ -110,6 +121,9 @@
     <div class="email-button-container">
         <a href="mailto:aurume@gmail.com" class="email-button">Contattaci</a>
     </div>
+
+    <!-- JavaScript per l'effetto di scorrimento dinamico -->
+    <script src="resources/js/index.js"></script>
 
     <!-- JavaScript per lo scroll orizzontale -->
     <script src="resources/js/scroll.js"></script>
