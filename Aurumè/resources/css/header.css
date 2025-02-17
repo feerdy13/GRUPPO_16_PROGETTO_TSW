@@ -73,20 +73,28 @@
     .sidenav a {font-size: 18px;}
   }
 
-header {
-    background-color: var(--first-color);
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 15px;
-    border-bottom: 3px solid var(--second-color);
-    position: sticky; /* Fissa l'header in alto */
-    top: 0; /* Posiziona l'header in cima alla pagina */
-    width: 100%; /* Assicura che l'header occupi l'intera larghezza della pagina */
-    z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
+    border-bottom: transparent;
+    transition: background-color 0.5s ease;
+    z-index: 10;
+    opacity: 1;
+  }
+  
+  /* Quando l'utente è in cima alla pagina */
+  header.color {
+    background-color: var(--first-color);
+    border-bottom: var(--second-color) 3px solid;
+  }
 
-}
 /*BARRA DI NAVIGAZIONE CHE SCOMPARE*/
 #navbar {
     transition: top 0.5s; /* Effetto di transizione quando scorre verso il basso (e verso l'alto) */
@@ -129,7 +137,7 @@ header i:hover, a:hover {
 
 .sub-menu-wrap {
     position: absolute;
-    right: 5.5%;
+    right: 4%;
     width: 275px;
     max-height: 0px;
     overflow: hidden;

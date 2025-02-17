@@ -3,3 +3,57 @@ let subMenu = document.getElementById("subMenu");
 function toggleMenu() {
     subMenu.classList.toggle("open-menu");
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("header");
+    let prevScrollpos = window.pageYOffset;
+    let hoverTimeout, leaveTimeout;
+    let isHovered = false;
+    let firstScroll = true; // Variabile per gestire il primo scroll
+
+    // Effetto hover con delay
+    header.addEventListener("mouseenter", function () {
+        clearTimeout(leaveTimeout);
+        hoverTimeout = setTimeout(() => {
+            header.classList.add("color");
+            isHovered = true;
+        }, 500); // Ritardo di 500ms prima di colorarlo
+    });
+
+    header.addEventListener("mouseleave", function () {
+        clearTimeout(hoverTimeout);
+        leaveTimeout = setTimeout(() => {
+            header.classList.remove("color");
+            isHovered = false;
+        }, 500); // Ritardo di 500ms prima di tornare trasparente
+    });
+
+    // Controllo dello scroll con effetto fluido anche in uscita
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+
+        if (prevScrollpos > currentScrollPos) {
+            // Scrolling verso l'alto → Mostra header
+            header.style.top = "0";
+            if (currentScrollPos > 0) {
+                header.classList.add("color");
+            } else {
+                header.classList.remove("color");
+            }
+        } else {
+            // Scrolling verso il basso → Nasconde header
+            header.style.top = "-90px";
+        }
+
+        // PRIMO SCROLL IN GIÙ: Non colorare l'header se è la prima volta che si scorre
+        if (firstScroll && currentScrollPos > 0) {
+            firstScroll = false;
+        } else if (currentScrollPos === 0) {
+            // Se siamo tornati all'inizio, l'header deve tornare trasparente
+            header.classList.remove("color");
+            firstScroll = true; // Reset per il prossimo scroll
+        }
+
+        prevScrollpos = currentScrollPos;
+    };
+});

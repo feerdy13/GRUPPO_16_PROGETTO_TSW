@@ -35,6 +35,7 @@
     <body>
     <header id="navbar">
         
+        <script src="resources/js/header.js"></script>
 
         <!--<div class="container" onclick="myFunction(this)">
                 <div class="bar1"></div>
@@ -140,17 +141,4 @@
             document.querySelector("header").style.backgroundColor = "var(--first-color)";
             document.querySelector("footer").style.backgroundColor = "var(--third-color)";
         }
-    </script>
-
-    <script>
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-    } else {
-        document.getElementById("navbar").style.top = "-90px";
-    }
-    prevScrollpos = currentScrollPos;
-    }
     </script>
