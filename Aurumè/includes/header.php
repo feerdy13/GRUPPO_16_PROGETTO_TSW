@@ -103,7 +103,12 @@
             <!-- Icona della borsa per il carrello -->
             <a href="carrello.php"><i class="fi fi-rs-shopping-bag"></i></a>
         </div>
+        <!-- 🔥 Aggiunto: Overlay per l'effetto blur -->
+        <div id="overlay" class="overlay" onclick="closeNav()"></div>
     </header>
+
+    
+
     <script>
     function myFunction(x) {
     x.classList.toggle("change");
@@ -114,33 +119,33 @@
 
 
     <script>
-        /* Imposta la larghezza della navigazione laterale al 20% della larghezza della pagina */
+        document.querySelectorAll("body > *:not(header):not(#overlay)")
+
         function openNav() {
-            // Di quanto deve uscire la sidebar
+            // Imposta la larghezza della sidebar
             document.getElementById("mySidenav").style.width = "20%";
+            // Mostra l'overlay (se presente)
+            document.getElementById("overlay").style.display = "block";
 
-            // Cambia il colore di sfondo del body
-            document.body.style.backgroundColor = "rgba(0,0,0,0.5)";
-            //document.body.style.color = "black";
-
-            // Cambia il colore di sfondo dell'header
-            document.querySelector("header").style.backgroundColor = "rgba(0,0,0,0.5)";
-            //document.querySelector("header").style.color = "black";
-
-            // Cambia il colore di sfondo del footer
-            document.querySelector("footer").style.backgroundColor = "rgba(0,0,0,0.5)";
-            //document.querySelector("footer").style.color = "black";
-
+            // 🔥 MODIFICATO: Applica il blur a tutti i figli di <body> tranne l'header e l'overlay
+            document.querySelectorAll("body > *:not(header):not(#overlay)").forEach(function(el) {
+                el.classList.add("blur-effect");
+            });
         }
 
-        /* Imposta la larghezza della navigazione laterale a 0 */
         function closeNav() {
+            // Ripristina la larghezza della sidebar
             document.getElementById("mySidenav").style.width = "0";
-            document.body.style.backgroundColor = "whitesmoke";
-            document.querySelector("header").style.backgroundColor = "var(--first-color)";
-            document.querySelector("footer").style.backgroundColor = "var(--third-color)";
+            // Nasconde l'overlay
+            document.getElementById("overlay").style.display = "none";
+
+            // 🔥 MODIFICATO: Rimuove il blur da tutti i figli di <body> tranne l'header e l'overlay
+            document.querySelectorAll("body > *:not(header):not(#overlay)").forEach(function(el) {
+                el.classList.remove("blur-effect");
+            });
         }
     </script>
+
 
     <script>
     var prevScrollpos = window.pageYOffset;
