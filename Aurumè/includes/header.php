@@ -32,6 +32,14 @@
         <script src="https://js.stripe.com/v3/"></script>
         
     </head>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href='index.php'>Home</a>
+        <a href='catalogo.php'>Catalogo</a>
+        <a href='faq.php'>FAQ</a>
+    </div>
+
     <body>
     <header id="navbar">
         
@@ -41,13 +49,6 @@
                 <div class="bar2"></div>
                 <div class="bar3"></div>
                 </div>-->
-
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href='index.php'>Home</a>
-            <a href='catalogo.php'>Catalogo</a>
-            <a href='faq.php'>FAQ</a>
-        </div>
 
         
 
@@ -119,7 +120,7 @@
 
 
     <script>
-        document.querySelectorAll("body > *:not(header):not(#overlay)")
+        document.querySelectorAll("body > *:not(#mySidenav)")
 
         function openNav() {
             // Imposta la larghezza della sidebar
@@ -127,8 +128,8 @@
             // Mostra l'overlay (se presente)
             document.getElementById("overlay").style.display = "block";
 
-            // 🔥 MODIFICATO: Applica il blur a tutti i figli di <body> tranne l'header e l'overlay
-            document.querySelectorAll("body > *:not(header):not(#overlay)").forEach(function(el) {
+            // 🔥 MODIFICATO: Applica il blur a tutti i figli di <body> tranne mySidenav e l'overlay
+            document.querySelectorAll("body > *:not(#mySidenav)").forEach(function(el) {
                 el.classList.add("blur-effect");
             });
         }
@@ -140,7 +141,7 @@
             document.getElementById("overlay").style.display = "none";
 
             // 🔥 MODIFICATO: Rimuove il blur da tutti i figli di <body> tranne l'header e l'overlay
-            document.querySelectorAll("body > *:not(header):not(#overlay)").forEach(function(el) {
+            document.querySelectorAll("body > *:not(#mySidenav)").forEach(function(el) {
                 el.classList.remove("blur-effect");
             });
         }

@@ -211,9 +211,7 @@ header i:hover, a:hover {
     }
 }
 
-/* ======================== */
 /* Overlay per effetto blur */
-/* ======================== */
 .overlay {
   position: fixed;
   top: 0;
@@ -225,11 +223,9 @@ header i:hover, a:hover {
   display: none; /* Inizialmente nascosto */
 }
 
-/* ======================== */
 /* Effetto Blur sui contenuti */
-/* ======================== */
 .blur-effect {
-  filter: blur(10px);
+  filter: blur(5px);
 }
 
 
