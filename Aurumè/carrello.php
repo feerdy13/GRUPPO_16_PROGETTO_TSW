@@ -94,7 +94,11 @@
                                 <span>Incluse tasse e spese di spedizione</span>
                             </div>
 
-                            <button class="complete-purchase">COMPLETA L'ACQUISTO</button>
+                            <form method="post" id="payment-form">
+                                <div id="card-element"><!-- Il form Stripe Elements verrà inserito qui --></div>
+                                <button id="submit-button">COMPLETA L'ACQUISTO</button>
+                                <p id="card-error" role="alert"></p>
+                            </form>
 
                             <div class="summary-row">
                                 <ul>
@@ -136,6 +140,8 @@
 
     <!-- Script per aggiornare quantità prodotto in AJAX -->
     <script src="resources/js/carrello-ajax.js"></script>
+    <!-- Script per il pagamento con stripe -->
+    <script src="resources/js/stripe.js"></script>
 
     <!-- Chiudo la connessione -->
     <?php pg_close($conn); ?>

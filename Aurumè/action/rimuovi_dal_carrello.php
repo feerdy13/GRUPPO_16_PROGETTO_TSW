@@ -17,3 +17,4 @@
 
     header('Location: ../carrello.php');
     exit();
+?>

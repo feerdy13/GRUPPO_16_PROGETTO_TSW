@@ -177,7 +177,7 @@
 
 /* Purchase Completion Button
  * Full-width button with interactive hover state */
-.complete-purchase {
+#submit-button {
     width: 100%;
     background-color: var(--first-color);
     color: white;
@@ -192,7 +192,7 @@
 
 /* Button Hover Effect
  * Provides visual feedback on user interaction */
-.complete-purchase:hover {
+#submit-button:hover {
     background-color: var(--second-color);
 }
 
