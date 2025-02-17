@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Gestione errore lato server durante la creazione del PaymentIntent
             if (response.error) {
-                console.error('Error creating PaymentIntent:', response.error);
                 cardErrors.textContent = 'Errore durante la creazione del pagamento.';
                 // Riabilito il bottone di invio per permettere una nuova richiesta
                 document.getElementById('submit-button').disabled = false;
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
 
             const clientSecret = response.clientSecret;
-            console.log('Client Secret:', clientSecret);
 
             // Step 2: Conferma del pagamento lato client
             const await_stripe = await stripe.confirmCardPayment(clientSecret, {
@@ -53,7 +51,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             if (error) {
                 // Gestione degli errori ricevuti durante la conferma del pagamento
-                console.error('Error confirming payment:', error);
                 cardErrors.textContent = 'Errore durante la conferma del pagamento.';
             } else if (paymentIntent && paymentIntent.status === 'succeeded') {
                 // Pagamento andato a buon fine
@@ -61,7 +58,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 window.location.href = 'action/registra_ordine.php';
             } else {
                 // Errore sconosciuto
-                console.error('Unexpected error during payment confirmation.');
                 cardErrors.textContent = 'Errore sconosciuto, riprova.';
                 document.getElementById('submit-button').disabled = false;
             }
@@ -78,14 +74,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                 if (xhttp.status === 200) {
                     try {
                         const response = xhttp.response;
-                        console.log(response);
                         callback(response);
                     } catch (e) {
-                        console.error('Error parsing JSON response:', e);
                         callback({ error: 'Invalid server response' });
                     }
                 } else {
-                    console.error('Error with AJAX request:', xhttp.statusText);
                     callback({ error: xhttp.statusText });
                 }
             }

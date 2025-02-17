@@ -39,7 +39,7 @@
             'amount' => $totale,
             'currency' => 'eur',
             'payment_method_types' => ['card'],
-            'description' => 'Aurumè: Pagamento ordine #daImplementare'
+            'description' => 'Aurumè: Pagamento ordine'
         ]);
     
         // Restituisci la client_secret in JSON
