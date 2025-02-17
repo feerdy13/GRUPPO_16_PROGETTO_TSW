@@ -1,3 +1,4 @@
+/* Stile generale per il corpo della pagina */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -5,13 +6,15 @@ body {
     padding: 0;
 }
 
+/* Stile per il titolo principale */
 h2 {
     text-align: center;
     margin-top: 20px;
 }
 
+/* Stile per i form */
 form {
-    max-width: 400px;
+    max-width: 1000px; /* Aumenta la larghezza massima del form */
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -19,14 +22,17 @@ form {
     border-radius: 8px;
 }
 
+/* Stile per le etichette dei form */
 label {
     display: block;
     margin-bottom: 8px;
 }
 
+/* Stile per i campi di input */
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="file"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -34,48 +40,100 @@ input[type="password"] {
     border-radius: 4px;
 }
 
+/* Stile per i pulsanti */
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #005f06;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
+/* Stile per i pulsanti al passaggio del mouse */
 button:hover {
-    background-color: #0056b3;
+    background-color: #005f06;
 }
 
+/* Stile per le sezioni amministrative */
 .admin-section {
-    max-width: 800px;
+    max-width: 1000px; /* Aumenta la larghezza massima della sezione amministrativa */
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
+    overflow: hidden; /* Assicura che il contenuto non esca fuori dal rettangolo */
 }
 
+/* Stile per i titoli delle sezioni amministrative */
 .admin-section h3 {
     margin-top: 0;
 }
 
+/* Stile per le tabelle */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    table-layout: auto; /* Permette alle colonne di adattarsi al contenuto */
 }
 
+/* Stile per le celle delle tabelle */
 table, th, td {
     border: 1px solid #ccc;
 }
 
+/* Stile per le celle delle tabelle */
 th, td {
     padding: 10px;
     text-align: left;
+    vertical-align: middle; /* Allinea verticalmente al centro */
+    word-wrap: break-word; /* Assicura che il testo vada a capo e non esca fuori dalla cella */
 }
 
+/* Stile per le intestazioni delle tabelle */
 th {
     background-color: #f4f4f4;
+}
+
+/* Stile per il pulsante di logout */
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Stile per il pulsante di logout al passaggio del mouse */
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* Stile per i messaggi */
+.message {
+    max-width: 1000px; /* Aumenta la larghezza massima dei messaggi */
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Stile per le celle delle tabelle con input file */
+td input[type="file"] {
+    width: auto; /* Imposta la larghezza automatica per evitare sovrapposizioni */
+}
+
+/* Stile per le celle delle tabelle con input text */
+td input[type="text"] {
+    width: 90%; /* Riduce la larghezza per evitare sovrapposizioni */
+    box-sizing: border-box; /* Include il padding e il bordo nella larghezza totale */
 }
