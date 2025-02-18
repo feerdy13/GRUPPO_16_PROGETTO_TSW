@@ -134,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
             $price = $_POST['price'];
             $description = $_POST['description'];
             $category = $_POST['category'];
+            // Directory di destinazione per il caricamento del file
             $target_dir = '../resources/img/catalogue/';
 
             // Verifico se è stato caricato un nuovo file
@@ -166,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
             $message = $result ? "Prodotto aggiornato con successo." : "Errore durante l'aggiornamento del prodotto: " . pg_last_error($conn);
             break;
 
-        // Operazione: Eliminazione Prodotti
+        /* Operazione: Eliminazione Prodotti */
         case 'delete_products':
             if (!empty($_POST['ids'])) {
                 // Recupero gli ID dei prodotti inviati tramite il form
@@ -186,31 +187,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
             }
             break;
 
-        // Operazione: Aggiunta Prodotto
+        /* Operazione: Aggiunta Prodotto */
         case 'add_product':
+            // Recupero i dati del prodotto dal form
+            $price = $_POST['price'];
+            $description = $_POST['description'];
+            $category = $_POST['category'];
+            // Directory di destinazione per il caricamento deli'immagine
             $target_dir = "../resources/img/catalogue/";
+
             $uploadResult = handleFileUpload($target_dir);
+
+            // Controllo se ci sono errori nel caricamento dell'immagine
             if (isset($uploadResult['error'])) {
                 $message = $uploadResult['error'];
                 break;
             }
+
+            // Recupero il nome del file caricato
             $filename = $uploadResult['filename'];
             if ($filename === null) {
                 $message = "Nessun file selezionato.";
                 break;
             }
+
+            // Verifico se tutti i campi richiesti sono stati compilati
             if (empty($_POST['price']) || empty($_POST['description']) || empty($_POST['category'])) {
                 $message = "Tutti i campi devono essere compilati.";
                 break;
             }
-            $price = $_POST['price'];
-            $description = $_POST['description'];
-            $category = $_POST['category'];
-            $query = "INSERT INTO prodotti (filename, prezzo, descrizione, categoria) VALUES ($1, $2, $3, $4)";
+
+            // Inserisco il nuovo prodotto nel database
+            $query = "INSERT INTO prodotti (filename, prezzo, descrizione, categoria) 
+                        VALUES ($1, $2, $3, $4)";
             $result = pg_query_params($conn, $query, array($filename, $price, $description, $category));
             $message = $result ? "Prodotto aggiunto con successo." : "Errore durante l'aggiunta del prodotto: " . pg_last_error($conn);
             break;
-
+            
         default:
             $message = "Operazione non valida.";
     }
@@ -248,10 +261,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
         <h2>Area Amministratore</h2>
         <!-- Bottone Logout -->
         <p><a href="area_admin.php?logout=1" class="logout-button">Logout</a></p>
-        <?php if (isset($message)) {
-            echo "<p>$message</p>";
-            $message = '';
-        } 
+        <?php 
+            if (isset($message)) {
+                echo "<p>$message</p>";
+                $message = '';
+            } 
         ?>
         
 
