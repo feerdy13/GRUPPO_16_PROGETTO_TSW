@@ -89,6 +89,7 @@
 }
 
 .catalogo-item img {
+    display: block;
     width: 80%;
     height: auto;
     margin: 0 auto;
