@@ -113,12 +113,12 @@
             <!-- Icona della borsa per il carrello -->
             <a href="carrello.php"><i class="fi fi-rs-shopping-bag"></i></a>
         </div>
-        <!-- 🔥 Aggiunto: Overlay per l'effetto blur
-        <div id="overlay" class="overlay" onclick="closeNav()"></div> -->
+        <!-- Aggiunto: Overlay per l'effetto blur-->
+        <div id="overlay" class="overlay" onclick="closeNav()"></div> 
     </header>
 
     
-    <!-- 🔥 Aggiunto: Overlay per l'effetto blur -->
+    <!-- Aggiunto: Overlay per l'effetto blur -->
     <div id="overlay" class="overlay" onclick="closeNav()"></div>
 
     <!-- <script>
