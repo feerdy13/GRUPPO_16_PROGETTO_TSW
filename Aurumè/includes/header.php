@@ -33,12 +33,19 @@
         
     </head>
 
+
+
+
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href='index.php'>Home</a>
-        <a href='catalogo.php'>Catalogo</a>
-        <a href='faq.php'>FAQ</a>
-    </div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href='index.php'>Home</a>
+            <a href='catalogo.php'>Catalogo</a>
+            <a href='faq.php'>FAQ</a>
+        </div>
+
+
+
+
 
     <body>
     <header id="navbar">
@@ -52,10 +59,12 @@
 
         
 
+        
+
         <!-- Aggiungi tutto il contenuto della pagina all'interno di questo div se vuoi che la side nav spinga il contenuto della pagina a destra (non utilizzato se vuoi solo che la sidenav si sovrapponga alla pagina -->
         <div id="main">
             <!-- Usa qualsiasi elemento per aprire la sidenav -->
-            <span onclick="openNav()">
+            <span onclick="openNav(event)">
                 <div class="left-icons">
                     <!--Icona del menu--> 
                     <i class="fi fi-rs-bars-sort">  Menu</i>
@@ -104,47 +113,72 @@
             <!-- Icona della borsa per il carrello -->
             <a href="carrello.php"><i class="fi fi-rs-shopping-bag"></i></a>
         </div>
-        <!-- 🔥 Aggiunto: Overlay per l'effetto blur -->
-        <div id="overlay" class="overlay" onclick="closeNav()"></div>
+        <!-- 🔥 Aggiunto: Overlay per l'effetto blur
+        <div id="overlay" class="overlay" onclick="closeNav()"></div> -->
     </header>
 
     
+    <!-- 🔥 Aggiunto: Overlay per l'effetto blur -->
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
 
-    <script>
+    <!-- <script>
     function myFunction(x) {
     x.classList.toggle("change");
     }
-    </script>
+    </script> -->
 
 
 
 
     <script>
-        document.querySelectorAll("body > *:not(#mySidenav)")
+      // MODIFICA: Aggiungiamo il listener globale per chiudere la sidebar
+      function openNav(event) {
+        // Blocca la propagazione del click che apre la sidebar
+        if (event) event.stopPropagation();
 
-        function openNav() {
-            // Imposta la larghezza della sidebar
-            document.getElementById("mySidenav").style.width = "20%";
-            // Mostra l'overlay (se presente)
-            document.getElementById("overlay").style.display = "block";
+        //Disattiva lo scroll verticale
+        document.body.style.overflow = 'hidden';
 
-            // 🔥 MODIFICATO: Applica il blur a tutti i figli di <body> tranne mySidenav e l'overlay
-            document.querySelectorAll("body > *:not(#mySidenav)").forEach(function(el) {
-                el.classList.add("blur-effect");
-            });
+        // Imposta la larghezza della sidebar
+        document.getElementById("mySidenav").style.width = "20%";
+        // Mostra l'overlay
+        document.getElementById("overlay").style.display = "block";
+
+        // Applica il blur a tutti i figli di <body> tranne #mySidenav e #overlay
+        document.querySelectorAll("body > *:not(#mySidenav):not(#overlay)").forEach(function(el) {
+          el.classList.add("blur-effect");
+        });
+
+        // MODIFICA: Aggiungiamo un listener globale per chiudere la sidebar al click fuori
+        document.addEventListener("click", outsideClickListener);
+      }
+
+      // MODIFICA: Funzione per chiudere la sidebar se il click avviene fuori da #mySidenav
+      function outsideClickListener(event) {
+        var sidenav = document.getElementById("mySidenav");
+        // Se il click NON è all'interno della sidebar, chiudila
+        if (!sidenav.contains(event.target)) {
+          closeNav();
         }
+      }
 
-        function closeNav() {
-            // Ripristina la larghezza della sidebar
-            document.getElementById("mySidenav").style.width = "0";
-            // Nasconde l'overlay
-            document.getElementById("overlay").style.display = "none";
+      function closeNav() {
+        // Ripristina la larghezza della sidebar
+        document.getElementById("mySidenav").style.width = "0";
+        // Nasconde l'overlay
+        document.getElementById("overlay").style.display = "none";
 
-            // 🔥 MODIFICATO: Rimuove il blur da tutti i figli di <body> tranne l'header e l'overlay
-            document.querySelectorAll("body > *:not(#mySidenav)").forEach(function(el) {
-                el.classList.remove("blur-effect");
-            });
-        }
+        //Riattiva lo scroll verticale
+        document.body.style.overflow = '';
+
+        // Rimuove il blur da tutti i figli di <body> tranne #mySidenav e #overlay
+        document.querySelectorAll("body > *:not(#mySidenav):not(#overlay)").forEach(function(el) {
+          el.classList.remove("blur-effect");
+        });
+
+        // MODIFICA: Rimuove il listener globale
+        document.removeEventListener("click", outsideClickListener);
+      }
     </script>
 
 
