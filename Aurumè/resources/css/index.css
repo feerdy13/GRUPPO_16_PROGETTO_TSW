@@ -1,6 +1,27 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 15px;
+    border-bottom: transparent;
+    transition: background-color 0.5s ease;
+    z-index: 10;
+    opacity: 1;
+}
+  
+/* Quando l'utente è in cima alla pagina */
+header.color {
+    background-color: var(--first-color);
+    border-bottom: var(--second-color) 3px solid;
+}
+
 main {
     margin: 0;
-    overflow-x: hidden; /* Nasconde la scrollbar orizzontale */
 }
 
 .video-container {

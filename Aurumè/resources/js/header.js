@@ -1,15 +1,18 @@
-let subMenu = document.getElementById("subMenu");
-
-function toggleMenu() {
-    subMenu.classList.toggle("open-menu");
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
+    const subMenu = document.getElementById("subMenu");
     let prevScrollpos = window.pageYOffset;
     let hoverTimeout, leaveTimeout;
     let isHovered = false;
     let firstScroll = true; // Variabile per gestire il primo scroll
+
+    // Funzione toggleMenu per lo scorrimento del menu utente loggato
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+
+    // Rendo la funzione toggleMenu accessibile globalmente
+    window.toggleMenu = toggleMenu;
 
     // Effetto hover con delay
     header.addEventListener("mouseenter", function () {
