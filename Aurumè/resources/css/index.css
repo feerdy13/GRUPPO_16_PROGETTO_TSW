@@ -89,31 +89,34 @@ main {
     flex: 1;
 }
 
+.highlight-text {
+    text-align: justify;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .highlight .highlight-title {
     margin: 0 0 10px;
-    font-size: 1.5em;
+    font-size: 26px;
     color: var(--first-color);
 }
 
 .highlight .highlight-p {
     margin: 0;
-    font-size: 1em;
+    font-size: 17px;
     color: #333;
-    text-align: left;
+    text-align: justify;
 }
 
 .highlight {
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    padding: 20px;
     flex-direction: row;
 }
 
 .highlight img {
     width: 50%; /* Le immagini occupano il 50% dello spazio orizzontale */
-    margin-right: 20px;
-    border-radius: 10px;
 }
 
 .highlight.reverse {
@@ -121,7 +124,6 @@ main {
 }
 
 .highlight.reverse img {
-    margin-left: 20px;
     margin-right: 0;
 }
 
@@ -326,6 +328,18 @@ main {
 
     .heading h1 {
         font-size: var(--text-size-large);
+    }
+    
+    .highlight-text {
+        max-width: 250px;
+    }
+
+    .highlight .highlight-title {
+        font-size: 12px;
+    }
+
+    .highlight .highlight-p {
+        font-size: 10px;
     }
 
     .shop-button {

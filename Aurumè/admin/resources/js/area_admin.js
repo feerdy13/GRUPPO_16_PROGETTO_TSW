@@ -38,18 +38,3 @@ function selectAll(source) {
     });
 }
 
-// // Invia il form di eliminazione con gli ID dei prodotti selezionati
-// function submitDeleteForm() {
-//     console.log("submitDeleteForm chiamato");
-//     var selected = [];
-//     var checkboxes = document.querySelectorAll('.delete-checkbox:checked');
-//     checkboxes.forEach(function(checkbox) {
-//         selected.push(checkbox.value);
-//     });
-//     if (selected.length === 0) {
-//         alert("Nessun prodotto selezionato per l'eliminazione.");
-//         return;
-//     }
-//     document.getElementById('delete-product-ids').value = JSON.stringify(selected);
-//     document.getElementById('delete-form').submit();
-// }
