@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!emailRegex.test(email)) return false;
 
         const domain = email.split('@')[1];
-        const allowedDomains = ["gmail.com", "yahoo.com", "outlook.com", "libero.it", "hotmail.com"];
+        const allowedDomains = ["gmail.com", "yahoo.com", "outlook.com", "libero.it", "hotmail.com", "live.it", "studenti.unisa.it"];
         if (allowedDomains.length > 0 && !allowedDomains.includes(domain)) {
             return false;
         }

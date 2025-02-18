@@ -84,9 +84,7 @@
     align-items: center;
     padding: 30px 15px;
     border-bottom: var(--second-color) 3px solid;
-    transition: background-color 0.5s ease;
     z-index: 10;
-    opacity: 1;
   }
 
 /*BARRA DI NAVIGAZIONE CHE SCOMPARE*/

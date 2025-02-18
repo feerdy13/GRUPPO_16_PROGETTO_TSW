@@ -1,6 +1,5 @@
 <!-- Header -->
 <?php 
-    session_start();
     require 'includes/database.php';
     require 'includes/controllo.php';
 
@@ -125,10 +124,18 @@
     include 'includes/header.php'; 
 ?>
 
+    <!-- alert -->
+    <div class="alert-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            <?php if (!empty($alert)) { ?>
+                showAlert('<?php echo $alert; ?>');
+            <?php } ?>
+        });
+    </script>
+
 <main>
     <h2>Il mio account Aurumè</h2>
-
-    <button id="toggle-account-btn">Il mio account</button>
 
     <div class="container-element">
         <div class="info-personali">
@@ -179,3 +186,6 @@
 
 <!-- Script -->
 <script src="resources/js/area_utente.js"></script>
+
+<!-- Script per mostrare alert -->
+<script src="resources/js/showAlert.js"></script>

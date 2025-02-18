@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Rendo la funzione toggleMenu accessibile globalmente
     window.toggleMenu = toggleMenu;
-
+    
     // Effetto hover con delay
     header.addEventListener("mouseenter", function () {
         clearTimeout(leaveTimeout);
