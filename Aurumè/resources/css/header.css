@@ -31,7 +31,7 @@
         height: 100%; /* 100% Altezza completa */
         width: 0; /* 0 larghezza - cambia questo con JavaScript */
         position: fixed; /* Rimani in posizione */
-        z-index: 1; /* Rimani in cima */
+        z-index: 10000; /* Rimani in cima */
         top: 0; /* Rimani in cima */
         left: 0;
         background-color: #111; /* Nero */
@@ -209,4 +209,21 @@ header i:hover, a:hover {
     header .left-icons {
         padding-left: 20px;
     }
+}
+
+/* Overlay: copre l'intera viewport */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Deve essere inferiore a quello della sidebar (es. 8000) */
+  display: none; /* Nascosto di default */
+}
+
+/* Classe per applicare l'effetto blur */
+.blur-effect {
+  filter: blur(10px);
 }
