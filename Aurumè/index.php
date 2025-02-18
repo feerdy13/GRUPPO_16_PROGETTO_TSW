@@ -30,7 +30,7 @@
         ?>
 
         <div class="highlights-container hidden">
-            <div class="highlight right hidden">
+            <div class="highlight reverse hidden">
                 <img src="resources/img/highligth1.jpg" alt="Highlight 1" class="highlight-image1">
                 <div class="highlight-text">
                     <h2 class="highlight-title">Lui o Lei</h2>
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="highlight left hidden">
+            <div class="highlight hidden">
                 <img src="resources/img/highligth2.jpg" alt="Highlight 2" class="highlight-image2">
                 <div class="highlight-text">
                     <h2 class="highlight-title">Eleganza senza tempo</h2>

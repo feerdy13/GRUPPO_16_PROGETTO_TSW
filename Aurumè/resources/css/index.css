@@ -85,34 +85,44 @@ main {
     margin-top: 60px;
 }
 
-.highlight-text {
-    text-align: justify;
-    max-width: 550px;
-    margin: 0 auto;
+.highlight .highlight-text {
+    flex: 1;
 }
 
-.highlight-text .highlight-title {
+.highlight .highlight-title {
+    margin: 0 0 10px;
     font-size: 1.5em;
     color: var(--first-color);
 }
 
-.highlight-text .highlight-p {
+.highlight .highlight-p {
+    margin: 0;
     font-size: 1em;
     color: #333;
-}
-
-.highlight.right {
-    flex-direction: row-reverse;
+    text-align: left;
 }
 
 .highlight {
     display: flex;
     align-items: center;
+    margin: 20px 0;
+    padding: 20px;
     flex-direction: row;
 }
 
 .highlight img {
     width: 50%; /* Le immagini occupano il 50% dello spazio orizzontale */
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.highlight.reverse {
+    flex-direction: row-reverse;
+}
+
+.highlight.reverse img {
+    margin-left: 20px;
+    margin-right: 0;
 }
 
 /* Sezione gioielli in oro */
@@ -124,9 +134,13 @@ main {
     align-items: center; /* Centra l'immagine verticalmente */
     position: relative;
     overflow: hidden; /* Nasconde eventuali parti dell'immagine che escono dal contenitore */
+    object-fit: cover; /* Mantiene le proporzioni del video e riempie l'area disponibile */
 }
 
 .section-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%; /* Assicura che l'immagine occupi l'intera larghezza del contenitore */
     height: 100%; /* Assicura che l'immagine occupi l'intera altezza del contenitore */
     object-fit: cover; /* Mantiene le proporzioni dell'immagine e riempie l'area disponibile */
@@ -138,6 +152,7 @@ main {
     top: 75%; /* Posiziona il testo a metà dell'immagine */
     color: white; 
     text-align: left;  
+    left: 0;
     margin: 50px;
 }
 
@@ -161,6 +176,7 @@ main {
     top: 85%; /* Posiziona il testo a metà dell'immagine */
     color: white; 
     text-align: left;  
+    left: 0;
     margin: 50px;
 }
 
@@ -271,15 +287,13 @@ main {
     border-radius: 5px; /* Arrotonda gli angoli del bottone */
     text-decoration: none; /* Rimuove la sottolineatura dal link */
     cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    white-space: nowrap; /* Impedisce il wrapping del testo */
     transition: background-color 0.3s ease; /* Aggiunge una transizione per il cambio di colore di sfondo */
 }
 
 .authentication-container .button:hover {
     background-color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
 }
-
-
-
 
 
 /* Stile per il pulsante email */
@@ -301,4 +315,84 @@ main {
 }
 .email-button:hover {
     color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+
+/* Rende la pagina responsive per smartphone */ 
+@media (max-width: 600px) {
+    header {
+        padding: 15px 5px;
+    }
+
+    .heading h1 {
+        font-size: var(--text-size-large);
+    }
+
+    .shop-button {
+        padding: 6px 12px;
+        font-size: var(--text-size-xsmall);
+    }
+
+    .section-image {
+        height: 40vh; /* Imposta l'altezza al 40% dell'altezza della finestra */
+    }
+
+    .overlay-text-one {
+        top: 68%;
+        margin: 10px;
+    }
+
+    .overlay-text-two {
+        margin: 10px;
+    }
+
+    .section-image h2 {
+        font-size: var(--text-size-large); 
+    }
+    
+    .section-image p {
+        font-size: var(--text-size-medium);
+    }
+
+    .image-scroll img {
+        width: 150px;
+        margin: 0 1vw;
+    }
+
+    .text-gallery {
+        font-size: var(--text-size-xlarge);
+    }
+
+    .scroll-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .scroll-button.left {
+        right: 60px;
+    }
+
+    .authentication-container {
+        margin: 30px auto;
+        max-width: 95%;
+    }
+
+    .authentication-container h2 {
+        font-size: var(--text-size-large);
+    }
+
+    .authentication-container p {
+        font-size: var(--text-size-medium);
+    }
+
+    .authentication-container .button {
+        padding: 8px 30px;
+        font-size: var(--text-size-small);
+        white-space: nowrap; /* Impedisce il wrapping del testo */
+    }
+
+    .email-button {
+        padding: 6px 12px;
+        font-size: var(--text-size-small);
+    }
 }
