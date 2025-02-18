@@ -31,23 +31,25 @@ function saveEdit(id) {
 // Seleziona o deseleziona tutte le checkbox per l'eliminazione
 function selectAll(source) {
     var checkboxes = document.querySelectorAll('.delete-checkbox');
+    // Itero su tutte le checkbox
     checkboxes.forEach(function(checkbox) {
+        // Imposto lo stato 'checked' della checkbox corrente uguale a quello della checkbox 'source'
         checkbox.checked = source.checked;
     });
 }
 
-// Invia il form di eliminazione con gli ID dei prodotti selezionati
-function submitDeleteForm() {
-    console.log("submitDeleteForm chiamato");
-    var selected = [];
-    var checkboxes = document.querySelectorAll('.delete-checkbox:checked');
-    checkboxes.forEach(function(checkbox) {
-        selected.push(checkbox.value);
-    });
-    if (selected.length === 0) {
-        alert("Nessun prodotto selezionato per l'eliminazione.");
-        return;
-    }
-    document.getElementById('delete-product-ids').value = JSON.stringify(selected);
-    document.getElementById('delete-form').submit();
-}
+// // Invia il form di eliminazione con gli ID dei prodotti selezionati
+// function submitDeleteForm() {
+//     console.log("submitDeleteForm chiamato");
+//     var selected = [];
+//     var checkboxes = document.querySelectorAll('.delete-checkbox:checked');
+//     checkboxes.forEach(function(checkbox) {
+//         selected.push(checkbox.value);
+//     });
+//     if (selected.length === 0) {
+//         alert("Nessun prodotto selezionato per l'eliminazione.");
+//         return;
+//     }
+//     document.getElementById('delete-product-ids').value = JSON.stringify(selected);
+//     document.getElementById('delete-form').submit();
+// }
