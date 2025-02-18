@@ -137,3 +137,7 @@ td input[type="text"] {
     width: 90%; /* Riduce la larghezza per evitare sovrapposizioni */
     box-sizing: border-box; /* Include il padding e il bordo nella larghezza totale */
 }
+
+input [type="file"] [disabled] {
+    pointer-events: none;
+}
