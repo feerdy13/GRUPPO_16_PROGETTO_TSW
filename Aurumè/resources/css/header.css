@@ -111,12 +111,6 @@
     transition: margin-left .5s;
   }
 
-/* Su schermi più piccoli, dove l'altezza è inferiore a 600px, cambia lo stile della sidenav (meno padding e una dimensione del font più piccola) */
-  @media screen and (max-height: 600px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-
   header {
     position: sticky;
     top: 0;
@@ -145,7 +139,7 @@
 
 .header-title a {
     font-family: var(--font-title);
-    font-size: var(--text-size-xlarge);
+    font-size: var(--text-size-xxlarge);
     color: white;
 }
 
@@ -194,6 +188,11 @@ header i:hover, a:hover {
     display: flex;
     align-items: center;
     color: var(--first-color);
+}
+
+.user-icon {
+  background-color: transparent;
+  border: none;
 }
 
 .sub-menu hr {
@@ -253,6 +252,19 @@ header i:hover, a:hover {
     header .left-icons {
         padding-left: 20px;
     }
+
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    .sidenav a {
+      font-size: 18px;
+    }
+
+    .header-title a {
+      font-size: var(--text-size-large);
+    }
+    
 }
 
 /* Overlay: copre l'intera viewport */

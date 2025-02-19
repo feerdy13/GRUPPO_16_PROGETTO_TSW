@@ -72,12 +72,12 @@
       <div class="right-icons">
         <i class="fi fi-rs-search"></i>
         <?php if (isset($_SESSION["user_name"])): ?>
-          <a href="javascript:void(0)" class="user-icon" onclick="toggleMenu()">
-            <i class="fi fi-rs-user"><?php echo htmlspecialchars($_SESSION["user_name"]); ?></i>
-          </a>
+          <button class="user-icon" onclick="toggleMenu()">
+            <i class="fi fi-rs-user"><?php echo $_SESSION["user_name"]; ?></i>
+        </button>
           <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
-              <div class="user-info"><?php echo htmlspecialchars($_SESSION["user_name"]); ?></div>
+              <div class="user-info"><?php echo $_SESSION["user_name"]; ?></div>
               <hr>
               <a href="area_utente.php" class="sub-menu-link">
                 <img src="resources/img/profile.png" alt="Area Utente">
