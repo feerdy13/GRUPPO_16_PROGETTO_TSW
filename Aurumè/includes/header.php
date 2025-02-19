@@ -31,10 +31,22 @@
   </head>
 
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.php">Home</a>
-        <a href="catalogo.php">Catalogo</a>
-        <a href="faq.php">FAQ</a>
+        <span><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></span><span onclick="closeNav()">Chiudi</span>
+        <h2 class="titoli">I nostri prodotti</h2>
+        <a href="catalogo.php" class="collegamenti">Anelli</a>
+        <a href="catalogo.php" class="collegamenti">Collane</a>
+        <a href="catalogo.php" class="collegamenti">Bracciali</a>
+        <a href="catalogo.php" class="collegamenti">Orecchini</a>
+        <a href="catalogo.php" class="collegamenti">Orologi</a>
+        <!-- <a href="index.php" class="collegamenti">Home</a> -->
+        <!-- <a href="catalogo.php" class="collegamenti">Catalogo</a> -->
+
+        <div class="containerSotto">
+            <a href="faq.php" class="collSotto">FAQ</a>
+            <a href="la_nostra_storia.php" class="collSotto">La nostra storia</a>
+            <a href="contatti.php" class="collSotto">Contatti</a>
+            <a href="termini_condizioni.php" class="collSotto">Termini e condizioni</a>
+        </div>
     </div>
 
 
@@ -115,7 +127,8 @@
 
       function closeNav() {
         // Ripristina la larghezza della sidebar
-        document.getElementById("mySidenav").style.width = "0";
+        // document.getElementById("mySidenav").style.width = "0";
+         document.getElementById("mySidenav").style.left = "-21%";
         // Nasconde l'overlay
         document.getElementById("overlay").style.display = "none";
 
