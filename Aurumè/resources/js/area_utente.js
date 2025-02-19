@@ -1,6 +1,7 @@
 // Script per gestire il click del pulsante e mostrare/nascondere le sezioni
-document.addEventListener('DOMContentLoaded', function() {
-
+document.addEventListener('DOMContentLoaded', function () {
+    const infoPersonali = document.querySelector('#info-personali');
+    const credenziali = document.querySelector('#credenziali');
     const inputs = document.querySelectorAll('input');
 
     function validateEmail(email) {
@@ -15,6 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         return true;
+    }
+
+    function validatePassword(password) {
+        return (
+            password.length >= 6 &&
+            /[!@#$%^&*(),.?":{}|<>]/.test(password) &&
+            /[0-9]/.test(password) &&
+            /[a-zA-Z]/.test(password)
+        );
     }
 
     function validateName(name) {
@@ -48,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     message = 'Inserisci un\'email valida e con un dominio corretto.';
                 }
             } 
-            else if (input.name === 'password' || input.name === 'new-password') {
+            else if (input.name === 'new-password' || input.name === 'current-password') {
                 const password = input.value;
                 if (password.length < 6) {
                     isValid = false;
@@ -80,4 +90,42 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    if (infoPersonali) {
+        infoPersonali.addEventListener('submit', function (event) {
+            const name = infoPersonali.querySelector('input[name="name"]').value.trim();
+            const email = infoPersonali.querySelector('input[name="email"]').value.trim();
+
+            if (!validateName(name)) {
+                showAlert('Il nome deve avere almeno 3 caratteri.');
+                event.preventDefault();
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                showAlert('Inserisci un\'email valida e con un dominio corretto.');
+                event.preventDefault();
+                return;
+            }
+        });
+    }
+
+    if (credenziali) {
+        credenziali.addEventListener('submit', function (event) {
+            const password = credenziali.querySelector('input[name="current-password"]').value.trim();
+            const newPassword = credenziali.querySelector('input[name="new-password"]').value.trim();
+
+            if (!validatePassword(password)) {
+                showAlert('La password corrente deve contenere almeno 6 caratteri, un carattere speciale, un numero e una lettera.');
+                event.preventDefault();
+                return;
+            }
+
+            if (!validatePassword(newPassword)) {
+                showAlert('La nuova password deve contenere almeno 6 caratteri, un carattere speciale, un numero e una lettera.');
+                event.preventDefault();
+                return;
+            }
+        });
+    }
 });

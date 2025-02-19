@@ -145,7 +145,7 @@
             <form method="POST" id="register-form">
                 <h2>Registrazione</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label>Nome:</label> <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" required><br>
+                <label>Nome:</label> <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="10" required><br>
                 <label>Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
                 <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
                 <input type="submit" name="register" value="REGISTRATI">

@@ -39,7 +39,7 @@ footer a:hover {
 .footer-title {
     font-family: var(--font-title);
     color: white;
-    font-size: 200px;
+    font-size: 180px;
     text-align: center;
     margin: 5vh 3vw 0 3vh;
 }
@@ -69,4 +69,21 @@ footer img {
 .logo-instagram {
     text-decoration: none;
     font-size: var(--text-size-xlarge);
+}
+
+
+@media (max-width: 768px) {
+
+    .footer {
+        display: flex;
+    }
+
+    .footer-column {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footer-title {
+        font-size: 150px;
+    }
 }
