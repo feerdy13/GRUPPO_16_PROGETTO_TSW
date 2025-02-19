@@ -60,23 +60,14 @@
     transform: scale(1.05);
 }
 
-
+/* Responsive grazie alla proprietà auto-fill */
 .catalogo-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
     margin: 30px;
 }
 
-/*  
-    Limita il numero massimo di colonne a 4: al di sotto di 800px di larghezza dello schermo 
-    il layout sarà comunque responsive e gestito automaticamente 
-*/
-@media (min-width: 800px) {
-    .catalogo-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
 
 .catalogo-item {
     background-color: #fff;
@@ -120,6 +111,7 @@
 /* Stile per la call to action */
 .catalogo-item .add-to-cart {
     position: absolute;
+    white-space: nowrap;
     bottom: 10px;
     right: 10px;
     background-color: var(--first-color);
