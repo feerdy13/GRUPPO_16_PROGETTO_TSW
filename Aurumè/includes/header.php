@@ -31,7 +31,10 @@
   </head>
 
     <div id="mySidenav" class="sidenav">
-        <span><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></span><span onclick="closeNav()">Chiudi</span>
+        <div class="classeChiudi">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <p onclick="closeNav()">Chiudi</p>
+        </div>
         <h2 class="titoli">I nostri prodotti</h2>
         <a href="catalogo.php" class="collegamenti">Anelli</a>
         <a href="catalogo.php" class="collegamenti">Collane</a>
@@ -112,7 +115,8 @@
 
       function openNav() {
         // Imposta la larghezza della sidebar
-        document.getElementById("mySidenav").style.width = "20%";
+        document.getElementById("mySidenav").style.width = "21%";
+        document.getElementById("mySidenav").style.left = "0";
         // Mostra l'overlay
         document.getElementById("overlay").style.display = "block";
 

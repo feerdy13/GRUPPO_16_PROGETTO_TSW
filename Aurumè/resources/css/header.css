@@ -30,7 +30,7 @@
 .sidenav {
         height: 100%; /* 100% Altezza completa */
         width: 0; /* 0 larghezza - cambia questo con JavaScript */
-        position: fixed; /* Rimani in posizione */
+        position: absolute; /* Rimani in posizione */
         z-index: 10000; /* Rimani in cima */
         top: 0; /* Rimani in cima */
         left: -3px;
@@ -42,8 +42,8 @@
     }
 
   .sidenav h2 {
-      color: var(--fifth-color);
-      padding-left: 15px;
+    color: var(--fifth-color);
+    padding-left: 15px;
   }
 
   .sidenav .collegamenti {
@@ -61,15 +61,15 @@
   }
 
 /* Posiziona e stila il pulsante di chiusura (angolo in alto a destra) */
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    font-size: var(--text-size-xlarge);
-    margin-left: 10px;
-    color: var(--fifth-color);
-    display: inline;
-  }
+.sidenav .closebtn {
+  position: static !important; /* Rimuove il posizionamento assoluto */
+  top: 0 !important;
+  left: 5% !important;
+  margin-left: 0 !important;
+  display: inline-block !important;
+  font-size: var(--text-size-xlarge);
+  color: var(--fifth-color);
+}
 
   .sidenav .containerSotto {
     padding-top: 70%;
@@ -79,6 +79,21 @@
     color: var(--fifth-color);
     display: block;
     transition: 0.3s; */
+  }
+
+  .sidenav .classeChiudi {
+    /* position: absolute; */
+    top: 8px;
+    left: 8px;
+    right: 8px; 
+    display: flex;
+    align-items: center; /* Allinea verticalmente al centro */
+    gap: 8px;           /* Spazio orizzontale tra la X e "Chiudi" */
+  }
+
+  .sidenav .classeChiudi p {
+    margin: 0;
+    color: var(--fifth-color); /* Assicura che "Chiudi" abbia lo stesso colore della X */
   }
 
   .sidenav .containerSotto .collSotto {
