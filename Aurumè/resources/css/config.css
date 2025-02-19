@@ -11,6 +11,7 @@
     --second-color: #d4af37;
     --third-color: #000000;
     --fourth-color: #333;
+    --fifth-color: whitesmoke;
 
     /* Font Testo */
     --font-text: 'Inter', sans-serif;
@@ -33,7 +34,7 @@
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: var(--fifth-color);
 }
 
 main {
