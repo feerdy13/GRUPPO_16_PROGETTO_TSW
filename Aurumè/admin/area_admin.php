@@ -234,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Area Amministratore</title>
+    <title>Aurumè | Area Amministratore</title>
     <link rel="stylesheet" href="resources/css/area_admin.css">
 </head>
 <body>
@@ -271,7 +271,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
 
         <!-- Sezione: Gestione Prodotti -->
         <div class="admin-section">
-            <h3>Visualizza e Modifica Prodotti</h3>
+            <h3>VISUALIZZA E MODIFICA PRODOTTI</h3>
 
             <!-- Form separato per l'eliminazione multipla -->
             <form id="delete-form" method="POST" action="area_admin.php">
@@ -300,27 +300,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
                     $result = pg_query($conn, $query);
 
                     if ($result) {
-                        while ($row = pg_fetch_assoc($result)) {
-                            $rowId = $row['id'];
-                            echo "<tr id='row-{$rowId}'>";
-                            echo    "<td><input type='checkbox' class='delete-checkbox' form='delete-form' name='ids[]' value='{$rowId}'></td>";
-                            echo    "<td>{$rowId}</td>";
-                            echo    "<td>";
-                            echo        "<span>" . htmlspecialchars($row['filename']) . "</span> ";
-                            echo        "<input type='file' name='filename' form='update-form-{$rowId}' accept='image/png, image/jpeg' disabled>";
-                            echo    "</td>";
-                            echo    "<td><input type='text' name='price' form='update-form-{$rowId}' value='" . htmlspecialchars($row['prezzo']) . "' disabled></td>";
-                            echo    "<td><input type='text' name='description' form='update-form-{$rowId}' value='" . htmlspecialchars($row['descrizione']) . "' disabled></td>";
-                            echo    "<td><input type='text' name='category' form='update-form-{$rowId}' value='" . htmlspecialchars($row['categoria']) . "' disabled></td>";
-                            echo    "<td>";
-                            echo    "<form id='update-form-{$rowId}' method='POST' action='area_admin.php' enctype='multipart/form-data'>";
-                            echo        "<input type='hidden' name='operation' value='update_product'>";
-                            echo        "<input type='hidden' name='product_id' value='{$rowId}'>";
-                            echo        "<button type='button' onclick='enableEdit(\"{$rowId}\")'>Modifica</button> ";
-                            echo        "<button type='button' id='save-{$rowId}' style='display:none;' onclick='saveEdit(\"{$rowId}\")'>Salva</button>";
-                            echo    "</form>";
-                            echo    "</td>";
-                            echo "</tr>";
+                        if (pg_num_rows($result) > 0) {
+                            while ($row = pg_fetch_assoc($result)) {
+                                $rowId = $row['id'];
+                                echo "<tr id='row-{$rowId}'>";
+                                echo    "<td data-label='Seleziona'><input type='checkbox' class='delete-checkbox' form='delete-form' name='ids[]' value='{$rowId}'></td>";
+                                echo    "<td data-label='ID Prodotto'>{$rowId}</td>";
+                                echo    "<td data-label='Filename'>";
+                                echo        "<span>" . htmlspecialchars($row['filename']) . "</span> ";
+                                echo        "<input type='file' name='filename' form='update-form-{$rowId}' accept='image/png, image/jpeg' disabled>";
+                                echo    "</td>";
+                                echo    "<td data-label='Prezzo'><input type='text' name='price' form='update-form-{$rowId}' value='" . htmlspecialchars($row['prezzo']) . "' disabled></td>";
+                                echo    "<td data-label='Descrizione'><input type='text' name='description' form='update-form-{$rowId}' value='" . htmlspecialchars($row['descrizione']) . "' disabled></td>";
+                                echo    "<td data-label='Categoria'><input type='text' name='category' form='update-form-{$rowId}' value='" . htmlspecialchars($row['categoria']) . "' disabled></td>";
+                                echo    "<td data-label='Azioni'>";
+                                echo    "<form id='update-form-{$rowId}' method='POST' action='area_admin.php' enctype='multipart/form-data'>";
+                                echo        "<input type='hidden' name='operation' value='update_product'>";
+                                echo        "<input type='hidden' name='product_id' value='{$rowId}'>";
+                                echo        "<button type='button' onclick='enableEdit(\"{$rowId}\")'>Modifica</button> ";
+                                echo        "<button type='button' id='save-{$rowId}' style='display:none;' onclick='saveEdit(\"{$rowId}\")'>Salva</button>";
+                                echo    "</form>";
+                                echo    "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='7'>Nessun prodotto trovato.</td></tr>";
                         }
                     } else {
                         echo "<tr><td colspan='7'>Errore durante il recupero dei prodotti.</td></tr>";
@@ -332,7 +336,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
 
         <!-- Sezione: Aggiungi Prodotto -->
         <div class="admin-section">
-            <h3>Aggiungi Prodotto</h3>
+            <h3>AGGIUNGI PRODOTTO</h3>
             <form method="POST" action="area_admin.php" enctype="multipart/form-data">
                 <input type="hidden" name="operation" value="add_product">
                 <label for="filename">Filename:</label>
@@ -349,29 +353,89 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
 
         <!-- Sezione: Visualizza Clienti Registrati -->
         <div class="admin-section">
-            <h3>Visualizza Clienti Registrati</h3>
+            <h3>VISUALIZZA CLIENTI REGISTRATI</h3>
             <?php
-            $query = "SELECT id, name, email FROM utenti";
-            $result = pg_query($conn, $query);
-            if ($result) {
-                if (pg_num_rows($result) > 0) {
-                    echo "<ul>";
-                    while ($row = pg_fetch_assoc($result)) {
-                        echo "<li>ID: " . htmlspecialchars($row['id']) . " - Nome: " . htmlspecialchars($row['name']) . " - Email: " . htmlspecialchars($row['email']) . "</li>";
+                $query = "SELECT id, name, email FROM utenti";
+                $result = pg_query($conn, $query);
+                if ($result) {
+                    if (pg_num_rows($result) > 0) {
+                        echo "<ul>";
+                        while ($row = pg_fetch_assoc($result)) {
+                            echo "<li><b>ID</b>: " . htmlspecialchars($row['id']) . " - <b>Nome</b>: " . htmlspecialchars($row['name']) . " - <b>Email</b>: " . htmlspecialchars($row['email']) . "</li>";
+                            echo "<br>";
+                        }
+                        echo "</ul>";
+                    } else {
+                        echo "<p>Nessun cliente registrato.</p>";
                     }
-                    echo "</ul>";
                 } else {
-                    echo "<p>Nessun cliente registrato.</p>";
+                    echo "<p>Errore durante il recupero dei clienti registrati.</p>";
                 }
-            } else {
-                echo "<p>Errore durante il recupero dei clienti registrati.</p>";
-            }
+            ?>
+        </div>
+
+        <!-- Sezione: Visualizza Ordini -->
+        <div class="admin-section">
+            <h3>VISUALIZZA ORDINI</h3>
+            <?php
+                // Recupero gli ordini dal database
+                $query_ordini = "SELECT id, id_utente, totale, data_creazione
+                                    FROM ordini
+                                    ORDER BY data_creazione DESC";
+                $result_ordini = pg_query($conn, $query_ordini);
+
+                // Recupero i dettagli degli ordini dal database
+                $query_dettagli_ordine = "SELECT id_ordine, id_prodotto, quantita
+                                            FROM dettagli_ordine
+                                            WHERE id_ordine = $1";
+                
+                
+                if ($result_ordini) {
+                    if (pg_num_rows($result_ordini) > 0) {
+                        // Lista ordinata per gli ordini
+                        echo "<ol>";
+
+                        // Per ogni ordine
+                        while ($row_ordine = pg_fetch_assoc($result_ordini)) {
+                            // Recupero tutti gli attributi dell'ordine
+                            $id_ordine = $row_ordine['id'];
+                            $id_utente = $row_ordine['id_utente'];
+                            $totale = $row_ordine['totale'];
+                            $data_creazione = date('Y-m-d H:i:s', strtotime($row_ordine['data_creazione']));
+
+                            echo "<li><b>ID Ordine</b>: " . $id_ordine. " - <b>ID Utente</b>: " . $id_utente. " - <b>Totale</b>: " .$totale. " - <b>Data Creazione</b>: ".$data_creazione. "</li>";
+
+                            // Recupero i dettagli dell'ordine
+                            $result_dettagli_ordine = pg_query_params($conn, $query_dettagli_ordine, array( $id_ordine));
+                            if ($result_dettagli_ordine) {
+                                echo "<ul>";
+                                while ($row_dettagli_ordine = pg_fetch_assoc($result_dettagli_ordine)) {
+                                    $id_prodotto = $row_dettagli_ordine['id_prodotto'];
+                                    $quantita = $row_dettagli_ordine['quantita'];
+
+                                    echo "<li><i>ID Prodotto</i>: " .$id_prodotto. " - <i>Quantità</i>: " .$quantita. "</li>";
+                                }
+                                echo "</ul>";
+                            } else {
+                                echo "<p>Errore durante il recupero dei dettagli dell'ordine.</p>";
+                            }
+
+                            echo "<br>";
+                        }
+
+                        echo "</ol>";
+                    } else {
+                        echo "<p>Nessun ordine trovato.</p>";
+                    }
+                } else {
+                    echo "<p>Errore durante il recupero degli ordini.</p>";
+                } 
             ?>
         </div>
 
         <!-- Sezione: Cambio Credenziali Amministratore -->
         <div class="admin-section">
-            <h3>Cambia Credenziali Amministratore</h3>
+            <h3>CAMBIA CREDENZIALI AMMINISTRATORE</h3>
             <form method="POST" action="area_admin.php">
                 <input type="hidden" name="operation" value="change_admin_credentials">
                 <label for="new_admin_username">Nuovo Username:</label>

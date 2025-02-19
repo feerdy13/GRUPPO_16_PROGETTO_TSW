@@ -1,9 +1,17 @@
-/* Stile generale per il corpo della pagina */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Stile generale per il corpo della pagina */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f4;
 }
 
 /* Stile per il titolo principale */
@@ -60,7 +68,7 @@ button:hover {
 .admin-section {
     max-width: 1000px; /* Aumenta la larghezza massima della sezione amministrativa */
     margin: 20px auto;
-    padding: 20px;
+    padding: 60px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -76,12 +84,13 @@ button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    table-layout: auto; /* Permette alle colonne di adattarsi al contenuto */
+    
 }
 
 /* Stile per le celle delle tabelle */
-table, th, td {
+th, td {
+    padding: 8px;
+    text-align: left;
     border: 1px solid #ccc;
 }
 
@@ -129,15 +138,45 @@ th {
 
 /* Stile per le celle delle tabelle con input file */
 td input[type="file"] {
-    width: auto; /* Imposta la larghezza automatica per evitare sovrapposizioni */
+    width: 100%; 
 }
 
 /* Stile per le celle delle tabelle con input text */
 td input[type="text"] {
-    width: 90%; /* Riduce la larghezza per evitare sovrapposizioni */
-    box-sizing: border-box; /* Include il padding e il bordo nella larghezza totale */
+    width: 100%; /* Riduce la larghezza per evitare sovrapposizioni */
 }
 
 input [type="file"] [disabled] {
     pointer-events: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
 }
