@@ -104,7 +104,7 @@ main {
 
 .highlight .highlight-p {
     margin: 0;
-    font-size: 17px;
+    font-size: var(--text-size-large);
     color: #333;
     text-align: justify;
 }
@@ -319,6 +319,12 @@ main {
     color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
 }
 
+@media (max-width: 900px) {
+    .highlight .highlight-p {
+        font-size: var(--text-size-medium);        
+    }
+}
+
 
 /* Rende la pagina responsive per smartphone */ 
 @media (max-width: 600px) {
@@ -339,7 +345,7 @@ main {
     }
 
     .highlight .highlight-p {
-        font-size: 10px;
+        font-size: var(--text-size-small);
     }
 
     .shop-button {

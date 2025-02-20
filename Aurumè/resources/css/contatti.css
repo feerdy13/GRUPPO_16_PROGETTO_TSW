@@ -96,7 +96,7 @@
 
 
 /* Rende la pagina responsive per smartphone */
-@media (max-width: 600px) {
+@media (max-width: 820px) {
     .contacts-container {
         flex-direction: column; /* Dispone le colonne in verticale sui dispositivi più piccoli */
     }
@@ -106,4 +106,15 @@
         width: 100%; /* Ogni cella occupa l'intera larghezza disponibile */
         text-align: left; /* Allinea il testo a sinistra */
     }
+}
+
+@media (max-width: 600px) {
+    .visit-table h2 {
+        font-size: var(--text-size-large);
+    }
+
+    .visit-table p {
+        font-size: var(--text-size-small);
+    }
+
 }
