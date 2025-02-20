@@ -299,8 +299,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
                 </thead>
                 <tbody>
                 <?php
-                    $query = "SELECT id, filename, prezzo, descrizione, categoria 
-                                FROM prodotti";
+                    $query = "SELECT id, filename, prezzo, descrizione, categoria FROM prodotti";
                     $result = pg_query($conn, $query);
 
                     if ($result) {
@@ -310,20 +309,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
                                 echo "<tr id='row-{$rowId}'>";
                                 echo    "<td data-label='Seleziona'><input type='checkbox' class='delete-checkbox' form='delete-form' name='ids[]' value='{$rowId}'></td>";
                                 echo    "<td data-label='ID Prodotto'>{$rowId}</td>";
+                                
+                                // Modifica della cella Filename: include area drag & drop e pulsante "Scegli File"
                                 echo    "<td data-label='Filename'>";
-                                echo        "<span>" . htmlspecialchars($row['filename']) . "</span> ";
-                                echo        "<input type='file' name='filename' form='update-form-{$rowId}' accept='image/png, image/jpeg' disabled>";
+                                echo        "<div class='file-input-container'>";
+                                // Area Drag & Drop con id univoco e attributo data-input che punta al file input
+                                echo            "<div id='drop-area-{$rowId}' class='drop-area' data-input='filename-{$rowId}'>";
+                                echo                "<p>Trascina qui l'immagine</p>";
+                                echo            "</div>";
+                                // Pulsante per selezionare il file manualmente
+                                echo            "<div class='file-input-wrapper'>";
+                                echo                "<label for='filename-{$rowId}'>Scegli File:</label>";
+                                echo                "<input type='file' id='filename-{$rowId}' name='filename' form='update-form-{$rowId}' accept='image/png, image/jpeg' disabled>";
+                                echo            "</div>";
+                                echo        "</div>";
                                 echo    "</td>";
+                                
                                 echo    "<td data-label='Prezzo'><input type='text' name='price' form='update-form-{$rowId}' value='" . htmlspecialchars($row['prezzo']) . "' disabled></td>";
                                 echo    "<td data-label='Descrizione'><input type='text' name='description' form='update-form-{$rowId}' value='" . htmlspecialchars($row['descrizione']) . "' disabled></td>";
                                 echo    "<td data-label='Categoria'><input type='text' name='category' form='update-form-{$rowId}' value='" . htmlspecialchars($row['categoria']) . "' disabled></td>";
+                                
                                 echo    "<td data-label='Azioni'>";
-                                echo    "<form id='update-form-{$rowId}' method='POST' action='area_admin.php' enctype='multipart/form-data'>";
-                                echo        "<input type='hidden' name='operation' value='update_product'>";
-                                echo        "<input type='hidden' name='product_id' value='{$rowId}'>";
-                                echo        "<button type='button' onclick='enableEdit(\"{$rowId}\")'>Modifica</button> ";
-                                echo        "<button type='button' id='save-{$rowId}' style='display:none;' onclick='saveEdit(\"{$rowId}\")'>Salva</button>";
-                                echo    "</form>";
+                                echo        "<form id='update-form-{$rowId}' method='POST' action='area_admin.php' enctype='multipart/form-data'>";
+                                echo            "<input type='hidden' name='operation' value='update_product'>";
+                                echo            "<input type='hidden' name='product_id' value='{$rowId}'>";
+                                echo            "<button type='button' onclick='enableEdit(\"{$rowId}\")'>Modifica</button> ";
+                                echo            "<button type='button' id='save-{$rowId}' style='display:none;' onclick='saveEdit(\"{$rowId}\")'>Salva</button>";
+                                echo        "</form>";
                                 echo    "</td>";
                                 echo "</tr>";
                             }
@@ -343,8 +355,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
             <h3>AGGIUNGI PRODOTTO</h3>
             <form method="POST" action="area_admin.php" enctype="multipart/form-data">
                 <input type="hidden" name="operation" value="add_product">
-                <label for="filename">Filename:</label>
-                <input type="file" id="filename" name="filename" accept="image/png, image/jpeg" required>
+
+                <!--Area di Drag and Drop-->
+                <div id="drop-area">
+                    <p>Trascina qui l'immagine o Scegli File:</p>
+                    <input type="file" id="filename" name="filename" accept="image/png, image/jpeg" required>
+                </div>
+
                 <label for="price">Prezzo:</label>
                 <input type="text" id="price" name="price" required>
                 <label for="description">Descrizione:</label>
