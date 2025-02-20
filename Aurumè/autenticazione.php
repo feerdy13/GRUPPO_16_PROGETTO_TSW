@@ -30,7 +30,7 @@
         }
 
         if (!empty($errors)) {
-            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> " . implode("<br>", $errors);
+            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <p>" . implode("<br>", $errors) . "</p>";
             header("Location: autenticazione.php?register");
             exit();
         }
@@ -53,9 +53,9 @@
 
             // Controlliamo se l'errore è dovuto a una violazione UNIQUE (email già registrata)
             if (strpos($errorMessage, "utenti_email_key") !== false) {
-                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Account già esistente. Usa un'altra email o accedi.";
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <span>Account già esistente. Usa un'altra email.</span>";
             } else {
-                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Errore nella registrazione: " . htmlspecialchars($errorMessage);
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <span>Errore nella registrazione: " . htmlspecialchars($errorMessage) . "</span>";
             }
         } else {
             $_SESSION['alert'] = "Registrazione completata! Accedi ora.";
@@ -83,10 +83,10 @@
                 header("Location: index.php");
                 exit();
             } else {
-                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Nome utente o password errati, riprova.";
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <span>Nome utente o password errati, riprova.</span>";
             }
         } else {
-            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Nome utente o password errati, riprova.";
+            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <span>Nome utente o password errati, riprova.</span>";
         }
     }
 
@@ -120,6 +120,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             <?php if (!empty($alert)) { ?>
                 showAlert('<?php echo $alert; ?>');
+                // Rimuovi l'alert dalla query string
+                if (window.history.replaceState) {
+                    const url = new URL(window.location);
+                    url.searchParams.delete('alert');
+                    window.history.replaceState({}, document.title, url.toString());
+                }
             <?php } ?>
         });
     </script>
@@ -133,8 +139,8 @@
             <form method="POST">
                 <h2>Ho già un account</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label>Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
-                <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                <label for="email">Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                <label for="password">Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
                 <input type="submit" name="login" value="ACCEDI">
             </form>
             <p>Non sei ancora membro? Scopri i nostri vantaggi<a href="?register" class="button" id="show-register">CREA  ACCOUNT</a></p>
@@ -145,9 +151,9 @@
             <form method="POST" id="register-form">
                 <h2>Registrazione</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label>Nome:</label> <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="10" required><br>
-                <label>Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
-                <label>Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                <label for="name">Nome:</label> <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="8" required><br>
+                <label for="email">Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                <label for="password">Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
                 <input type="submit" name="register" value="REGISTRATI">
             </form>
             <p>Hai già un account? <a href="autenticazione.php" class="button" id="show-login">ACCEDI</a></p>

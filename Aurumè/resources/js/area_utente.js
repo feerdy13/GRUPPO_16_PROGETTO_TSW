@@ -1,7 +1,6 @@
 // Script per gestire il click del pulsante e mostrare/nascondere le sezioni
 document.addEventListener('DOMContentLoaded', function () {
-    const infoPersonali = document.querySelector('#info-personali');
-    const credenziali = document.querySelector('#credenziali');
+    const infoPersonali = document.querySelector('.info-personali form');
     const inputs = document.querySelectorAll('input');
 
     function validateEmail(email) {
@@ -95,6 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
         infoPersonali.addEventListener('submit', function (event) {
             const name = infoPersonali.querySelector('input[name="name"]').value.trim();
             const email = infoPersonali.querySelector('input[name="email"]').value.trim();
+            const password = infoPersonali.querySelector('input[name="current-password"]').value.trim();
+            const newPassword = infoPersonali.querySelector('input[name="new-password"]').value.trim();
 
             if (!validateName(name)) {
                 showAlert('Il nome deve avere almeno 3 caratteri.');
@@ -107,13 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 event.preventDefault();
                 return;
             }
-        });
-    }
-
-    if (credenziali) {
-        credenziali.addEventListener('submit', function (event) {
-            const password = credenziali.querySelector('input[name="current-password"]').value.trim();
-            const newPassword = credenziali.querySelector('input[name="new-password"]').value.trim();
 
             if (!validatePassword(password)) {
                 showAlert('La password corrente deve contenere almeno 6 caratteri, un carattere speciale, un numero e una lettera.');

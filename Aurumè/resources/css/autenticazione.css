@@ -87,7 +87,6 @@ input[type="submit"]:hover {
     display: none; /* Nasconde il container finché non viene attivato */
     width: 100%;
     position: absolute;
-    top: 90px;
     left: 0;
     text-align: center;
     z-index: 1000;
@@ -176,4 +175,24 @@ input.invalid::after {
     margin-bottom: 10px;
     min-height: 16px; /* Mantiene spazio anche se il messaggio non è visibile */
     display: none;
+}
+
+@media (max-width: 600px) {
+
+    .alert-error {
+        padding: 5px 15px;
+    }
+
+    span {
+        font-size: 13px;
+    }
+
+    .alert {
+        padding: 5px 10px;
+        font-size: var(--text-size-medium);
+    }
+
+    .form-container p {
+        font-size: 13px;
+    }
 }

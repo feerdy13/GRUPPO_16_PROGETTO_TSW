@@ -1,127 +1,125 @@
-<!-- Header -->
 <?php 
     require 'includes/database.php';
     require 'includes/controllo.php';
-
-    /* SEZIONE PER MODIFICARE NEL DB LE INFORMAZIONI DELL'UTENTE */
-    // Controlla se è stata inviata la richiesta per aggiornare il profilo
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_profile"])) {
-        // Recupera i dati inviati dal form
-        $new_name  = trim($_POST["name"]);
-        $new_email = trim($_POST["email"]);
-
-        // Validazione lato server
-        $errors = [];
-
-        if (strlen($new_name) < 3) {
-            $errors[] = "Il nome deve contenere almeno 3 caratteri.";
-        }
-
-        if (!filter_var($new_email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "L'email inserita non è valida.";
-        }
-
-        if (!empty($errors)) {
-            // Se ci sono errori, li salvi in sessione e reindirizzi l'utente indietro
-            $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> " . implode("<br>", $errors);
-            header("Location: area_utente.php");
-            exit();
-        }
-
-        // Ottieni l'ID dell'utente dalla sessione
-        $user_id = $_SESSION["user_id"];
-
-        // Esegui la query per aggiornare il nome e l'email nel database
-        $query = "UPDATE utenti SET name = $1, email = $2 WHERE id = $3";
-        $stmt  = pg_prepare($conn, "update_profile", $query);
-
-        // Invia la query senza eseguirla immediatamente
-        pg_send_execute($conn, "update_profile", array($new_name, $new_email, $user_id));
     
-        // Ottieni il risultato della query
-        $result = pg_get_result($conn);
-
-        // Controlla se ci sono errori
-        if (pg_result_status($result) !== PGSQL_COMMAND_OK) {
-            $errorMessage = pg_result_error($result);
-
-            // Controlliamo se l'errore è dovuto a una violazione UNIQUE (email già registrata)
-            if (strpos($errorMessage, "utenti_email_key") !== false) {
-                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Account già esistente. Usa un'altra email.";
-            } else {
-                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> Errore nella registrazione: " . htmlspecialchars($errorMessage);
-            }
-        } else {
-            // Se è cambiato solo il nome, aggiorna la sessione e rimani in area_utente.php
-            $_SESSION["user_name"] = $new_name;
-            $_SESSION['alert'] = "Profilo aggiornato correttamente.";
-            header("Location: area_utente.php");
-            exit();
-        }
-
-        // Reindirizza l'utente all'area utente per evitare il re-invio del form
-        header("Location: area_utente.php");
-        exit();
-    }
-
-    /* SEZIONE PER MODIFICARE LA PASSWORD DELL'UTENTE */
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_password"])) {
-        // Recupera i dati inviati dal form per il cambio password
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_profile"])) {
+        session_start();
+        $user_id = $_SESSION["user_id"];
+        
+        $new_name = trim($_POST["name"]);
+        $new_email = trim($_POST["email"]);
         $current_password = trim($_POST["current-password"]);
         $new_password = trim($_POST["new-password"]);
     
-        // Controllo preliminare: la nuova password non deve essere identica alla corrente (come stringa)
-        if ($current_password === $new_password) {
-            $_SESSION["error"] = "La nuova password deve essere diversa dalla password attuale.";
+        $errors = [];
+    
+        // Ottieni i dati attuali dell'utente
+        $query = "SELECT name, email, password FROM utenti WHERE id = $1";
+        $stmt = pg_prepare($conn, "get_user", $query);
+        
+        if (!$stmt) {
+            $_SESSION["error"] = "Errore nella preparazione della query.";
             header("Location: area_utente.php");
             exit();
         }
     
-        $user_id = $_SESSION["user_id"];
-        // Recupera l'hash della password attuale dal database
-        $query = "SELECT password FROM utenti WHERE id = $1";
-        $stmt  = pg_prepare($conn, "get_password", $query);
-        $result = pg_execute($conn, "get_password", array($user_id));
+        $result = pg_execute($conn, "get_user", array($user_id));
+        $user = pg_fetch_assoc($result);
     
-        if ($row = pg_fetch_assoc($result)) {
-            $hashed_password = $row["password"];
-            // Verifica che la password attuale immessa corrisponda a quella presente nel DB
-            if (!password_verify($current_password, $hashed_password)) {
-                $_SESSION["error"] = "La password attuale inserita non è corretta.";
-                header("Location: area_utente.php");
-                exit();
-            }
-            // Controllo aggiuntivo: se la nuova password, una volta hashata, risulta uguale a quella attuale
-            if (password_verify($new_password, $hashed_password)) {
-                $_SESSION["error"] = "La nuova password non può essere uguale a quella attuale.";
-                header("Location: area_utente.php");
-                exit();
-            }
-            // Hash della nuova password e aggiornamento nel database
-            $new_hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-            $update_query = "UPDATE utenti SET password = $1 WHERE id = $2";
-            $update_stmt  = pg_prepare($conn, "update_password", $update_query);
-            $update_result = pg_execute($conn, "update_password", array($new_hashed_password, $user_id));
-    
-            if (pg_affected_rows($update_result) > 0) {
-                $alertMessage = "Password modificata correttamente. Per sicurezza devi effettuare nuovamente il login.";
-                session_destroy();  // Distrugge la sessione corrente, costringendo il logout
-                // Se necessario, puoi riavviare la sessione per gestire l'alert, oppure passare il messaggio via query string.
-                header("Location: autenticazione.php?alert=" . urlencode($alertMessage));
-                exit();
-            } else {
-                $_SESSION["error"] = "Errore nell'aggiornamento della password.";
-                header("Location: area_utente.php");
-                exit();
-            }            
-        } else {
+        if (!$user) {
             $_SESSION["error"] = "Utente non trovato.";
             header("Location: autenticazione.php");
             exit();
         }
+    
+        $current_name = $user["name"];
+        $current_email = $user["email"];
+        $hashed_password = $user["password"];
+    
+        // Validazione solo sui campi modificati
+        if (!empty($new_name) && $new_name !== $current_name && strlen($new_name) < 3) {
+            $errors[] = "Il nome deve contenere almeno 3 caratteri.";
+        }
+    
+        if (!empty($new_email) && $new_email !== $current_email) {
+            if (!filter_var($new_email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = "L'email inserita non è valida.";
+            } else {
+                // Controlla se l'email è già in uso
+                $query = "SELECT id FROM utenti WHERE email = $1 AND id <> $2";
+                $stmt = pg_prepare($conn, "check_email", $query);
+                if (!$stmt) {
+                    $_SESSION["error"] = "Errore nella preparazione della query.";
+                    header("Location: area_utente.php");
+                    exit();
+                }
+                $result = pg_execute($conn, "check_email", array($new_email, $user_id));
+                if (pg_num_rows($result) > 0) {
+                    $errors[] = "L'email è già in uso.";
+                }
+            }
+        }
+    
+        if (!empty($new_password)) {
+            if (!password_verify($current_password, $hashed_password)) {
+                $errors[] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i><span>La password attuale è errata.</span>";
+            } elseif (strlen($new_password) < 6 || 
+                      !preg_match('/[!@#$%^&*(),.?":{}|<>]/', $new_password) || 
+                      !preg_match('/[0-9]/', $new_password) || 
+                      !preg_match('/[a-zA-Z]/', $new_password)) {
+                $errors[] = "La nuova password deve contenere almeno 6 caratteri, un carattere speciale, un numero e una lettera.";
+            }
+        }
+    
+        if (!empty($errors)) {
+            $_SESSION['error'] = implode("<br>", $errors);
+            header("Location: area_utente.php");
+            exit();
+        }
+    
+        // Costruzione della query di aggiornamento
+        $update_fields = [];
+        $update_values = [];
+        $param_count = 1;
+    
+        if (!empty($new_name) && $new_name !== $current_name) {
+            $update_fields[] = "name = $" . $param_count++;
+            $update_values[] = $new_name;
+            $_SESSION["user_name"] = $new_name;
+        }
+    
+        if (!empty($new_email) && $new_email !== $current_email) {
+            $update_fields[] = "email = $" . $param_count++;
+            $update_values[] = $new_email;
+            $_SESSION["user_email"] = $new_email;
+        }
+    
+        if (!empty($new_password)) {
+            $hashed_new_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $update_fields[] = "password = $" . $param_count++;
+            $update_values[] = $hashed_new_password;
+        }
+    
+        if (!empty($update_fields)) {
+            $update_values[] = $user_id;
+            $query = "UPDATE utenti SET " . implode(", ", $update_fields) . " WHERE id = $" . $param_count;
+            $stmt = pg_prepare($conn, "update_user", $query);
+            $result = pg_execute($conn, "update_user", $update_values);
+    
+            if (pg_affected_rows($result) > 0) {
+                $_SESSION['alert'] = "Profilo aggiornato con successo.";
+    
+                if (!empty($new_password) || (!empty($new_email) && $new_email !== $current_email)) {
+                    $_SESSION['alert'] .= " Devi effettuare nuovamente il login.";
+                    
+                }
+            }
+        }
+    
+        header("Location: area_utente.php");
+        exit();
     }
 
-    // Controlla se è presente un alert passato via GET, altrimenti controlla la sessione
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
     $alert = '';
 
@@ -152,31 +150,18 @@
 
 <main>
     <h2>Il mio account Aurumè</h2>
-
-    <div class="container-element">
         <div class="info-personali">
-            <h3>Informazioni personali</h3>
-            <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
             <form id="personal-info-form" method="POST" action="area_utente.php">
-                <!--campo nascosto per identificare il form-->
-                <input type="hidden" name="update_profile" value="true">
-                <label for="name">Nome:</label><input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>" required>
-                <label for="email">Email:</label><input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_SESSION['user_email']); ?>" required>
-                <button type="submit">Salva</button>
+                <h3>Informazioni personali</h3>
+                <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
+                <label for="name">Nome:</label><input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>" minlength="3" maxlength="8">
+                <label for="email">Email:</label><input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_SESSION['user_email']); ?>">
+                <label for="current-password">Password attuale:</label><input type="password" id="current-password" name="current-password">
+                <label for="new-password">Nuova password:</label><input type="password" id="new-password" name="new-password">
+                <input type="submit" value="Salva modifiche">
             </form>
-        </div>
-
-        <div class="credenziali">
-            <h3>Credenziali</h3>
-            <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-            <form id="credentials-form" method="POST" action="area_utente.php">
-                <input type="hidden" name="update_password" value="true">
-                <label for="current-password">Password attuale:</label><input type="password" id="current-password" name="current-password" required>
-                <label for="new-password">Nuova password:</label><input type="password" id="new-password" name="new-password" required>
-                <button type="submit">Cambia password</button>
-            </form>
-        </div>
-
+        </div><br>
+        <!--
         <div class="indirizzo-consegna">
             <h3>Indirizzo di consegna</h3>
             <form id="address-form" method="POST" action="update_address.php">
@@ -185,17 +170,14 @@
                 <label for="postal-code">CAP:</label><input type="text" id="postal-code" name="postal-code" value="<?php echo htmlspecialchars($_SESSION['user_postal_code']); ?>" required>
                 <button type="submit">Salva indirizzo</button>
             </form>
-        </div>
-    </div>
-    
+        </div> -->
 </main>
 
-
-<!-- Footer -->
-<?php include 'includes/footer.html'; ?>
+<!-- Script per mostrare alert -->
+<script src="resources/js/showAlert.js"></script>
 
 <!-- Script -->
 <script src="resources/js/area_utente.js"></script>
 
-<!-- Script per mostrare alert -->
-<script src="resources/js/showAlert.js"></script>
+<!-- Footer -->
+<?php include 'includes/footer.html'; ?>
