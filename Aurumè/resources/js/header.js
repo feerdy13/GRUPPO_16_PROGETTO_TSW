@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const subMenu = document.getElementById("subMenu");
-    let prevScrollpos = window.pageYOffset;
+    let prevScrollpos = window.scrollY;
     let hoverTimeout, leaveTimeout;
     let isHovered = false;
     let firstScroll = true; // Variabile per gestire il primo scroll
 
-    // Funzione toggleMenu per lo scorrimento del menu utente loggato
-    function toggleMenu() {
-        subMenu.classList.toggle("open-menu");
-    }
+    
 
     // Rendo la funzione toggleMenu accessibile globalmente
     window.toggleMenu = toggleMenu;
@@ -33,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Controllo dello scroll con effetto fluido anche in uscita
     window.onscroll = function () {
-        let currentScrollPos = window.pageYOffset;
+        let currentScrollPos = window.scrollY;
 
         if (prevScrollpos > currentScrollPos) {
             // Scrolling verso l'alto → Mostra header
@@ -61,8 +58,32 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
+/* Apertura menu laterale */
+function openMenu() {
+    const sidenav = document.getElementById("sidenav");
+    const blur = document.getElementById("blur");
+
+    sidenav.classList.add("active");
+    blur.classList.add("active");
+}
+
+/* Chiusura menu laterale */
+function closeMenu() {
+    const sidenav = document.getElementById("sidenav");
+    const blur = document.getElementById("blur");
+
+    sidenav.classList.remove("active");
+    blur.classList.remove("active");
+}
+
+/* Permette di filtrare le categorie del catalogo dal menu laterale */
 function salvaCategoria(categoria) {
     if (categoria) {  // Controlla che la categoria non sia vuota o null
         sessionStorage.setItem("filtro", categoria);
     }
+}
+
+// Funzione toggleMenu per lo scorrimento del menu utente loggato
+function toggleMenu() {
+    subMenu.classList.toggle("open-menu");
 }
