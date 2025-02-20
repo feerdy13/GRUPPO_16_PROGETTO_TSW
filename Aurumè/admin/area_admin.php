@@ -248,7 +248,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
         <h2>Login Amministratore</h2>
         <form method="POST" action="area_admin.php">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit" name="login">Login</button>
