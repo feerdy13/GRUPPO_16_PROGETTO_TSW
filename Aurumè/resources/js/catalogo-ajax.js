@@ -21,6 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 });
 
+// Filtra i prodotti per categoria in base alla scelta dei link presenti nel menu laterale
+document.addEventListener("DOMContentLoaded", function() {
+    const categoria = sessionStorage.getItem("filtro");
+    if (categoria) {
+        const filtro = document.querySelector(`.filter.${categoria}`);
+        if (filtro) {
+            filtro.click();
+        }
+        sessionStorage.removeItem("filtro"); // Pulisce il valore dopo il primo utilizzo
+    }
+});
+
+
 function filterProducts(items, category) {
     items.forEach(item => {
         if (item.classList.contains(category)) {

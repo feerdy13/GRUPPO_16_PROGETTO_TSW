@@ -60,3 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
         prevScrollpos = currentScrollPos;
     };
 });
+
+function salvaCategoria(categoria) {
+    if (categoria) {  // Controlla che la categoria non sia vuota o null
+        sessionStorage.setItem("filtro", categoria);
+    }
+}

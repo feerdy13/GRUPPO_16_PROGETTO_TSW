@@ -56,7 +56,7 @@
   }
 
 /* Quando passi il mouse sui link di navigazione, cambia il loro colore */
-  .sidenav a:hover {
+  .sidenav .collegamenti:hover {
     color: var(--second-color);
   }
 

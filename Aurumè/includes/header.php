@@ -36,11 +36,11 @@
             <p onclick="closeNav()">Chiudi</p>
         </div>
         <h2 class="titoli">I nostri prodotti</h2>
-        <a href="catalogo.php" class="collegamenti">Anelli</a>
-        <a href="catalogo.php" class="collegamenti">Collane</a>
-        <a href="catalogo.php" class="collegamenti">Bracciali</a>
-        <a href="catalogo.php" class="collegamenti">Orecchini</a>
-        <a href="catalogo.php" class="collegamenti">Orologi</a>
+        <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('anelli')">Anelli</a>
+        <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('collane')">Collane</a>
+        <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('bracciali')">Bracciali</a>
+        <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('orecchini')">Orecchini</a>
+        <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('orologi')">Orologi</a>
         <!-- <a href="index.php" class="collegamenti">Home</a> -->
         <!-- <a href="catalogo.php" class="collegamenti">Catalogo</a> -->
 
