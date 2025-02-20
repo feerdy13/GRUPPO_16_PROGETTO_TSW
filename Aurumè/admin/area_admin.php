@@ -2,6 +2,10 @@
 session_start();
 include '../includes/database.php'; // Assicurati che questo file imposti correttamente la connessione in $conn
 
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+ini_set('display_errors', 0);
+
+
 // Gestione del logout
 if (isset($_GET['logout'])) {
     session_unset();
