@@ -246,6 +246,36 @@ header .left-icons {
 
 /* Rende l'header responsive per smartphone */
 @media (max-width: 600px) {
+
+  .sub-menu {
+    padding: 12px;
+  }
+
+  .sub-menu-wrap {
+    width: 175px;
+    right: 7.4%;
+  }
+
+  .user-info {
+    font-size: 14px;
+  }
+
+  .sub-menu hr {
+    margin: 8px 0 10px 0;
+  }
+
+  .sub-menu-link img{
+    width: 30px;
+  }
+
+  .sub-menu-link p{
+    font-size: 14px;
+  }
+
+  .sub-menu-link span {
+    font-size: 18px;
+  }
+
   #sidenav.active {
     width: 100%;
     border: none;

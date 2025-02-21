@@ -60,7 +60,7 @@
             <a href="area_utente.php" class="sub-menu-link">
               <img src="resources/img/profile.png" alt="Area Utente">
               <p>Area Utente</p>
-               <span> &#62; </span> <!-- Simbolo "maggiore" in Unicode -->
+              <span> &#62; </span> <!-- Simbolo "maggiore" in Unicode -->
             </a>
             <a href="action/logout.php" class="sub-menu-link">
               <img src="resources/img/logout.png" alt="Logout">
