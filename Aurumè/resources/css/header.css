@@ -23,7 +23,7 @@
   background-color: rgba(0, 0, 0, 0.6); /* Colore bianco semitrasparente */
   backdrop-filter: blur(2px); /* Effetto blur */
   z-index: -1; /* Copre tutta la visuale ma non l'header */
-  transition: opacity 0.3s ease-in; /* Effetto di transizione */
+  transition: opacity 0.5s ease; /* Effetto di transizione */
 }
 
 /* Quando l'effetto blur è attivo */
@@ -39,7 +39,7 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: var(--first-color);
+  background-color: #171718;
   z-index: 3;
   overflow-x: hidden; /* Disabilita lo scroll orizzontale */
   padding-top: 20px;
@@ -48,8 +48,14 @@
   white-space: nowrap;  /* Assicura che gli elementi della sidenav non vadano a capo */
 }
 
+/* Quando il menu laterale è aperto */
+#sidenav.active {
+  width: 280px; /* Diventa visibile */
+  border-right-width: 3px;
+}
+
 .sidenav-content {
-  padding: 20px 15px;
+  padding: 10px 15px;
 }
 
 .sidenav-content ul {
@@ -57,97 +63,60 @@
   padding: 0;
 }
 
-/* Quando il menu laterale è aperto */
-#sidenav.active {
-  width: 250px; /* Diventa visibile */
-  border-right-width: 3px;
-}
-
-
-#sidenav h2 {
+.close-text {
   color: var(--fifth-color);
-  padding-left: 15px;
+  padding-left: 20px;
+  font-size: var(--text-size-xlarge);
 }
 
-#sidenav .catalogo {
+.close-text span {
   font-size: var(--text-size-large);
 }
 
-#sidenav .filtra-catalogo {
+#sidenav .catalogo {
+  text-decoration: underline;
+  color: var(--fifth-color);
+  font-size: var(--text-size-xlarge);
+  transition: color 0.3s ease;
+}
+#sidenav .catalogo:hover {
+  color: var(--second-color);
+}
+
+#sidenav .filtri-catalogo {
+  margin-top: 15px;
+}
+
+#sidenav .filtra-catalogo, .sidenav-bottom-link {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: var(--text-size-xlarge);
+  font-size: var(--text-size-large);
   color: var(--fifth-color);
   display: block;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
-
-/* Quando passi il mouse sui link di navigazione, cambia il loro colore */
-#sidenav .collegamenti:hover {
+#sidenav .filtra-catalogo:hover, .sidenav-bottom-link:hover {
   color: var(--second-color);
 }
 
-/* Posiziona e stila il pulsante di chiusura (angolo in alto a destra) */
-#sidenav .closebtn {
-  position: static !important;
-  /* Rimuove il posizionamento assoluto */
-  top: 0 !important;
-  left: 5% !important;
-  margin-left: 0 !important;
-  display: inline-block !important;
-  font-size: var(--text-size-xlarge);
-  color: var(--fifth-color);
+#sidenav .sidenav-bottom {
+  margin-top: 200px;
 }
 
-#sidenav .containerSotto {
-  padding-top: 70%;
-  /* padding-bottom: 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: var(--fifth-color);
-    display: block;
-    transition: 0.3s; */
-}
-
-#sidenav .classeChiudi {
-  /* position: absolute; */
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  display: flex;
-  align-items: center;
-  /* Allinea verticalmente al centro */
-  gap: 8px;
-  /* Spazio orizzontale tra la X e "Chiudi" */
-}
-
-#sidenav .classeChiudi p {
-  margin: 0;
-  color: var(--fifth-color);
-  /* Assicura che "Chiudi" abbia lo stesso colore della X */
-}
-
-#sidenav .containerSotto .collSotto {
+.sidenav-bottom-link {
+  padding: 8px 0;
+  text-decoration: none;
+  font-size: var(--text-size-medium);
   color: var(--fifth-color);
   display: block;
-  padding: 8px 8px 8px 35px;
-}
-
-#sidenav .containerSotto .collSotto:hover {
-  color: var(--second-color);
-}
-
-/* Stile del contenuto della pagina - usa questo se vuoi spingere il contenuto della pagina a destra quando apri la navigazione laterale */
-#main {
-  transition: margin-left .5s;
+  transition: color 0.3s ease;
 }
 
 
-
-/*BARRA DI NAVIGAZIONE CHE SCOMPARE*/
+/* BARRA DI NAVIGAZIONE CHE SCOMPARE */
+/* Effetto di transizione quando scorre verso il basso (e verso l'alto) */
 #navbar {
   transition: top 0.5s;
-  /* Effetto di transizione quando scorre verso il basso (e verso l'alto) */
 }
 
 
@@ -164,12 +133,7 @@
   color: white;
 }
 
-header a {
-  color: white;
-  transition: color 0.3s ease;
-  /* Regola la transizione da un colore all'altro */
-}
-
+/* Icone */
 header i {
   color: white;
   margin: 0 10px;
@@ -179,15 +143,17 @@ header i {
   /* Regola la transizione da un colore all'altro */
 }
 
-header .left-icons {
-  padding-left: 54px;
-}
-
 header i:hover,
 a:hover {
   color: var(--second-color);
   /* Transizione al colore second-color */
 }
+
+header .left-icons {
+  padding-left: 54px;
+}
+
+
 
 
 .sub-menu-wrap {
@@ -290,23 +256,4 @@ a:hover {
     font-size: var(--text-size-large);
   }
 
-}
-
-/* Overlay: copre l'intera viewport */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  /* Deve essere inferiore a quello della sidebar (es. 8000) */
-  display: none;
-  /* Nascosto di default */
-}
-
-/* Classe per applicare l'effetto blur */
-.blur-effect {
-  filter: blur(10px);
 }

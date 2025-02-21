@@ -1,32 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector("header");
-    const subMenu = document.getElementById("subMenu");
+    const header = document.getElementById("navbar");
+    
     let prevScrollpos = window.scrollY;
     let hoverTimeout, leaveTimeout;
     let isHovered = false;
     let firstScroll = true; // Variabile per gestire il primo scroll
 
     
+    header.addEventListener("click", function (event) {
+        const sidenav = document.getElementById("sidenav");
+        const openMenuButton = document.getElementById("openMenu");
+        
+        // Evito che il click sul pulsante chiuda subito la sidenav
+        // event.target è l'elemento su cui è stato effettuato il click
+        if (openMenuButton.contains(event.target)) return;
 
-    // Rendo la funzione toggleMenu accessibile globalmente
-    window.toggleMenu = toggleMenu;
+        // Chiudi la sidenav
+        if (sidenav.classList.contains("active")) {
+            closeMenu();
+        }
+    });
+
     
-    // Effetto hover con delay
-    header.addEventListener("mouseenter", function () {
-        clearTimeout(leaveTimeout);
-        hoverTimeout = setTimeout(() => {
-            header.classList.add("color");
-            isHovered = true;
-        }, 500); // Ritardo di 500ms prima di colorarlo
-    });
+    /* Effetto hover con delay */
+    // header.addEventListener("mouseenter", function () {
+    //     clearTimeout(leaveTimeout);
+    //     hoverTimeout = setTimeout(() => {
+    //         header.classList.add("color");
+    //         isHovered = true;
+    //     }, 500); // Ritardo di 500ms prima di colorarlo
+    // });
+    // header.addEventListener("mouseleave", function () {
+    //     clearTimeout(hoverTimeout);
+    //     leaveTimeout = setTimeout(() => {
+    //         header.classList.remove("color");
+    //         isHovered = false;
+    //     }, 500); // Ritardo di 500ms prima di tornare trasparente
+    // });
 
-    header.addEventListener("mouseleave", function () {
-        clearTimeout(hoverTimeout);
-        leaveTimeout = setTimeout(() => {
-            header.classList.remove("color");
-            isHovered = false;
-        }, 500); // Ritardo di 500ms prima di tornare trasparente
-    });
 
     // Controllo dello scroll con effetto fluido anche in uscita
     window.onscroll = function () {
@@ -85,5 +96,6 @@ function salvaCategoria(categoria) {
 
 // Funzione toggleMenu per lo scorrimento del menu utente loggato
 function toggleMenu() {
+    const subMenu = document.getElementById("subMenu");
     subMenu.classList.toggle("open-menu");
 }
