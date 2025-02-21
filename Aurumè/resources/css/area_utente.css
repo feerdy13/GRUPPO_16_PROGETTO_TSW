@@ -5,7 +5,7 @@ h2 {
     color: var(--first-color);
 }
 
-.info-personali, .indirizzo-consegna {
+.info-personali {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -62,7 +62,7 @@ input[type="submit"]:hover {
     width: calc(100% - 40px); /* Stessa larghezza delle caselle del form */
     text-align: left;
     position: absolute; /* Posizionamento assoluto */
-    top: 50px; /* Posiziona l'alert sotto il tag h2 */
+    top: 40px; /* Posiziona l'alert sotto il tag h2 */
     z-index: 10; /* Assicura che l'alert sia sopra gli altri elementi */
 }
 
@@ -151,11 +151,16 @@ input.invalid::after {
 }
 
 /* Stile per i messaggi di errore */
+.input-container {
+    position: relative; /* Per posizionare correttamente il messaggio di errore */
+    margin-bottom: 20px; /* Distanza tra gli input */
+}
+
 .error-message {
-    color: red;
     position: absolute;
+    left: 0;
+    bottom: -18px; /* Distanza dal campo input */
     font-size: 12px;
-    margin-bottom: 10px;
-    min-height: 16px; /* Mantiene spazio anche se il messaggio non è visibile */
+    color: red;
     display: none;
 }

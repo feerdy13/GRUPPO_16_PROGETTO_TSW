@@ -168,12 +168,17 @@ input.invalid::after {
 }
 
 /* Stile per i messaggi di errore */
+.input-container {
+    position: relative; /* Per posizionare correttamente il messaggio di errore */
+    margin-bottom: 20px; /* Distanza tra gli input */
+}
+
 .error-message {
-    color: red;
     position: absolute;
+    left: 0;
+    bottom: -18px; /* Distanza dal campo input */
     font-size: 12px;
-    margin-bottom: 10px;
-    min-height: 16px; /* Mantiene spazio anche se il messaggio non è visibile */
+    color: red;
     display: none;
 }
 

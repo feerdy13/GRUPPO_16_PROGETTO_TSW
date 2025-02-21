@@ -111,7 +111,9 @@
     
                 if (!empty($new_password) || (!empty($new_email) && $new_email !== $current_email)) {
                     $_SESSION['alert'] .= " Devi effettuare nuovamente il login.";
-                    
+                    session_destroy();
+                    header("Location: autenticazione.php?alert=" . urlencode($_SESSION['alert']));
+                    exit();
                 }
             }
         }
@@ -138,6 +140,9 @@
     include 'includes/header.php'; 
 ?>
 
+    <!-- Script per mostrare alert -->
+    <script src="resources/js/showAlert.js"></script>
+
     <!-- alert -->
     <div class="alert-container"></div>
     <script>
@@ -154,27 +159,27 @@
             <form id="personal-info-form" method="POST" action="area_utente.php">
                 <h3>Informazioni personali</h3>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label for="name">Nome:</label><input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>" minlength="3" maxlength="8">
-                <label for="email">Email:</label><input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_SESSION['user_email']); ?>">
-                <label for="current-password">Password attuale:</label><input type="password" id="current-password" name="current-password">
-                <label for="new-password">Nuova password:</label><input type="password" id="new-password" name="new-password">
+                <input type="hidden" name="update_profile" value="true">
+                <div class="input-container">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>" minlength="3" maxlength="8">
+                </div>
+                <div class="input-container">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_SESSION['user_email']); ?>">
+                </div>
+                <div class="input-container">
+                    <label for="current-password">Password attuale:</label>
+                    <input type="password" id="current-password" name="current-password">
+                </div>
+                <div class="input-container">
+                    <label for="new-password">Nuova password:</label>
+                    <input type="password" id="new-password" name="new-password">
+                </div>
                 <input type="submit" value="Salva modifiche">
             </form>
         </div><br>
-        <!--
-        <div class="indirizzo-consegna">
-            <h3>Indirizzo di consegna</h3>
-            <form id="address-form" method="POST" action="update_address.php">
-                <label for="address">Indirizzo:</label><input type="text" id="address" name="address" value="<?php echo htmlspecialchars($_SESSION['user_address']); ?>" required>
-                <label for="city">Città:</label><input type="text" id="city" name="city" value="<?php echo htmlspecialchars($_SESSION['user_city']); ?>" required>
-                <label for="postal-code">CAP:</label><input type="text" id="postal-code" name="postal-code" value="<?php echo htmlspecialchars($_SESSION['user_postal_code']); ?>" required>
-                <button type="submit">Salva indirizzo</button>
-            </form>
-        </div> -->
 </main>
-
-<!-- Script per mostrare alert -->
-<script src="resources/js/showAlert.js"></script>
 
 <!-- Script -->
 <script src="resources/js/area_utente.js"></script>

@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!errorMessage || !errorMessage.classList.contains('error-message')) {
             errorMessage = document.createElement('div');
             errorMessage.className = 'error-message';
-            errorMessage.style.color = 'red';
-            input.parentNode.insertBefore(errorMessage, input.nextSibling);
+            input.parentNode.appendChild(errorMessage);
         }
 
         input.addEventListener('input', function () {
@@ -94,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         infoPersonali.addEventListener('submit', function (event) {
             const name = infoPersonali.querySelector('input[name="name"]').value.trim();
             const email = infoPersonali.querySelector('input[name="email"]').value.trim();
-            const password = infoPersonali.querySelector('input[name="current-password"]').value.trim();
+            const currentPassword = infoPersonali.querySelector('input[name="current-password"]').value.trim();
             const newPassword = infoPersonali.querySelector('input[name="new-password"]').value.trim();
 
             if (!validateName(name)) {
@@ -109,13 +108,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            if (!validatePassword(password)) {
+            if (currentPassword && !validatePassword(currentPassword)) {
                 showAlert('La password corrente deve contenere almeno 6 caratteri, un carattere speciale, un numero e una lettera.');
                 event.preventDefault();
                 return;
             }
 
-            if (!validatePassword(newPassword)) {
+            if (newPassword && !validatePassword(newPassword)) {
                 showAlert('La nuova password deve contenere almeno 6 caratteri, un carattere speciale, un numero e una lettera.');
                 event.preventDefault();
                 return;

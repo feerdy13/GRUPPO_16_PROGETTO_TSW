@@ -139,8 +139,14 @@
             <form method="POST">
                 <h2>Ho già un account</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label for="email">Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
-                <label for="password">Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                <div class="input-container">
+                    <label for="email">Email:</label> 
+                    <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password:</label> 
+                    <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                </div>
                 <input type="submit" name="login" value="ACCEDI">
             </form>
             <p>Non sei ancora membro? Scopri i nostri vantaggi<a href="?register" class="button" id="show-register">CREA  ACCOUNT</a></p>
@@ -151,9 +157,18 @@
             <form method="POST" id="register-form">
                 <h2>Registrazione</h2>
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
-                <label for="name">Nome:</label> <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="8" required><br>
-                <label for="email">Email:</label> <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
-                <label for="password">Password:</label> <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                <div class="input-container">
+                    <label for="name">Nome:</label> 
+                    <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="8" required><br>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email:</label> 
+                    <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password:</label> 
+                    <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                </div>
                 <input type="submit" name="register" value="REGISTRATI">
             </form>
             <p>Hai già un account? <a href="autenticazione.php" class="button" id="show-login">ACCEDI</a></p>
