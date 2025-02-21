@@ -119,7 +119,7 @@
 
     <!-- Pulsante per inviare email -->
     <div class="email-button-container">
-        <a href="mailto:aurume@gmail.com" class="email-button">Contattaci</a>
+        <a href="mailto:aurumegioielli@gmail.com" class="email-button">Contattaci</a>
     </div>
 
     <!-- JavaScript per l'effetto di scorrimento dinamico -->
