@@ -76,6 +76,7 @@ function openMenu() {
 
     sidenav.classList.add("active");
     blur.classList.add("active");
+    document.body.style.overflow = 'hidden';    // Disabilita lo scroll della pagina
 }
 
 /* Chiusura menu laterale */
@@ -85,6 +86,7 @@ function closeMenu() {
 
     sidenav.classList.remove("active");
     blur.classList.remove("active");
+    document.body.style.overflow = '';    // Riabilita lo scroll della pagina
 }
 
 /* Permette di filtrare le categorie del catalogo dal menu laterale */
