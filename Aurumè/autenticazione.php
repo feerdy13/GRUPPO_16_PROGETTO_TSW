@@ -141,11 +141,11 @@
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
                 <div class="input-container">
                     <label for="email">Email:</label> 
-                    <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                    <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required>
                 </div>
                 <div class="input-container">
                     <label for="password">Password:</label> 
-                    <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                    <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required>
                 </div>
                 <input type="submit" name="login" value="ACCEDI">
             </form>
@@ -159,15 +159,15 @@
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
                 <div class="input-container">
                     <label for="name">Nome:</label> 
-                    <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="8" required><br>
+                    <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="8" required>
                 </div>
                 <div class="input-container">
                     <label for="email">Email:</label> 
-                    <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required><br>
+                    <input type="email" name="email" value="<?php echo $email ?>" placeholder="Inserisci il tuo indirizzo e-mail" required>
                 </div>
                 <div class="input-container">
                     <label for="password">Password:</label> 
-                    <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required><br>
+                    <input type="password" name="password" placeholder="Inserisci la tua password" minlength="6" required>
                 </div>
                 <input type="submit" name="register" value="REGISTRATI">
             </form>
