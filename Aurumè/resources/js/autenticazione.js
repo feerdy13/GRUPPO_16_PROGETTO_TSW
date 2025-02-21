@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!errorMessage || !errorMessage.classList.contains('error-message')) {
             errorMessage = document.createElement('div');
             errorMessage.className = 'error-message';
-            errorMessage.style.color = 'red';
-            input.parentNode.insertBefore(errorMessage, input.nextSibling);
+            input.parentNode.appendChild(errorMessage);
         }
 
         input.addEventListener('input', function () {
