@@ -74,6 +74,12 @@
   font-size: var(--text-size-xlarge);
 }
 
+.close-X {
+  color: var(--fifth-color);
+  margin-bottom: 0;
+  font-size: var(--text-size-xxlarge);
+}
+
 .close-text span {
   font-size: var(--text-size-large);
 }
