@@ -32,29 +32,6 @@
   <script src="resources/js/header.js" defer></script>
 </head>
 
-<!-- <div id="mySidenav" class="sidenav">
-  <div class="classeChiudi">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <p onclick="closeNav()">Chiudi</p>
-  </div>
-  <h2 class="titoli">I nostri prodotti</h2>
-  <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('anelli')">Anelli</a>
-  <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('collane')">Collane</a>
-  <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('bracciali')">Bracciali</a>
-  <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('orecchini')">Orecchini</a>
-  <a href="catalogo.php" class="collegamenti" onclick="salvaCategoria('orologi')">Orologi</a> -->
-  <!-- <a href="index.php" class="collegamenti">Home</a> -->
-  <!-- <a href="catalogo.php" class="collegamenti">Catalogo</a> -->
-
-  <!-- <div class="containerSotto">
-    <a href="faq.php" class="collSotto">FAQ</a>
-    <a href="la_nostra_storia.php" class="collSotto">La nostra storia</a>
-    <a href="contatti.php" class="collSotto">Contatti</a>
-    <a href="termini_condizioni.php" class="collSotto">Termini e condizioni</a>
-  </div>
-</div> -->
-
-
 <body>
 
   <header id="navbar">
