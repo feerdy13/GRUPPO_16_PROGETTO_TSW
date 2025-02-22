@@ -13,7 +13,7 @@
     opacity: 0;
 }
 .alert-container.show {
-    height: 50px; /* Altezza dell'alert */
+    height: 50px;
     opacity: 1;
 }
 

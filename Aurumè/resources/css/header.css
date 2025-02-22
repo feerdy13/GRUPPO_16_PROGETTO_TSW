@@ -127,10 +127,6 @@
   transition: color 0.3s ease;
 }
 
-
-
-
-
 .header-title {
   position: absolute;
   left: 50%;
@@ -145,7 +141,7 @@
 }
 
 /* Icone */
-header i {
+#navbar i {
   color: white;
   margin: 0 10px;
   font-size: var(--text-size-medium);
@@ -154,18 +150,14 @@ header i {
   /* Regola la transizione da un colore all'altro */
 }
 
-header i:hover,
-a:hover {
+#navbar i:hover, a:hover {
   color: var(--second-color);
   /* Transizione al colore second-color */
 }
 
-header .left-icons {
+#navbar .left-icons {
   padding-left: 54px;
 }
-
-
-
 
 .sub-menu-wrap {
   position: absolute;
@@ -287,7 +279,6 @@ header .left-icons {
   #sidenav .filtra-catalogo, .sidenav-bottom-link {
     padding: 8px 8px 8px 32px;
     display: inline-block;
-
   }
 
 
@@ -296,7 +287,6 @@ header .left-icons {
     font-size: var(--text-size-small);
     margin: 0 5px;
   }
-
 
   #navbar .left-icons {
     padding-left: 20px;

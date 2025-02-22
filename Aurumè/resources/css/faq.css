@@ -6,18 +6,18 @@
 
 /* Contenitore flessibile per le icone */
 .flex-container {
-    display: flex; /* Utilizza Flexbox per disporre gli elementi in una riga */
-    justify-content: space-around; /* Distribuisce gli elementi con spazio uguale tra di loro */
-    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    display: flex; /* Utilizzo Flexbox per disporre gli elementi in una riga */
+    justify-content: space-around; /* Distribuisco gli elementi con spazio uguale tra di loro */
+    align-items: center; 
 }
 
 /* Elementi flessibili */
 .flex-item {
-    display: flex; /* Utilizza Flexbox per disporre il contenuto all'interno dell'elemento */
-    flex-direction: column; /* Dispone il contenuto in una colonna */
-    align-items: center; /* Centra il contenuto orizzontalmente */
-    text-align: center; /* Centra il testo */
-    margin: 10px; /* Aggiunge uno spazio intorno agli elementi */
+    display: flex; /* Utilizzo Flexbox per disporre il contenuto all'interno dell'elemento */
+    flex-direction: column; /* Posiziono il contenuto in una colonna */
+    align-items: center; 
+    text-align: center; 
+    margin: 10px; 
     color: var(--fourth-color);
     transition: color 0.3s ease;
     cursor: pointer;
@@ -33,7 +33,7 @@
 
 /* Link all'interno degli elementi flessibili */
 .flex-item a {
-    color: inherit; /* Eredita il colore del testo */
+    color: inherit;
 }
 
 /* Stile per il testo di supporto */
@@ -54,11 +54,11 @@
 
 /* Stile per le sezioni FAQ */
 .faq-section {
-    display: none; /* Nasconde le sezioni FAQ per impostazione predefinita */
+    display: none; /* Nascondo le sezioni FAQ per impostazione predefinita */
     margin-top: 20px;
 }
 .faq-section.active {
-    display: block; /* Mostra la sezione FAQ attiva */
+    display: block; /* Mostro la sezione FAQ attiva */
 }
 
 .faq-item {
