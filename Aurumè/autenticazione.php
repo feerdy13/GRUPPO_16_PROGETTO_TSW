@@ -55,7 +55,7 @@
             if (strpos($errorMessage, "utenti_email_key") !== false) {
                 $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <span>Account già esistente. Usa un'altra email.</span>";
             } else {
-                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <span>Errore nella registrazione: " . htmlspecialchars($errorMessage) . "</span>";
+                $_SESSION['error'] = "<i class=\"fi fi-rr-exclamation icon-spacing\"></i> <span>Errore nella registrazione: " . $errorMessage . "</span>";
             }
         } else {
             $_SESSION['alert'] = "Registrazione completata! Accedi ora.";
@@ -159,7 +159,7 @@
                 <div class="alert-error <?php echo empty($error) ? 'hidden' : ''; ?>"><?php echo $error; ?></div>
                 <div class="input-container">
                     <label for="name">Nome:</label> 
-                    <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="8" required>
+                    <input type="text" name="name" value="<?php echo $name ?>" placeholder="Inserisci il tuo nome" minlength="3" maxlength="10" required>
                 </div>
                 <div class="input-container">
                     <label for="email">Email:</label> 
