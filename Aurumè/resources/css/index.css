@@ -1,4 +1,4 @@
-header {
+#navbar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -8,15 +8,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 15px;
-    border-bottom: transparent;
-    transition: background-color 0.5s ease;
-    z-index: 10;
+    border-bottom: transparent 3px solid;
+    z-index: 2; 
+    transition: all 0.5s ease-in-out;
 }
-  
-/* Quando l'utente è in cima alla pagina */
-header.color {
-    background-color: var(--first-color);
-    border-bottom: var(--second-color) 3px solid;
+
+#navbar.color {
+background-color: var(--first-color);
+border-bottom: var(--second-color) 3px solid;
 }
 
 main {

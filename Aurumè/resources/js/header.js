@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
     let prevScrollpos = window.scrollY;
     let hoverTimeout, leaveTimeout;
-    let isHovered = false;
     let firstScroll = true; // Variabile per gestire il primo scroll
 
-    
+    /* Consente di chiudere la sidenav cliccando anche sull'header */
     header.addEventListener("click", function (event) {
         const sidenav = document.getElementById("sidenav");
         const openMenuButton = document.getElementById("openMenu");
@@ -23,20 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     /* Effetto hover con delay */
-    // header.addEventListener("mouseenter", function () {
-    //     clearTimeout(leaveTimeout);
-    //     hoverTimeout = setTimeout(() => {
-    //         header.classList.add("color");
-    //         isHovered = true;
-    //     }, 500); // Ritardo di 500ms prima di colorarlo
-    // });
-    // header.addEventListener("mouseleave", function () {
-    //     clearTimeout(hoverTimeout);
-    //     leaveTimeout = setTimeout(() => {
-    //         header.classList.remove("color");
-    //         isHovered = false;
-    //     }, 500); // Ritardo di 500ms prima di tornare trasparente
-    // });
+    header.addEventListener("mouseenter", function () {
+        clearTimeout(leaveTimeout);
+        hoverTimeout = setTimeout(() => {
+            header.classList.add("color");
+        }, 300); // Ritardo di 300ms prima di colorarlo
+    });
+
+    header.addEventListener("mouseleave", function () {
+        if (window.scrollY === 0) {
+            clearTimeout(hoverTimeout);
+            leaveTimeout = setTimeout(() => {
+                header.classList.remove("color");
+            }, 300); // Ritardo di 300ms prima di tornare trasparente
+        }
+    });
 
 
     // Controllo dello scroll con effetto fluido anche in uscita

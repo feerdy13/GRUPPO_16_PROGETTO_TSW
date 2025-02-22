@@ -10,6 +10,7 @@
   padding: 30px 15px;
   border-bottom: var(--second-color) 3px solid;
   z-index: 2; 
+  transition: top 0.5s ease-in-out;
 }
 
 /* Maschera di sfondo per l'effetto blur */
@@ -28,7 +29,7 @@
 
 /* Quando l'effetto blur è attivo */
 #blur.active {
-  z-index: 1;
+  z-index: 2;
   opacity: 1; /* Diventa visibile */
 }
 
@@ -127,11 +128,7 @@
 }
 
 
-/* BARRA DI NAVIGAZIONE CHE SCOMPARE */
-/* Effetto di transizione quando scorre verso il basso (e verso l'alto) */
-#navbar {
-  transition: top 0.5s;
-}
+
 
 
 .header-title {
@@ -293,9 +290,6 @@ header .left-icons {
 
   }
 
-  #navbar {
-    padding: 20px 10px;
-  }
 
   /* Icone */
   #navbar i {

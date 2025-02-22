@@ -44,8 +44,6 @@
     
     <!-- Icone: ricerca, utente e carrello -->
     <div class="right-icons">
-      <!-- Icona ricerca -->
-      <i class="fi fi-rs-search"></i>
       <?php if (isset($_SESSION["user_name"])): ?>
         <button class="user-icon" onclick="toggleMenu()">
           <!-- Icona utente loggato -->
