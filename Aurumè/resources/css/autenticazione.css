@@ -14,7 +14,7 @@
 .form-container form {
     background-color: whitesmoke;
     width: 100%; /* Il form occupa tutta la larghezza del contenitore */
-    max-width: 500px; /* Limita la larghezza massima del form */
+    max-width: 500px; /* Limito la larghezza massima del form */
     padding: 20px;
     border-radius: 15px;
     position: relative; /* Necessario per il posizionamento assoluto dell'alert */
@@ -79,12 +79,12 @@ input[type="submit"]:hover {
     width: calc(100% - 40px); /* Stessa larghezza delle caselle del form */
     text-align: left;
     position: absolute; /* Posizionamento assoluto */
-    top: 55px; /* Posiziona l'alert sotto il tag h2 */
-    z-index: 10; /* Assicura che l'alert sia sopra gli altri elementi */
+    top: 55px; /* Posiziono l'alert sotto il tag h2 */
+    z-index: 10; /* Assicuro che l'alert sia sopra gli altri elementi */
 }
 
 .alert-container {
-    display: none; /* Nasconde il container finché non viene attivato */
+    display: none; /* Nascondo il container finché non viene attivato */
     width: 100%;
     position: absolute;
     left: 0;

@@ -15,8 +15,8 @@
     margin: 10px 10px;
     padding: 20px;
     background-color: #f9f9f9; /* Colore di sfondo delle colonne */
-    border-radius: 8px;     /* Arrotonda gli angoli delle colonne */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra leggera alle colonne */
+    border-radius: 8px;     /* Arrotondo gli angoli delle colonne */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungo un'ombra leggera alle colonne */
 }
 
 .contacts p {
@@ -37,25 +37,22 @@
 }
 
 
-
-
-
 /* Stile per la tabella degli orari */
 .hours-table {
     width: 100%; /* La tabella occupa l'intera larghezza del contenitore */
-    border-collapse: collapse; /* Rimuove gli spazi tra le celle */
+    border-collapse: collapse; /* Rimuovo gli spazi tra le celle */
 }
 
 .hours-table .day, .hours-table .time {
-    padding: 8px 5px; /* Aggiunge spazio interno alle celle */
+    padding: 8px 5px; /* Aggiungo spazio interno alle celle */
 }
 
 .hours-table tr {
-    border-bottom: 1px solid #ddd; /* Aggiunge una linea di separazione tra le righe */
+    border-bottom: 1px solid #ddd; /* Aggiungo una linea di separazione tra le righe */
 }
 
 .hours-table .day {
-    font-weight: bold; /* Rende il testo in grassetto */
+    font-weight: bold; /* Rendo il testo in grassetto */
 }
 
 /* Stile per la tabella che contiene l'immagine del negozio */
@@ -63,9 +60,9 @@
     width: 100%;
     margin-top: 50px;
     border-collapse: collapse;
-    background-color: #f9f9f9; /* Colore di sfondo della tabella */
-    border-radius: 8px; /* Arrotonda gli angoli della tabella */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra leggera alla tabella */
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .visit-table td {
@@ -81,7 +78,7 @@
 .visit-table a {
     color: var(--fourth-color);
     text-decoration: underline;
-    transition: color 0.3s ease; /* Regola la transizione da un colore all'altro */
+    transition: color 0.3s ease; /* Regolo la transizione da un colore all'altro */
 }
 
 .visit-table a:hover {
@@ -89,22 +86,22 @@
 }
 
 .visit-image {
-    width: 100%; /* Imposta la larghezza dell'immagine al 100% */
-    border-radius: 8px; /* Arrotonda gli angoli dell'immagine */
+    width: 100%; /* Imposto la larghezza dell'immagine al 100% */
+    border-radius: 8px; /* Arrotondo gli angoli dell'immagine */
 }
 
 
 
-/* Rende la pagina responsive per smartphone */
+/* Rendo la pagina responsive per smartphone */
 @media (max-width: 820px) {
     .contacts-container {
-        flex-direction: column; /* Dispone le colonne in verticale sui dispositivi più piccoli */
+        flex-direction: column; /* Dispongo le colonne in verticale sui dispositivi più piccoli */
     }
 
     .hours-table .day, .hours-table .time {
-        display: block; /* Rende le celle blocchi per andare su più righe */
+        display: block; /* Rendo le celle blocchi per andare su più righe */
         width: 100%; /* Ogni cella occupa l'intera larghezza disponibile */
-        text-align: left; /* Allinea il testo a sinistra */
+        text-align: left; /* Allineo il testo a sinistra */
     }
 }
 

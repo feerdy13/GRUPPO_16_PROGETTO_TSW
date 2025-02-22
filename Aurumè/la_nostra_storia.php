@@ -5,7 +5,6 @@
         include 'includes/header.php'; 
     ?>
     <main>
-        <video class="video" src="resources/img/gold.mp4" autoplay loop muted></video>
         <h1 class="heading">La nostra storia</h1>
         <p class="description">
             Nata nel 2024 dalla visione creativa di quattro giovani designer italiani, Aurumè ha rapidamente conquistato il suo spazio nel mondo della gioielleria di lusso contemporanea. L'incontro tra i fondatori durante un evento presso l'Università degli Studi di Salerno ha dato vita a un progetto che unisce tradizione artigianale e design innovativo, sinonimo di eleganza e raffinatezza. <br><br>

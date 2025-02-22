@@ -47,10 +47,10 @@
 
         <!-- Prima sezione immagine statica con link all'interno -->
         <div class="section-image hidden">
-            <a href="catalogo.php">
+            <a href="catalogo.php" class="filtra-catalogo" onclick="salvaCategoria('anelli')">
                 <img src="resources/img/gold_jewels.jpg" alt="Gioielli in oro">
                 <div class="overlay-text-one">
-                    <h2>Gioielli in Oro</h2>
+                    <h2>Anelli</h2>
                     <p>Scopri la nostra collezione</p>
                 </div>
             </a>
@@ -58,7 +58,7 @@
 
         <!-- Prima sezione immagine statica con link all'interno -->
         <div class="section-image hidden">
-            <a href="catalogo.php">
+            <a href="catalogo.php" class="filtra-catalogo" onclick="salvaCategoria('orologi')">
                 <img src="resources/img/watch.jpeg" alt="Orologi">
                 <div class="overlay-text-one">
                     <h2>Il tempo è prezioso</h2>
