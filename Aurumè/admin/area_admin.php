@@ -359,8 +359,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operation'])) {
                 <!--Area di Drag and Drop-->
                 <div id="drop-area">
                     <p>Trascina qui l'immagine o Scegli File:</p>
-                    <input type="file" id="filename" name="filename" accept="image/png, image/jpeg" required>
                 </div>
+                <input type="file" id="filename" name="filename" accept="image/png, image/jpeg" required>
 
                 <label for="price">Prezzo:</label>
                 <input type="text" id="price" name="price" required>

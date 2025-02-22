@@ -40,10 +40,12 @@ function selectAll(source) {
     });
 }
 
+
+/* DRAG AND DROP */
 /* 
     Funzione helper per configurare una drop area
     La funzione riceve due parametri: 
-        -drop area: l'elemento HTML che fungerà da area per il drop & drop
+        -drop area: l'elemento HTML che fungerà da area per il drag & drop
         -fileInput: l'elemento input di tipo file associato alla drop area
 */
 function setupDropArea(dropArea, fileInput) {
@@ -53,6 +55,11 @@ function setupDropArea(dropArea, fileInput) {
             fileInput.click();
         }
     });
+
+    //Stoppiamo la propagazione dell'evento click così da non far aprire due volte il file input
+    fileInput.addEventListener('click', function(e) {
+        e.stopPropagation();
+});
     
     /* 
         Aggiunge un event listener per l'evento "dragover" (quando un elemento viene trascinato sopra la drop area).
@@ -99,23 +106,23 @@ function setupDropArea(dropArea, fileInput) {
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    /****Configurazione dell'area drop globale (sezione "Aggiungi Prodotto")****/
-    //Seleziona l'elemento che fungerà da drop area globale e 'input file associato.
-    var globalDropArea = document.getElementById('drop-area');
-    var globalFileInput = document.getElementById('filename');
+    /* Area di drop: sezione "Aggiungi Prodotto */
+    const dropAreaAggiungi = document.getElementById('drop-area');
+    const inputFileAggiungi = document.getElementById('filename');
 
     //se entrambi gli elementi esistono, applica la funzione di configurazione
-    if (globalDropArea && globalFileInput) {
-        setupDropArea(globalDropArea, globalFileInput);
+    if (dropAreaAggiungi && inputFileAggiungi) {
+        setupDropArea(dropAreaAggiungi, inputFileAggiungi);
     }
     
-    /****Configurazione delle aree drop per ciascuna riga della tabella****/
+
+    /* Area di drop: ciascuna riga della tabella di modifica prodotti */
     // Seleziona tutte le drop-area con l'attributo data-input
-    var tableDropAreas = document.querySelectorAll('.drop-area[data-input]');
+    const tableDropAreas = document.querySelectorAll('.drop-area[data-input]');
     // Per ciascuna drop-area, ottieni l'elemento input associato dall'id del file input e applica la funzione di configurazione
     tableDropAreas.forEach(function(dropArea) {
-        var fileInputId = dropArea.getAttribute('data-input');
-        var fileInput = document.getElementById(fileInputId);
+        const fileInputId = dropArea.getAttribute('data-input');
+        const fileInput = document.getElementById(fileInputId);
         setupDropArea(dropArea, fileInput);
     });
 });
