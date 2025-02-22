@@ -22,8 +22,7 @@
         
         if (!$stmt) {
             $_SESSION["error"] = "Errore nella preparazione della query.";
-            header("Location: area_utente.php");
-            exit();
+            $redirect_url = 'area_utente.php';
         }
     
         $result = pg_execute($conn, "get_user", array($user_id));
@@ -31,8 +30,7 @@
     
         if (!$user) {
             $_SESSION["error"] = "Utente non trovato.";
-            header("Location: autenticazione.php");
-            exit();
+            $redirect_url = 'area_utente.php';
         }
     
         $current_name = $user["name"];
@@ -53,8 +51,7 @@
                 $stmt = pg_prepare($conn, "check_email", $query);
                 if (!$stmt) {
                     $_SESSION["error"] = "Errore nella preparazione della query.";
-                    header("Location: area_utente.php");
-                    exit();
+                    $redirect_url = 'area_utente.php';
                 }
                 $result = pg_execute($conn, "check_email", array($new_email, $user_id));
                 if (pg_num_rows($result) > 0) {
@@ -76,8 +73,7 @@
     
         if (!empty($errors)) {
             $_SESSION['error'] = implode("<br>", $errors);
-            header("Location: area_utente.php");
-            exit();
+            $redirect_url = 'area_utente.php';
         }
     
         // Costruzione della query di aggiornamento
@@ -115,14 +111,12 @@
                 if (!empty($new_password) || (!empty($new_email) && $new_email !== $current_email)) {
                     $_SESSION['alert'] .= " Devi effettuare nuovamente il login.";
                     session_destroy();
-                    header("Location: autenticazione.php?alert=" . urlencode($_SESSION['alert']));
-                    exit();
+                    $redirect_url = 'autenticazione.php?alert=' . urlencode($_SESSION['alert']);
+                } else {
+                    $redirect_url = "area_utente.php";
                 }
             }
         }
-    
-        header("Location: area_utente.php");
-        exit();
     }
 
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
@@ -134,7 +128,7 @@
         $alert = $_SESSION['alert'];
     }
 
-    // Se usi la sessione per l'alert, puoi anche rimuoverlo dalla sessione
+    // Rimuovo l'alert dalla sessione dopo averlo usato
     unset($_SESSION['error']);
     unset($_SESSION['alert']);
 ?>
@@ -148,6 +142,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             <?php if (!empty($alert)) { ?>
                 showAlert('<?php echo $alert; ?>');
+            <?php } ?>
+            <?php if (!empty($redirect_url)) { ?>
+                window.location.href = '<?php echo $redirect_url; ?>';
             <?php } ?>
         });
     </script>
