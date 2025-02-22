@@ -1,3 +1,10 @@
+    <!-- Header -->
+    <?php 
+        $title = 'Carrello';
+        $cssFile = 'resources/css/carrello.css';
+        include 'includes/header.php'; 
+    ?>
+    
     <?php
         session_start();
         require 'includes/database.php';
@@ -25,15 +32,6 @@
                 }
             }
         }
-    ?>
-    
-    
-    
-    <!-- Header -->
-    <?php 
-        $title = 'Carrello';
-        $cssFile = 'resources/css/carrello.css';
-        include 'includes/header.php'; 
     ?>
     
     <main>

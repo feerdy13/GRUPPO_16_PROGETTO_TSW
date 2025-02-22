@@ -1,3 +1,11 @@
+    <!-- Header -->
+    <?php
+        
+        $title = 'Catalogo';
+        $cssFile = 'resources/css/catalogo.css';
+        include 'includes/header.php'; 
+    ?>
+    
     <?php 
         session_start(); 
         require 'includes/database.php';  // Assicura che $conn sia disponibile
@@ -7,15 +15,6 @@
         $query = "SELECT id, filename, descrizione, prezzo, categoria 
                     FROM prodotti";
         $result = pg_query($conn, $query);
-    ?>
-
-
-    <!-- Header -->
-    <?php
-        
-        $title = 'Catalogo';
-        $cssFile = 'resources/css/catalogo.css';
-        include 'includes/header.php'; 
     ?>
 
     <!-- alert -->

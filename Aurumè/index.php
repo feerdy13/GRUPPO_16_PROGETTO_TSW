@@ -16,7 +16,7 @@
         </div>
 
         <?php 
-            if(isset($_SESSION["user_name"])) {
+            if(isset($_SESSION["user_id"])) {
                 echo '<div class="heading hidden">
                         <h1>Benvenuto ' . $_SESSION["user_name"] . '</h1>
                         <a href="catalogo.php" class="shop-button">Scopri la collezione</a>

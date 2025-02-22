@@ -21,11 +21,18 @@
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
   <?php
-  if (isset($cssFile))
-    echo '<link rel="stylesheet" href="' . $cssFile . '">';
-  if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-  }
+    if (isset($cssFile))
+      echo '<link rel="stylesheet" href="' . $cssFile . '">';
+    if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+    }
+
+    // Se la sessione non è attiva ma esiste un cookie, riattiviamo la sessione
+    if (isset($_COOKIE["user_id"]) &&  isset($_COOKIE["user_name"]) && isset($_COOKIE["user_email"])) {
+      $_SESSION["user_id"] = $_COOKIE["user_id"];
+      $_SESSION["user_name"] = $_COOKIE["user_name"];
+      $_SESSION["user_email"] = $_COOKIE["user_email"];
+    }
   ?>
 
   <script src="https://js.stripe.com/v3/" defer></script>
@@ -44,7 +51,7 @@
     
     <!-- Icone: ricerca, utente e carrello -->
     <div class="right-icons">
-      <?php if (isset($_SESSION["user_name"])): ?>
+      <?php if (isset($_SESSION["user_id"])): ?>
         <button class="user-icon" onclick="toggleMenu()">
           <!-- Icona utente loggato -->
           <i class="fi fi-rs-user"><?php echo $_SESSION["user_name"]; ?></i>
