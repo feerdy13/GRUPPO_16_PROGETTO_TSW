@@ -143,7 +143,7 @@ td input[type="file"] {
 
 /* Stile per le celle delle tabelle con input text */
 td input[type="text"] {
-    width: 100%; /* Riduce la larghezza per evitare sovrapposizioni */
+    width: 100%;
 }
 
 input [type="file"] [disabled] {
