@@ -162,11 +162,11 @@
                 <input type="hidden" name="update_profile" value="true">
                 <div class="input-container">
                     <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>" minlength="3" maxlength="8">
+                    <input type="text" id="name" name="name" value="<?php echo $_SESSION['user_name'] ?>" minlength="3" maxlength="10">
                 </div>
                 <div class="input-container">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_SESSION['user_email']); ?>">
+                    <input type="email" id="email" name="email" value="<?php echo $_SESSION['user_email'] ?>">
                 </div>
                 <div class="input-container">
                     <label for="current-password">Password attuale:</label>
