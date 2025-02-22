@@ -19,7 +19,7 @@ border-bottom: var(--second-color) 3px solid;
 }
 
 main {
-    margin: 0;
+    margin: 0 !important;
     overflow: hidden;
 }
 
