@@ -91,17 +91,11 @@
     color: var(--second-color);
 }
 
-
-
-/* Product Price Styling
- * Highlights price in brand's secondary color */
 .cart-info .prezzo {
     font-size: var(--text-size-large);
     font-weight: bold;
 }
 
-/* Remove Product Link
- * Subtle styling for product removal option */
 .remove-from-cart {
     color: var(--fourth-color);
     background-color: white;
@@ -117,8 +111,6 @@
     color: var(--second-color);
 }
 
-/* Order Summary Section
- * Displays order total and purchase options */
 .order-summary {
     flex: 0 0 40%;
     background-color: white;
@@ -128,8 +120,6 @@
     height: fit-content;
 }
 
-/* Order Summary Heading
- * Centered title with brand's primary color */
 .order-summary h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -137,8 +127,6 @@
     color: var(--first-color);
 }
 
-/* Summary Details Container
- * Organizes price breakdown items */
 .summary-details {
     display: flex;
     flex-direction: column;
@@ -147,8 +135,6 @@
     padding-bottom: 15px;
 }
 
-/* Individual Summary Rows
- * Displays price details with items pushed to opposite ends */
 .summary-row {
     display: flex;
     justify-content: space-between;
@@ -164,16 +150,12 @@
     margin-bottom: 15px;
 }
 
-/* Total Row Styling
- * Emphasizes total price with larger font and brand color */
 .summary-row.total {
     margin-top: 10px;
     font-size: var(--text-size-large);
     color: var(--first-color);
 }
 
-/* Purchase Completion Button
- * Full-width button with interactive hover state */
 #submit-button {
     width: 100%;
     background-color: var(--first-color);
@@ -187,8 +169,6 @@
     transition: background-color 0.3s ease;
 }
 
-/* Button Hover Effect
- * Provides visual feedback on user interaction */
 #submit-button:hover {
     background-color: var(--second-color);
 }
@@ -212,16 +192,15 @@
     background-color: var(--second-color);
 }
 
-
+/* Responsive per tablet e pc portatili con schermo piccolo */
 @media (max-width: 1105px) {
-
     .cart-page-container {
         flex-direction: column;
     }
 }
 
+/* Responsive per smartphone */
 @media (max-width: 600px) {
-
     .cart-page-container {
         display: flex;
         gap: 40px;  /* gap tra sezione prodotti e sezione pagamento */
