@@ -8,6 +8,8 @@
   <?php
   if (isset($title))
     echo '<title>' . $title . ' | Aurumè Official Store</title>';
+  if (isset($cssFile))
+    echo '<link rel="stylesheet" href="' . $cssFile . '">';
   ?>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="resources/css/config.css">
@@ -21,11 +23,7 @@
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
   <?php
-    if (isset($cssFile))
-      echo '<link rel="stylesheet" href="' . $cssFile . '">';
-    if (session_status() == PHP_SESSION_NONE) {
-      session_start();
-    }
+    session_start();
 
     // Se la sessione non è attiva ma esiste un cookie, riattiviamo la sessione
     if (isset($_COOKIE["user_id"]) &&  isset($_COOKIE["user_name"]) && isset($_COOKIE["user_email"])) {

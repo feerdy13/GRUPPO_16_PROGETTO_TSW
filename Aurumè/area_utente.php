@@ -1,9 +1,12 @@
 <?php 
+    $title = 'Area utente';
+    $cssFile = 'resources/css/area_utente.css';
+    include 'includes/header.php'; 
+
     require 'includes/database.php';
     require 'includes/controllo.php';
     
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_profile"])) {
-        session_start();
         $user_id = $_SESSION["user_id"];
         
         $new_name = trim($_POST["name"]);
@@ -134,10 +137,6 @@
     // Se usi la sessione per l'alert, puoi anche rimuoverlo dalla sessione
     unset($_SESSION['error']);
     unset($_SESSION['alert']);
-
-    $title = 'Area utente';
-    $cssFile = 'resources/css/area_utente.css';
-    include 'includes/header.php'; 
 ?>
 
     <!-- Script per mostrare alert -->

@@ -1,6 +1,10 @@
 <?php
+    $title = 'Autenticazione';
+    $cssFile = 'resources/css/autenticazione.css';
+    include 'includes/header.php'; 
+
     require 'includes/database.php';  // Assicura che $conn sia disponibile
-    session_start();
+    
 
     $showForm = isset($_GET["register"]) ? "register" : "login";
 
@@ -111,14 +115,6 @@
     unset($_SESSION['alert']);
 
 ?>
-
-    <!-- Header -->
-    <?php
-        $title = 'Autenticazione';
-        $cssFile = 'resources/css/autenticazione.css';
-        include 'includes/header.php'; 
-    ?>
-
 
     <!-- alert -->
     <div class="alert-container"></div>

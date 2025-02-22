@@ -1,9 +1,3 @@
-    <?php
-    // Avvia la sessione
-    session_start();
-    ?>
-    
-    <!-- Header -->
     <?php 
         $title = 'Homepage';
         $cssFile = 'resources/css/index.css';
