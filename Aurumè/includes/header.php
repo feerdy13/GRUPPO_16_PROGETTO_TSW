@@ -24,13 +24,6 @@
 
   <?php
     session_start();
-
-    // Se la sessione non è attiva ma esiste un cookie, riattiviamo la sessione
-    if (isset($_COOKIE["user_id"]) &&  isset($_COOKIE["user_name"]) && isset($_COOKIE["user_email"])) {
-      $_SESSION["user_id"] = $_COOKIE["user_id"];
-      $_SESSION["user_name"] = $_COOKIE["user_name"];
-      $_SESSION["user_email"] = $_COOKIE["user_email"];
-    }
   ?>
 
   <script src="https://js.stripe.com/v3/" defer></script>

@@ -62,7 +62,7 @@ input[type="submit"]:hover {
     width: calc(100% - 40px); /* Stessa larghezza delle caselle del form */
     text-align: left;
     position: absolute; /* Posizionamento assoluto */
-    top: 40px; /* Posiziono l'alert sotto il tag h2 */
+    top: 35px; /* Posiziono l'alert sotto il tag h2 */
     z-index: 10; /* Assicuro che l'alert sia sopra gli altri elementi */
 }
 

@@ -22,7 +22,7 @@
         
         if (!$stmt) {
             $_SESSION["error"] = "Errore nella preparazione della query.";
-            $redirect_url = 'area_utente.php';
+            $redirect_url = "area_utente.php";
         }
     
         $result = pg_execute($conn, "get_user", array($user_id));
@@ -30,7 +30,7 @@
     
         if (!$user) {
             $_SESSION["error"] = "Utente non trovato.";
-            $redirect_url = 'area_utente.php';
+            $redirect_url = "autenticazione.php";
         }
     
         $current_name = $user["name"];
@@ -51,7 +51,7 @@
                 $stmt = pg_prepare($conn, "check_email", $query);
                 if (!$stmt) {
                     $_SESSION["error"] = "Errore nella preparazione della query.";
-                    $redirect_url = 'area_utente.php';
+                    $redirect_url = "area_utente.php";
                 }
                 $result = pg_execute($conn, "check_email", array($new_email, $user_id));
                 if (pg_num_rows($result) > 0) {
@@ -73,7 +73,7 @@
     
         if (!empty($errors)) {
             $_SESSION['error'] = implode("<br>", $errors);
-            $redirect_url = 'area_utente.php';
+            $redirect_url = "area_utente.php";
         }
     
         // Costruzione della query di aggiornamento
@@ -102,22 +102,42 @@
         if (!empty($update_fields)) {
             $update_values[] = $user_id;
             $query = "UPDATE utenti SET " . implode(", ", $update_fields) . " WHERE id = $" . $param_count;
+            // Esegui la query di aggiornamento
             $stmt = pg_prepare($conn, "update_user", $query);
             $result = pg_execute($conn, "update_user", $update_values);
-    
-            if (pg_affected_rows($result) > 0) {
-                $_SESSION['alert'] = "Profilo aggiornato con successo.";
-    
-                if (!empty($new_password) || (!empty($new_email) && $new_email !== $current_email)) {
-                    $_SESSION['alert'] .= " Devi effettuare nuovamente il login.";
-                    session_destroy();
-                    $redirect_url = 'autenticazione.php?alert=' . urlencode($_SESSION['alert']);
+
+            if (!$result) {
+                $_SESSION["error"] = "Errore nell'aggiornamento del profilo: " . pg_last_error($conn);
+                $redirect_url = 'area_utente.php';
+            } else {
+                if (pg_affected_rows($result) > 0) {
+                    $_SESSION['alert'] = "Profilo aggiornato con successo.";
+
+                    if (!empty($new_password) || (!empty($new_email) && $new_email !== $current_email)) {
+                        $_SESSION['alert'] .= " Devi effettuare nuovamente il login.";
+                        session_destroy();
+                        $redirect_url = 'autenticazione.php?alert=' . urlencode($_SESSION['alert']);
+                    } else {
+                        $redirect_url = "area_utente.php";
+                    }
                 } else {
-                    $redirect_url = "area_utente.php";
+                    $_SESSION['error'] = "Nessuna modifica effettuata.";
+                    $redirect_url = 'area_utente.php';
                 }
             }
+
         }
+        
+        $redirect_url = "area_utente.php";
     }
+
+?>
+<script> 
+    <?php if (!empty($redirect_url)) { ?>
+                window.location.href = '<?php echo $redirect_url; ?>';
+    <?php } ?>
+</script>
+<?php
 
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
     $alert = '';
@@ -128,7 +148,7 @@
         $alert = $_SESSION['alert'];
     }
 
-    // Rimuovo l'alert dalla sessione dopo averlo usato
+    // Se usi la sessione per l'alert, puoi anche rimuoverlo dalla sessione
     unset($_SESSION['error']);
     unset($_SESSION['alert']);
 ?>
@@ -142,9 +162,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             <?php if (!empty($alert)) { ?>
                 showAlert('<?php echo $alert; ?>');
-            <?php } ?>
-            <?php if (!empty($redirect_url)) { ?>
-                window.location.href = '<?php echo $redirect_url; ?>';
             <?php } ?>
         });
     </script>
