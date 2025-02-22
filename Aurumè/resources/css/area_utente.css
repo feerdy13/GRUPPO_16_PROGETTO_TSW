@@ -62,12 +62,12 @@ input[type="submit"]:hover {
     width: calc(100% - 40px); /* Stessa larghezza delle caselle del form */
     text-align: left;
     position: absolute; /* Posizionamento assoluto */
-    top: 40px; /* Posiziona l'alert sotto il tag h2 */
-    z-index: 10; /* Assicura che l'alert sia sopra gli altri elementi */
+    top: 40px; /* Posiziono l'alert sotto il tag h2 */
+    z-index: 10; /* Assicuro che l'alert sia sopra gli altri elementi */
 }
 
 .alert-container {
-    display: none; /* Nasconde il container finché non viene attivato */
+    display: none; /* Nascondo il container finché non viene attivato */
     width: 100%;
     position: absolute;
     left: 0;
@@ -76,7 +76,7 @@ input[type="submit"]:hover {
 }
 
 .alert-container.show {
-    display: block; /* Mostra l'alert quando necessario */
+    display: block; /* Mostro l'alert quando necessario */
     height: auto;
     opacity: 1;
     transition: opacity 0.5s ease;
@@ -159,7 +159,7 @@ input.invalid::after {
 .error-message {
     position: absolute;
     left: 0;
-    bottom: -18px; /* Distanza dal campo input */
+    bottom: -18px; /* Distanzo dal campo input */
     font-size: 12px;
     color: red;
     display: none;

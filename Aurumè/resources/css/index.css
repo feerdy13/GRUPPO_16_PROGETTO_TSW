@@ -25,56 +25,56 @@ main {
 
 .video-container {
     position: relative;
-    width: 100vw; /* Imposta la larghezza al 100% della larghezza della finestra */
-    height: 100vh; /* Imposta l'altezza al 100% dell'altezza della finestra */
-    overflow: hidden; /* Nasconde eventuali parti del video che escono dal contenitore */
+    width: 100vw; /* Imposto la larghezza al 100% della larghezza della finestra */
+    height: 100vh; /* Imposto l'altezza al 100% dell'altezza della finestra */
+    overflow: hidden; /* Nascondo eventuali parti del video che escono dal contenitore */
 }
 
 .video-home {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Assicura che il video occupi l'intera larghezza del contenitore */
-    height: 100%; /* Assicura che il video occupi l'intera altezza del contenitore */
-    object-fit: cover; /* Mantiene le proporzioni del video e riempie l'area disponibile */
+    width: 100%; /* Assicuro che il video occupi l'intera larghezza del contenitore */
+    height: 100%; /* Assicuro che il video occupi l'intera altezza del contenitore */
+    object-fit: cover; /* Mantengo le proporzioni del video e riempie l'area disponibile */
 }
 
 /* Effetto di ingresso per i container */
 .hidden {
-    opacity: 0; /* Nasconde inizialmente gli elementi */
+    opacity: 0; /* Nascondo inizialmente gli elementi */
     transform: translateY(50px); /* Li sposta in basso */
     transition: opacity 1s ease-out, transform 1s ease-out; /* Effetto fluido */
 }
   
 /* Quando l'elemento entra in viewport */
 .show {
-    opacity: 1; /* Rende visibile l'elemento */
+    opacity: 1; /* Rendo visibile l'elemento */
     transform: translateY(0); /* Lo riporta alla posizione normale */
 }
   
 
 .heading {
-    text-align: center; /* Centra il testo e gli elementi all'interno del contenitore */
+    text-align: center; /* Centro il testo e gli elementi all'interno del contenitore */
     margin: 20px;
 }
 
 .heading h1 {
-    font-size: var(--text-size-xxlarge); /* Dimensione del testo */
-    color: var(--first-color); /* Colore del testo */
-    margin: 20px; /* Aggiunge spazio sotto il titolo */
+    font-size: var(--text-size-xxlarge); 
+    color: var(--first-color); 
+    margin: 20px; 
 }
 
 /* Stile per il pulsante "Scopri la collezione" */
 .shop-button {
-    display: inline-block; /* Rende il pulsante un elemento inline-block */
-    background-color: var(--first-color); /* Colore di sfondo del pulsante */
-    color: whitesmoke; /* Colore del testo del pulsante */
-    padding: 10px 20px; /* Padding interno del pulsante */
-    border: none; /* Rimuove il bordo del pulsante */
-    border-radius: 5px; /* Arrotonda gli angoli del pulsante */
-    text-decoration: none; /* Rimuove la sottolineatura dal link */
-    font-size: var(--text-size-medium); /* Dimensione del testo */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera al pulsante */
+    display: inline-block; /* Rendo il pulsante un elemento inline-block */
+    background-color: var(--first-color); 
+    color: whitesmoke; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    text-decoration: none; /* Rimuovo la sottolineatura dal link */
+    font-size: var(--text-size-medium); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiungo un'ombra leggera al pulsante */
     transition: background-color 0.3s ease; /* Transizione per il cambio di colore di sfondo */
 }
 
@@ -128,29 +128,29 @@ main {
 
 /* Sezione gioielli in oro */
 .section-image {
-    width: 100vw; /* Imposta la larghezza al 100% della larghezza della finestra */
-    height: 100vh; /* Imposta l'altezza al 100% dell'altezza della finestra */
-    display: flex; /* Assicura che il contenitore utilizzi Flexbox */
-    justify-content: center; /* Centra l'immagine orizzontalmente */
-    align-items: center; /* Centra l'immagine verticalmente */
+    width: 100vw; /* Imposto la larghezza al 100% della larghezza della finestra */
+    height: 100vh; /* Imposto l'altezza al 100% dell'altezza della finestra */
+    display: flex; /* Assicuro che il contenitore utilizzi Flexbox */
+    justify-content: center; /* Centro l'immagine orizzontalmente */
+    align-items: center; /* Centro l'immagine verticalmente */
     position: relative;
-    overflow: hidden; /* Nasconde eventuali parti dell'immagine che escono dal contenitore */
-    object-fit: cover; /* Mantiene le proporzioni del video e riempie l'area disponibile */
+    overflow: hidden; /* Nascondo eventuali parti dell'immagine che escono dal contenitore */
+    object-fit: cover; /* Mantengo le proporzioni del video e riempie l'area disponibile */
 }
 
 .section-image img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Assicura che l'immagine occupi l'intera larghezza del contenitore */
-    height: 100%; /* Assicura che l'immagine occupi l'intera altezza del contenitore */
-    object-fit: cover; /* Mantiene le proporzioni dell'immagine e riempie l'area disponibile */
+    width: 100%; /* Assicuro che l'immagine occupi l'intera larghezza del contenitore */
+    height: 100%; /* Assicuro che l'immagine occupi l'intera altezza del contenitore */
+    object-fit: cover; /* Mantengo le proporzioni dell'immagine e riempie l'area disponibile */
 }
 
 /* Stile per il testo sovrapposto */
 .overlay-text-one {
-    position: absolute; /* Posiziona il testo in modo assoluto sopra l'immagine */
-    top: 75%; /* Posiziona il testo a metà dell'immagine */
+    position: absolute; /* Posiziono il testo in modo assoluto sopra l'immagine */
+    top: 75%; /* Posiziono il testo a metà dell'immagine */
     color: white; 
     text-align: left;  
     left: 0;
@@ -173,8 +173,8 @@ main {
 }
 
 .overlay-text-two {
-    position: absolute; /* Posiziona il testo in modo assoluto sopra l'immagine */
-    top: 85%; /* Posiziona il testo a metà dell'immagine */
+    position: absolute; /* Posiziono il testo in modo assoluto sopra l'immagine */
+    top: 85%; /* Posiziono il testo a metà dell'immagine */
     color: white; 
     text-align: left;  
     left: 0;
@@ -184,18 +184,18 @@ main {
 /* Contenitore per lo scroll orizzontale delle immagini */
 .image-scroll-wrapper {
     margin: 14vh 7vw;
-    position: relative; /* Posiziona i pulsanti delle frecce in relazione al contenitore */
+    position: relative; /* Posiziono i pulsanti delle frecce in relazione al contenitore */
     display: flex;
-    flex-direction: column; /* Dispone gli elementi in una colonna */
-    overflow: hidden; /* Nasconde la scrollbar orizzontale */
+    flex-direction: column; /* Dispongo gli elementi in una colonna */
+    overflow: hidden; /* Nascondo la scrollbar orizzontale */
 }
 
 .text-gallery-container {
     display: flex;
     width: 100%;
-    justify-content: space-between; /* Distribuisce lo spazio tra la scritta e i bottoni */
-    align-items: center; /* Allinea verticalmente gli elementi al centro */
-    margin-bottom: 10px; /* Aggiunge uno spazio tra la scritta e le immagini */
+    justify-content: space-between; /* Distribuisco lo spazio tra la scritta e i bottoni */
+    align-items: center; 
+    margin-bottom: 10px; 
 }
 
 .text-gallery {
@@ -205,90 +205,90 @@ main {
 }
 
 .image-scroll-container {
-    overflow-x: auto; /* Abilita lo scroll orizzontale */
-    white-space: nowrap; /* Impedisce il wrapping delle immagini */
-    padding: 40px 0; /* Aggiunge padding sopra e sotto il contenitore */
-    flex: 1; /* Permette al contenitore di espandersi per riempire lo spazio disponibile */
-    scrollbar-width: none; /* Nasconde la scrollbar orizzontale */
+    overflow-x: auto; /* Abilito lo scroll orizzontale */
+    white-space: nowrap; /* Impedisco il wrapping delle immagini */
+    padding: 40px 0; 
+    flex: 1; /* Permetto al contenitore di espandersi per riempire lo spazio disponibile */
+    scrollbar-width: none; /* Nascondo la scrollbar orizzontale */
 }
 
 .image-scroll {
-    display: inline-flex; /* Utilizza Flexbox per disporre le immagini in una riga */
+    display: inline-flex; /* Utilizzo Flexbox per disporre le immagini in una riga */
 }
 
 .image-scroll img {
-    width: 300px; /* Imposta una larghezza fissa per le immagini */
-    height: auto; /* Mantiene l'altezza proporzionale alla larghezza */
-    max-height: 450px; /* Limita l'altezza massima delle immagini */
-    margin: 0 4vw; /* Aggiunge uno spazio tra le immagini */
-    border-radius: 8px; /* Arrotonda gli angoli delle immagini */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra leggera alle immagini */
+    width: 300px; 
+    height: auto; 
+    max-height: 450px; 
+    margin: 0 4vw; 
+    border-radius: 8px; 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); 
 }
 
 /* Stile per i pulsanti delle frecce */
 .scroll-button {
-    position: absolute; /* Posiziona i pulsanti in modo assoluto */
-    background-color: var(--first-color); /* Colore di sfondo del pulsante */
-    color: whitesmoke; /* Colore del testo del pulsante */
-    border: none; /* Rimuove il bordo del pulsante */
-    border-radius: 50%; /* Arrotonda gli angoli del pulsante */
-    width: 40px; /* Larghezza del pulsante */
-    height: 40px; /* Altezza del pulsante */
+    position: absolute; /* Posiziono i pulsanti in modo assoluto */
+    background-color: var(--first-color); 
+    color: whitesmoke; 
+    border: none; /* Rimuovo il bordo del pulsante */
+    border-radius: 50%; /* Arrotondo gli angoli del pulsante */
+    width: 40px; 
+    height: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera al pulsante */
-    top: 10px; /* Posiziona i pulsanti in alto */
-    right: 10px; /* Allinea i pulsanti a destra */
-    margin-left: 10px; /* Aggiunge uno spazio tra i pulsanti */
+    cursor: pointer; /* Cambio il cursore al passaggio del mouse */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiungo un'ombra leggera al pulsante */
+    top: 10px; /* Posiziono i pulsanti in alto */
+    right: 10px; /* Allineo i pulsanti a destra */
+    margin-left: 10px; 
     transition: background-color 0.3s ease; /* Transizione per il cambio di colore di sfondo */
 }
 
 .scroll-button.left {
-    right: 80px; /* Impedisce il sovrapporsi dei pulsanti */
+    right: 80px; /* Impedisco il sovrapporsi dei pulsanti */
 }
 
 .scroll-button:hover {
-    background-color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
+    background-color: var(--second-color); /* Cambio il colore di sfondo al passaggio del mouse */
 }
 
 
 /* Stile per il contenitore di autenticazione */
 .authentication-container {
     display: flex;
-    flex-direction: column; /* Dispone gli elementi in una colonna */
+    flex-direction: column; /* Dispongo gli elementi in una colonna */
     text-align: left; 
-    margin: 60px auto; /* Centra il contenitore orizzontalmente */
-    max-width: 800px; /* Limita la larghezza massima */
+    margin: 60px auto; /* Centro il contenitore orizzontalmente */
+    max-width: 800px; /* Limito la larghezza massima */
 }
 
 .authentication-container h2 {
     font-size: var(--text-size-xxlarge);
-    margin-bottom: 20px; /* Aggiunge spazio sotto l'h2 */
+    margin-bottom: 20px; /* Aggiungo spazio sotto l'h2 */
 }
 
 .authentication-content {
     display: flex;
-    justify-content: space-between; /* Distribuisce lo spazio tra il paragrafo e il bottone */
-    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    justify-content: space-between; /* Distribuisco lo spazio tra il paragrafo e il bottone */
+    align-items: center; /* Allineo verticalmente gli elementi al centro */
 }
 
 .authentication-container p {
     font-size: var(--text-size-large);
     max-width: 600px; /* Limita la larghezza massima del testo */
-    margin: 0; /* Rimuove il margine predefinito */
+    margin: 0; 
 }
 
 .authentication-container .button {
-    padding: 15px 60px; /* Aggiunge padding interno */
+    padding: 15px 60px; 
     background-color: var(--first-color); /* Colore di sfondo del bottone */
     color: whitesmoke; /* Colore del testo del bottone */
-    border: none; /* Rimuove il bordo del bottone */
-    border-radius: 5px; /* Arrotonda gli angoli del bottone */
+    border: none; 
+    border-radius: 5px; 
     text-decoration: none; /* Rimuove la sottolineatura dal link */
-    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
-    white-space: nowrap; /* Impedisce il wrapping del testo */
+    cursor: pointer; 
+    white-space: nowrap; 
     transition: background-color 0.3s ease; /* Aggiunge una transizione per il cambio di colore di sfondo */
 }
 
@@ -299,23 +299,23 @@ main {
 
 /* Stile per il pulsante email */
 .email-button-container {
-    position: fixed; /* Posiziona il contenitore in modo fisso */
-    bottom: 20px; /* Distanza dal fondo della pagina */
-    right: 20px; /* Distanza dal lato destro della pagina */
+    position: fixed; /* Posiziono il contenitore in modo fisso */
+    bottom: 20px; 
+    right: 20px; 
 }
 .email-button {
     background-color: var(--first-color); /* Colore di sfondo del pulsante */
     color: whitesmoke; /* Colore del testo del pulsante */
     padding: 10px 20px; /* Padding interno del pulsante */
-    border: none; /* Rimuove il bordo del pulsante */
-    border-radius: 5px; /* Arrotonda gli angoli del pulsante */
-    text-decoration: none; /* Rimuove la sottolineatura dal link */
+    border: none; /* Rimuovo il bordo del pulsante */
+    border-radius: 5px; /* Arrotondo gli angoli del pulsante */
+    text-decoration: none; /* Rimuovo la sottolineatura dal link */
     font-size: var(--text-size-medium); /* Dimensione del testo */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra leggera al pulsante */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Aggiungo un'ombra leggera al pulsante */
     transition: color 0.3s ease; /* Transizione per il cambio di colore di sfondo */
 }
 .email-button:hover {
-    color: var(--second-color); /* Cambia il colore di sfondo al passaggio del mouse */
+    color: var(--second-color); /* Cambio il colore di sfondo al passaggio del mouse */
 }
 
 @media (max-width: 900px) {
@@ -407,7 +407,7 @@ main {
     .authentication-container .button {
         padding: 8px 30px;
         font-size: var(--text-size-small);
-        white-space: nowrap; /* Impedisce il wrapping del testo */
+        white-space: nowrap; /* Impedisco il wrapping del testo */
     }
 
     .email-button {
