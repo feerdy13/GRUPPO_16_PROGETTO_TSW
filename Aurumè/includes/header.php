@@ -9,7 +9,7 @@
   if (isset($title))
     echo '<title>' . $title . ' | Aurumè Official Store</title>';
   ?>
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="resources/css/config.css">
   <link rel="stylesheet" href="resources/css/header.css">
   <link rel="stylesheet" href="resources/css/footer.css">
