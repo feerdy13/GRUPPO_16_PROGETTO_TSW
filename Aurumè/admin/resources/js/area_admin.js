@@ -64,30 +64,24 @@ function setupDropArea(dropArea, fileInput) {
     /* 
         Aggiunge un event listener per l'evento "dragover" (quando un elemento viene trascinato sopra la drop area).
         Previene il comportamento di default del browser (che potrebbe impedire il drop) e interrompe la propagazione dell'evento.
-        Aggiunge anche la classe "highlight" per dare un feedback visivo all'utente.
     */    
     dropArea.addEventListener('dragover', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        dropArea.classList.add('highlight');
     });
     
     /* 
         Aggiunge un event listener per l'evento "dragleave" (quando l'elemento trascinato esce dalla drop area).
-        Previene il comportamento di default e rimuove la classe "highlight" per eliminare il feedback visivo.
     */
     dropArea.addEventListener('dragleave', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        dropArea.classList.remove('highlight');
     });
     
     // Drop: rimuove l'evidenza, assegna il file all'input e mostra il nome del file
     dropArea.addEventListener('drop', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        //rimuove la classe "highlight" poichè l'operazione di drop è conclusa
-        dropArea.classList.remove('highlight');
         
         //ottiene l'oggetto DataTransfer dall'evento e i file trascinati
         var dt = e.dataTransfer;
