@@ -84,7 +84,7 @@
     <div class="sidenav-content">
       <!-- Bottone chiudi menu -->
       <div id="closeMenu">
-        <button class="close-button" onclick="closeMenu()"><h2 class="close-text">&#215;<span>Chiudi</span></h2></button>
+        <button class="close-button" onclick="closeMenu()"><span class="close-X">&#215;<span class="close-text">Chiudi</span></span></button>
       </div>
       <!-- Collegamenti principali menu -->
       <a  href="catalogo.php" class="catalogo">Catalogo</a>
